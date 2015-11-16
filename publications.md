@@ -39,8 +39,7 @@ share: false
 
   * **Raghava Mutharaju**, Pavan Kapanipathi. *Are We Really Standing on the Shoulders of Giants?* In: Anastasia Dimou et al. (Eds.). Proceedings of the 1st International Workshop on Negative or Inconclusive Results in Semantic Web, NoISE 2015, co-located with the 12th Extended Semantic Web Conference (ESWC 2015), Portoroz, Slovenia, June 1st, 2015. CEUR Workshop Proceedings Vol-1435. <a href="files/NegativeResults-NoISE2015-Raghava.pdf" target="_blank">pdf</a>   
 
-  * **Raghava Mutharaju**, Pascal Hitzler, Prabhaker Mateti. *Distributed OWL EL Reasoning: The Story So Far*. In: Thorsten Liebig, Achille Fokoue (Eds.), SSWS 2014, Scalable Semantic Web Knowledge Base Systems. Proceedings of the 10th
-International Workshop on Scalable Semantic Web Knowledge Base Systems co-located with 13th International Semantic Web Conference (ISWC 2014) Riva del Garda, Italy, October 20, 2014. CEUR Workshop Proceedings Vol-1261, pp. 61-76. <a href="files/Distributed-EL-Story-SSWS2014-Raghava.pdf" target="_blank">pdf</a>   
+  * **Raghava Mutharaju**, Pascal Hitzler, Prabhaker Mateti. *Distributed OWL EL Reasoning: The Story So Far*. In: Thorsten Liebig, Achille Fokoue (Eds.), Proceedings of the 10th International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS 2014), co-located with the 13th International Semantic Web Conference (ISWC 2014) Riva del Garda, Italy, October 20, 2014. CEUR Workshop Proceedings Vol-1261, pp. 61-76. <a href="files/Distributed-EL-Story-SSWS2014-Raghava.pdf" target="_blank">pdf</a>   
 
   * **Raghava Mutharaju**, Prabhaker Mateti, Pascal Hitzler. *Developing a Distributed Reasoner for the Semantic Web*. In: Ruben Verborgh, Erik Mannens (Eds.), ISWCDEV 2014. Proceedings of the ISCW Developers Workshop 2014, co-located with the 13th International Semantic Web Conference (ISWC 2014) Riva del Garda, Italy, October 19, 2014. CEUR Workshop Proceedings Vol-1268, pp. 108-112. <a href="files/DistReasoner-SemDev2014-Raghava.pdf" target="_blank">pdf</a>   
 
@@ -53,6 +52,17 @@ International Workshop on Scalable Semantic Web Knowledge Base Systems co-locate
   * **Raghava Mutharaju**, Frederick Maier, Pascal Hitzler. *A MapReduce Algorithm for EL+*. In: Volker Haarslev et al. (Eds.), Proceedings of the 23rd International Workshop on Description Logics (DL2010), Waterloo, Canada, 2010. CEUR Workshop Proceedings Vol. 573, pp. 464-474. <a href="files/MapReduce-EL-DL2010-Raghava.pdf" target="_blank">pdf</a>   
 
 ### Posters/Demos/Challenges
+
+  * **Raghava Mutharaju**, Sherif Sakr, Alessandra Sala, Pascal Hitzler. *D-SPARQ: Distributed, Scalable and Efficient RDF Query Engine*. Proceedings of the International Semantic Web Conference (ISWC 2013) Posters & Demonstrations Track, Sydney, Australia, October 23, 2013. CEUR Workshop Proceedings Vol. 1035, pp. 261-264. <a href="files/DSparq-ISWC2013-PD-Raghava.pdf" target="_blank">pdf</a>   
+
+  * David Carral, Amit Joshi, Adila Krisnadhi, **Raghava Mutharaju**, Kunal Sengupta, Cong Wang. *Konf Connect*. WWW 2012, Metadata Challenge. 21st International Conference on World Wide Web. April 16-20, 2012, Lyon, France. <a href="files/KonfConnect-MetadataChallenge-WWW2012.pdf" target="_blank">pdf</a>   
+
+  * Ashutosh Jadhav, Wenbo Wang, **Raghava Mutharaju**, Pramod Anantharam, Vinh Nyugen, Amit P. Sheth, Karthik Gomadam, Meenakshi Nagarajan, and Ajith
+Ranabahu. *Twitris: Socially Influenced Browsing*. Semantic Web Challenge 2009, 8th International Semantic Web Conference, Oct. 25-29 2009, Washington, DC, USA. <a href="files/Twitris-SemWebChallenge-ISWC2009.pdf" target="_blank">pdf</a>   
+
+  * **Raghava Mutharaju**, Satya S. Sahoo, D. Brent Weatherly, Pramod Anantharam, Flora Logan, Amit P. Sheth, Rick Tarleton. *Ontology Driven Integration of Biology Experiment Data*. Ohio Collaborative Conference on BioInformatics (OCCBIO 2009), June 14-17, 2009.   
+
+  * Pramod Anantharam, Satya S. Sahoo, D. Brent Weatherly, Flora Logan, **Raghava Mutharaju**, Amit P. Sheth, Rick Tarleton. *Trykipedia: Collaborative Bio-Ontology Development using Wiki Environment*. Ohio Collaborative Conference on BioInformatics (OCCBIO 2009), June 14-17, 2009.   
 
 ### Technical Reports 
 
