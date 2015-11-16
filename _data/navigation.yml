@@ -1,0 +1,22 @@
+# Site navigation links
+
+- title: Home
+  url: /index.html
+
+- title: Projects
+  url: /projects.html
+
+- title: Publications
+  url: /publications.html
+
+- title: Work Experience
+  url: /work-experience.html
+  
+- title: Awards and Activities
+  url: /awards-activities.html  
+  
+- title: Technical Skills
+  url: /techskills.html
+  
+- title: Contact
+  url: /contact.html    
