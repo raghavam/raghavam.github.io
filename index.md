@@ -8,7 +8,7 @@ I am a PhD student in the Data Semantics Lab (<a href="http://dase.cs.wright.edu
 
 I completed my Masters in Computer Science from Motilal Nehru National Institute of Technology (<a href="http://www.mnnit.ac.in/" target="_blank">MNNIT</a>), Allahabad, India and my Bachelors in Computer Science from Jawaharlal Nehru Technological University (<a href="http://www.jntuh.ac.in/" target="_blank">JNTU</a>), Hyderabad, India.  
 
-I am interested in Semantic Web and building large scale systems. The work done during my PhD work revolves around these interests. My thesis work in particular, looks at scalable approaches for ontology reasoning.   
+I am interested in Semantic Web and building large scale systems. The work done during my PhD revolves around these interests. My thesis work in particular, explores scalable approaches for ontology reasoning.   
 
 ### Research Interests
   
