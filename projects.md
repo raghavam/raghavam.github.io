@@ -54,7 +54,7 @@ share: false
       * Temporal inconsistencies could be present in such workflows.
       * Temporal model was developed in OWL and James Allen's temporal operators are implemented as SWRL rules. 
       * Rules are run against the data in the knowledge base. Pellet is used to detect inconsistencies.   
-      * Explanations (justifications) for the inconsistencies can be generated.   
+      * Explanations (justifications) for the inconsistencies were generated.   
 &nbsp;
  
    2. Situational Understanding from Social data
@@ -64,7 +64,7 @@ share: false
       * I developed REST API on top of the ontology to facilitate reasoning and answer questions related to concepts and relationships in the ontology.    
 &nbsp;
 
-   3. T.cruzi Semantic PSE 
+   3. Ontology driven Data Integration
       * Goal of the project is to develop an ontology-driven semantic problem solving environment (PSE) for parasite (Trypanosoma cruzi) data. 
       * It allows integration of local and public data to answer biology queries.
       * I was involved in the ontology driven translation of data from relational database and excel sheets to RDF.
