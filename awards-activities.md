@@ -26,8 +26,10 @@ Activities
   * International Workshop on Understanding Situations through Multimodal Sensing (uSitu), 2016.
   * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2014, 2015. 
   * Extended Semantic Web Conference (ESWC), Posters & Demo track, 2014, 2015.   
-&nbsp;
+&nbsp; 
+
 * **External Reviewer**
+  * Journal on Data Semantics, 2015.
   * Extended Semantic Web Conference (ESWC), 2012, 2015.
   * International Conference on Artificial Intelligence: Methodology, Systems, Applications (AIMSA), 2014.
   * Semantic Web Journal, 2014.
