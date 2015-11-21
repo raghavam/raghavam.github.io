@@ -10,7 +10,7 @@ share: false
 
 ### Edited Proceedings
 
-  * Proceedings of the 1st International Diversity++ Workshop, co-located with the 14th International Semantic Web Conference (ISWC 2015), Bethlehem, Pensylvania, USA, October 12, 2015. Claudia d&#39;Amato, Freddy L&eacute;cu&eacute;, **Raghava Mutharaju**, Tom Narock, and Fabian Wirth (eds.). CEUR Workshop Proceedings 1501, CEUR-WS.org, 2015. <a href="http://ceur-ws.org/Vol-1501/" target="_blank">http://ceur-ws.org/Vol-1501</a>
+  * Proceedings of the 1st International Diversity++ Workshop, co-located with the 14th International Semantic Web Conference (ISWC 2015), Bethlehem, Pensylvania, USA, October 12, 2015. Claudia d&#39;Amato, Freddy L&eacute;cu&eacute;, **Raghava Mutharaju**, Tom Narock, and Fabian Wirth (Eds.). CEUR Workshop Proceedings 1501, CEUR-WS.org, 2015. <a href="http://ceur-ws.org/Vol-1501/" target="_blank">http://ceur-ws.org/Vol-1501</a>
 
 ### Journal Papers
 
