@@ -29,6 +29,7 @@ Activities
 &nbsp; 
 
 * **External Reviewer**
+  * International Conference on Principles of Knowledge Representation and Reasoning (KR), 2014, 2016.
   * Journal on Data Semantics, 2015.
   * Extended Semantic Web Conference (ESWC), 2012, 2015.
   * International Conference on Artificial Intelligence: Methodology, Systems, Applications (AIMSA), 2014.
@@ -37,7 +38,6 @@ Activities
   * International Conference on Web Reasoning and Rule Systems (RR), 2014.
   * European Conference on Logics in Artificial Intelligence (JELIA), 2014.
   * International Conference on Knowledge Engineering and Knowledge Management (EKAW), 2014.
-  * International Conference on Principles of Knowledge Representation and Reasoning (KR), 2014.
   * International Conference on Biomedical Ontologies (ICBO), 2013. 
   * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2011, 2013.
   * Joint International Semantic Technology Conference (JIST), 2011, 2013.
