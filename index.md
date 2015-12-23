@@ -26,6 +26,7 @@ I am interested in Semantic Web and building large scale systems. The work done 
 
 ### News
 
+  * Tutorial proposal titled *AI for Smarter Cities. Are we there yet?* got accepted at IJCAI 2016 (Dec 2015).
   * Attended the <a href="http://researcher.watson.ibm.com/researcher/view_group.php?id=6198" target="_blank">*Cloud and Data Services Workshop*</a> organized by IBM T.J. Watson Research Center (Dec 2015).
   * Attended <a href="http://iswc2015.semanticweb.org/" target="_blank">ISWC 2015</a> (Oct 2015).
   * Defended my dissertation proposal titled "*Distributed Rule-based Ontology Reasoning*" (Sept 2015).

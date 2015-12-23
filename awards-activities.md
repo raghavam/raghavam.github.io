@@ -17,6 +17,7 @@ Activities
 ==========
 
 * **Organizer**
+  * Tutorial titled *AI for Smarter Cities. Are we there yet?* at the 25th International Joint Conference on Artificial Intelligence (IJCAI 2016), July 9-11, 2016, New York, USA. Co-organized with Freddy L&eacute;cu&eacute;, Jeff Z. Pan, Jiewen Wu and Pascal Hitzler.
   * <a href="http://dase.cs.wright.edu/activities/diversity2015" target="_blank">Diversity++ 2015</a> workshop, co-located with the 14th International Semantic Web Conference (ISWC 2015). Co-chaired with Claudia d&#39;Amato, Freddy L&eacute;cu&eacute;, Tom Narock and Fabian Wirth. October 12, 2015. 
   * Tutorial titled <a href="http://researcher.watson.ibm.com/researcher/view_person_subpage.php?id=5854" target="_blank">AI for Smarter Cities, Hype or Reality? A Study in Dublin, Bologna, Miami and Rio</a> at the 29th AAAI Conference on Artificial Intelligence (AAAI 2015), January 26, 2015, Texas, USA. Co-organized with Freddy L&eacute;cu&eacute;, Jeff Z. Pan, Jiewen Wu and Pascal Hitzler. 
   * Tutorial titled <a href="http://homepages.abdn.ac.uk/jeff.z.pan/pages/research-ttl-iswc2014.shtml" target="_blank">Large Scale Reasoning over Semantic Data</a> at the 13th International Semantic Web Conference (ISWC 2014), October 19, 2015, Riva del Garda, Italy. Co-organized with Jeff Z. Pan, Ilias Tachmazidis and Guilin Qi.   
