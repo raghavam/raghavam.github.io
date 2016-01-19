@@ -1,13 +1,14 @@
 ---
 layout: page
-title: Honors and Awards
+title: Awards and Recognition
 share: false
 ---
 
 * Invited to present at the 6th student workshop on Cloud and Data Services  organized by IBM T.J Watson Research Center, NY. December 3-4, 2015.
 * Invited to attend NSF Data Science workshop 2015 at the University of Washington, Seattle. August 5-7, 2015.
 * Awarded Amazon AWS Research grant for a period of 2 years.
-* Awarded Microsoft Azure Research grant for a period of 1 year.
+* Awarded Microsoft Azure Research grant for a period of 1.5 year.
+* News article on my visit to University of Huddersfield appeared on the news of University of Huddersfield and Wright State University.
 * Travel awards for ISWC 2015, AAAI 2015, ISWC 2014, ISWC 2012, RR 2012, and DL 2010.
 * Spot award at CA Technologies.
 
@@ -31,8 +32,8 @@ Activities
 
 * **External Reviewer**
   * International Conference on Principles of Knowledge Representation and Reasoning (KR), 2014, 2016.
+  * Extended Semantic Web Conference (ESWC), 2012, 2015, 2016.
   * Journal on Data Semantics, 2015.
-  * Extended Semantic Web Conference (ESWC), 2012, 2015.
   * International Conference on Artificial Intelligence: Methodology, Systems, Applications (AIMSA), 2014.
   * Semantic Web Journal, 2014.
   * European Conference on Artificial Intelligence (ECAI), 2010, 2014.

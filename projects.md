@@ -16,19 +16,25 @@ share: false
        * Implementation is in Java and Redis is the distributed key-value store.
        * Code available at <a href="https://github.com/raghavam/DistEL" target="_blank">https://github.com/raghavam/DistEL<a/>   
 &nbsp;
-    2. DQuEL  
+    2. SparkEL
+       * This is a distributed OWL EL reasoner based on Apache Spark framework.
+       * Axioms are converted to tuple format so that they can be represented as Spark RDDs.
+       * Spark operations such as map, join and union are used to implement the reasoning rules.
+       * Code available at <a href="https://github.com/raghavam/sparkel" target="_blank">https://github.com/raghavam/sparkel</a> (under development).
+&nbsp;
+    3. DQuEL  
        * Distributed queue based implementation of OWL EL reasoning.  
        * Each concept in the ontology is assigned a queue and these queues are spread over the cluster.
        * Implementation is in Java and Redis is the distributed key-value store.
        * Code available at <a href="https://github.com/raghavam/DQuEL" target="_blank">https://github.com/raghavam/DQuEL<a/>   
 &nbsp;  
-    3. MR-EL  
+    4. MR-EL  
        * A MapReduce implementation of OWL EL reasoning.  
        * Axioms are represented as key-value pairs.  
        * Each rule is a MapReduce job and these are run iteratively.
        * An additional MapReduce job is needed for termination detection.     
 &nbsp;
-    4. Shared Memory Reasoning
+    5. Shared Memory Reasoning
        * OWL EL reasoning on a massively parallel shared-memory Cray XMT supercomputer. 
        * This work was done during the summer internship at Complexible Inc (formerly known as Clark & Parsia), Boston MA.
        * Axioms are represented as a directed labeled graph.     
