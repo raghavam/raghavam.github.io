@@ -31,11 +31,11 @@ share: false
 
 ### Workshop Papers
 
-  * **Raghava Mutharaju**, Prabhaker Mateti, and Pascal Hitzler. *Towards a Rule Based Distributed OWL Reasoning Framework*. Proceedings of the 12th OWL Experiences and Directions Workshop (OWLED 2015) co-located with the 14th International Semantic Web Conference (ISWC 2015). To Appear. <a href="files/DistFramework-OWLED2015-Raghava.pdf" target="_blank">pdf</a>   
+  * **Raghava Mutharaju**, Prabhaker Mateti, and Pascal Hitzler. *Towards a Rule Based Distributed OWL Reasoning Framework*. Proceedings of the 12th OWL Experiences and Directions Workshop (OWLED 2015) co-located with the 14th International Semantic Web Conference (ISWC 2015). Lecture Notes in Computer Science, Springer, Heidelberg, 2015. <a href="files/DistFramework-OWLED2015-Raghava.pdf" target="_blank">pdf</a>   
 
   * **Raghava Mutharaju**. *Distributed Reasoning over Ontology Streams and Large Knowledge Base*. NSF Data Science Workshop 2015. August 5-7, 2015, Seattle, Washington, USA.   
 
-  * Kasthuri Jayarajah, Shuochao Yao, **Raghava Mutharaju**, Archan Misra, Geeth De Mel, Julie Skipper, Tarek Abdelzaher, and Michael Kolodny. *Social Signal Processing for Real-time Situational Understanding: a Vision and Approach*. Proceedings of the 1st International Workshop on Social Sensing (SocialSens 2015) co-located with the 12th IEEE International Conference on Mobile Ad hoc and Sensor Systems (IEEE MASS 2015). To Appear. (Invited paper). <a href="files/SocialSignals-SocialSens2015-KSRM.pdf" target="_blank">pdf</a>   
+  * Kasthuri Jayarajah, Shuochao Yao, **Raghava Mutharaju**, Archan Misra, Geeth De Mel, Julie Skipper, Tarek Abdelzaher, and Michael Kolodny. *Social Signal Processing for Real-time Situational Understanding: a Vision and Approach*. Proceedings of the 1st International Workshop on Social Sensing (SocialSens 2015) co-located with the 12th IEEE International Conference on Mobile Ad hoc and Sensor Systems (IEEE MASS 2015). , Dallas, TX, USA, Oct 19-22, 2015. IEEE, 2015, pp. 627-632.  Invited paper. <a href="files/SocialSignals-SocialSens2015-KSRM.pdf" target="_blank">pdf</a>   
 
   * **Raghava Mutharaju**, Pavan Kapanipathi. *Are We Really Standing on the Shoulders of Giants?* In: Anastasia Dimou et al. (Eds.). Proceedings of the 1st International Workshop on Negative or Inconclusive Results in Semantic Web, NoISE 2015, co-located with the 12th Extended Semantic Web Conference (ESWC 2015), Portoroz, Slovenia, June 1st, 2015. CEUR Workshop Proceedings Vol-1435. <a href="files/NegativeResults-NoISE2015-Raghava.pdf" target="_blank">pdf</a>   
 
