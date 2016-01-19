@@ -20,7 +20,7 @@ share: false
        * This is a distributed OWL EL reasoner based on Apache Spark framework.
        * Axioms are converted to tuple format so that they can be represented as Spark RDDs.
        * Spark operations such as map, join and union are used to implement the reasoning rules.
-       * Code available at <a href="https://github.com/raghavam/sparkel" target="_blank">https://github.com/raghavam/sparkel</a> (under development).
+       * Code available at <a href="https://github.com/raghavam/sparkel" target="_blank">https://github.com/raghavam/sparkel</a> (under development)
 &nbsp;
     3. DQuEL  
        * Distributed queue based implementation of OWL EL reasoning.  
