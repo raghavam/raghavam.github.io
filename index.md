@@ -22,7 +22,7 @@ I am interested in Semantic Web and building large scale systems. The work done 
 ### Curriculum Vitae
 
   * <a href="files/Raghava_CV.pdf" target="_blank">Detailed CV</a> (updated in Jan 2016)   
-  * <a href="files/Raghava_Resume.pdf" target="_blank">Short resume</a> (updated in Nov 2015)   
+  * <a href="files/Raghava_onepage_resume.pdf" target="_blank">Short resume</a> (updated in Jan 2016)   
 
 
 ### News
