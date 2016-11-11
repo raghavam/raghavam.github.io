@@ -9,7 +9,7 @@ url:
 
 permalink:   /:categories/:title/
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
@@ -28,8 +28,8 @@ kramdown:
 owner:
   name: Raghava Mutharaju
   avatar: bio-photo.jpg
-  bio: "PhD student interested in Large Scale Computing, Ontology Reasoning, RDF, Semantic Web Applications and Knowledge Graph"
-  email: mutharaju.2@wright.edu
+  bio: "Research Scientist interested in Semantic Web Applications, Knowledge Graph, Ontology Modeling, Reasoning and Big Data"
+  email: m.vijayaraghava@gmail.com
   disqus-shortname:
   twitter: mraghava
   facebook: raghava.mutharaju

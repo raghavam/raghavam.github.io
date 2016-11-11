@@ -14,11 +14,10 @@ I am interested in Semantic Web and building large scale systems. The work done 
 
 ### Research Interests
   
-  * Large Scale Computing    
-  * Ontology Reasoning 
-  * RDF Query Processing  
   * Semantic Web Applications 
-  * Knowledge Graph     
+  * Knowledge Graph    
+  * Ontology Reasoning 
+  * RDF Query Processing      
   * Big Data 
 
 ### News
