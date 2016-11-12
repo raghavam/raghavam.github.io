@@ -10,10 +10,12 @@ share: false
 
 ### Journal Papers
 
-  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *Reasoning on the Web of Data*. Submitted.   
+  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *Reasoning on the Web of Data*. Under submission.   
   
 
 ### Conference Papers
+
+  * Zhangquan Zhou, Guilin Qi, Chang Liu, **Raghava Mutharaju**, Pascal Hitzler. *Reasoning with Large Scale OWL 2 EL Ontologies based on MapReduce*. In: Feifei Li et al. (Eds.), Proceedings of the 18th Asia Pacific Web Conference (APWeb), Suzhou, China, September 23-25, 2016. Lecture Notes in Computer Science, vol. 9932, pp. 429-433. Springer 2016.      
 
   * **Raghava Mutharaju**, Pascal Hitzler, Prabhaker Mateti, and Freddy L&eacute;cu&eacute;. *Distributed and Scalable OWL EL Reasoning*. In: Fabien Gandon et al. (Eds.), Proceedings of the 12th Extended Semantic Web Conference (ESWC 2015), Portoroz, Slovenia, May 31-June 4, 2015. Lecture Notes in Computer Science, vol. 9088, pp. 88-103. Springer 2015. <a href="files/DistEL-Raghava-ESWC2015.pdf" target="_blank">pdf</a>   
 
@@ -65,6 +67,8 @@ Ranabahu. *Twitris: Socially Influenced Browsing*. Semantic Web Challenge 2009, 
   * Pramod Anantharam, Satya S. Sahoo, D. Brent Weatherly, Flora Logan, **Raghava Mutharaju**, Amit P. Sheth, Rick Tarleton. *Trykipedia: Collaborative Bio-Ontology Development using Wiki Environment*. Ohio Collaborative Conference on BioInformatics (OCCBIO 2009), June 14-17, 2009.   
 
 ### Technical Reports 
+
+  * **Raghava Mutharaju**. *Distributed Rule-Based Ontology Reasoning*. August 2016. PhD Dissertation. Department of Computer Science, Wright State University, Dayton, Ohio. <a href="http://rave.ohiolink.edu/etdc/view?acc_num=wright1472534764" target="_blank">Electronic version</a> 
 
   * Frederick Maier, **Raghava Mutharaju**, Pascal Hitzler. *Distributed Reasoning with EL++ Using MapReduce*. June 2010. Department of Computer Science, Wright State University, Dayton, Ohio. <a href="files/ELpp-MapReduce-TechReport2010.pdf" target="_blank">pdf</a>      
 

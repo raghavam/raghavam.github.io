@@ -4,6 +4,10 @@ title: Industry Experience
 share: false
 ---
 
+  * <a href="http://www.geglobalresearch.com/" target="_blank">GE Global Research</a>, Niskayuna, NY
+    * Research Scientist from July 2016 (ongoing)    
+&nbsp;    
+
   * <a href="http://www.research.ibm.com/labs/watson/" target="_blank">IBM T.J. Watson Research Center</a>, NY
     * Research intern from June 2015 to August 2015   
 &nbsp;
@@ -25,11 +29,8 @@ share: false
 &nbsp;
 
   * <a href="http://www.ca.com/in/default.aspx" target="_blank">CA Technologies</a>, Hyderabad, India
-    * Software Engineer from August 2006 to December 2008
+    * Software Engineer from August 2006 to December 2008  
 
-Total Industry Experience: 3 years and 8 months   
-
-Projects worked on during the internships are listed on the <a href="projects.html" target="_blank">projects</a> page.   
 <br/>
 
 Academic Experience
@@ -37,8 +38,8 @@ Academic Experience
 
 * ### Graduate Research Assistant
     * Wright State University   
-      * from January 2009 till present, performing teaching assistant duties in between.
-      * worked on projects listed on the <a href="projects.html" target="_blank">projects</a> page.   
+      * from January 2009 to June 2016.
+      * worked on projects listed on the <a href="/projects" target="_blank">projects</a> page.   
 &nbsp;
   
     * University of Huddersfield   

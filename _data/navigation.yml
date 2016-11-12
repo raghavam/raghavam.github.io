@@ -4,19 +4,19 @@
   url: /index.html
 
 - title: Projects
-  url: /projects.html
+  url: /projects
 
 - title: Publications
-  url: /publications.html
+  url: /publications
 
 - title: Work Experience
-  url: /work-experience.html
+  url: /work-experience
   
 - title: Awards and Activities
-  url: /awards-activities.html  
+  url: /awards-activities  
   
 - title: Technical Skills
-  url: /techskills.html
+  url: /techskills
   
 - title: Contact
-  url: /contact.html    
+  url: /contact    

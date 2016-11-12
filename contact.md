@@ -4,7 +4,7 @@ title: Contact
 share: false
 ---
 
-**Email:** mutharaju.2 [at] wright [dot] edu   
+**Email:** m.vijayaraghava [at] gmail [dot] com   
 **LinkedIn:** <a href="https://www.linkedin.com/in/raghavamutharaju" target="_blank">https://www.linkedin.com/in/raghavamutharaju</a>   
 **Twitter:** <a href="https://twitter.com/mraghava" target="_blank">https://twitter.com/mraghava</a>   
 
@@ -13,9 +13,7 @@ share: false
 ### Mailing Address  
 
 Raghava Mutharaju,   
-Joshi 465,   
-Department of Computer Science and Engineering,   
-Wright State University.   
-3640 Colonel Glenn Hwy,   
-Dayton, OH 45435   
+GE Global Research,   
+1 Research Circle, K1-3A26B   
+Niskayuna, NY 12309      
 USA   

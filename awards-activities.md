@@ -25,14 +25,17 @@ Activities
 &nbsp;
 
 * **Program Committee member**
+  * International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN), Semantic Web Technologies track, 2016.
   * International Workshop on Understanding Situations through Multimodal Sensing (uSitu), 2016.
   * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2014, 2015. 
   * Extended Semantic Web Conference (ESWC), Posters & Demo track, 2014, 2015.   
 &nbsp; 
 
-* **External Reviewer**
+* **Reviewer**
+  * International Semantic Web Conference (ISWC), 2011, 2013, 2016.
   * International Conference on Principles of Knowledge Representation and Reasoning (KR), 2014, 2016.
   * Extended Semantic Web Conference (ESWC), 2012, 2015, 2016.
+  * Journal of Web Semantics, 2016.
   * Journal on Data Semantics, 2015.
   * International Conference on Artificial Intelligence: Methodology, Systems, Applications (AIMSA), 2014.
   * Semantic Web Journal, 2014.
@@ -43,7 +46,6 @@ Activities
   * International Conference on Biomedical Ontologies (ICBO), 2013. 
   * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2011, 2013.
   * Joint International Semantic Technology Conference (JIST), 2011, 2013.
-  * International Semantic Web Conference (ISWC), 2011, 2013.
   * International Conference on World Wide Web (WWW), 2012.
   * International Symposium on Foundations of Information and Knowledge Systems (FoIKS), 2012.
   * International Workshop on Description Logics (DL), 2010, 2011.

@@ -9,7 +9,7 @@ url:
 
 permalink:   /:categories/:title/
 markdown:    kramdown
-highlighter: rouge
+highlighter: pygments
 sass:
   sass_dir: _sass
   style: compressed
@@ -21,14 +21,14 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
+  enable_coderay: false
 
 
 # Site owner
 owner:
   name: Raghava Mutharaju
   avatar: bio-photo.jpg
-  bio: "Research Scientist interested in Semantic Web Applications, Knowledge Graph, Ontology Modeling, Reasoning and Big Data"
+  bio: "Researcher interested in Semantic Web Applications, Knowledge Graph, Ontology Modeling, Reasoning and Big Data"
   email: m.vijayaraghava@gmail.com
   disqus-shortname:
   twitter: mraghava
