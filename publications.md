@@ -15,7 +15,7 @@ share: false
 
 ### Conference Papers
 
-  * Zhangquan Zhou, Guilin Qi, Chang Liu, **Raghava Mutharaju**, Pascal Hitzler. *Reasoning with Large Scale OWL 2 EL Ontologies based on MapReduce*. In: Feifei Li et al. (Eds.), Proceedings of the 18th Asia Pacific Web Conference (APWeb), Suzhou, China, September 23-25, 2016. Lecture Notes in Computer Science, vol. 9932, pp. 429-433. Springer 2016.      
+  * Zhangquan Zhou, Guilin Qi, Chang Liu, **Raghava Mutharaju**, Pascal Hitzler. *Reasoning with Large Scale OWL 2 EL Ontologies based on MapReduce*. In: Feifei Li et al. (Eds.), Proceedings of the 18th Asia Pacific Web Conference (APWeb), Suzhou, China, September 23-25, 2016. Lecture Notes in Computer Science, vol. 9932, pp. 429-433. Springer 2016. <a href="files/EL-MR-APWeb2016.pdf" target="_blank">pdf</a>           
 
   * **Raghava Mutharaju**, Pascal Hitzler, Prabhaker Mateti, and Freddy L&eacute;cu&eacute;. *Distributed and Scalable OWL EL Reasoning*. In: Fabien Gandon et al. (Eds.), Proceedings of the 12th Extended Semantic Web Conference (ESWC 2015), Portoroz, Slovenia, May 31-June 4, 2015. Lecture Notes in Computer Science, vol. 9088, pp. 88-103. Springer 2015. <a href="files/DistEL-Raghava-ESWC2015.pdf" target="_blank">pdf</a>   
 
