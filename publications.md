@@ -5,15 +5,19 @@ share: false
 ---
 
 <a href="https://scholar.google.com/citations?user=69pEM_YAAAAJ&hl=en" target="_blank">Google Scholar profile</a>   
+&nbsp;
+<a href="https://www.semanticscholar.org/author/Raghava-Mutharaju/3163243" target="_blank">Semantic Scholar profile</a>   
 &nbsp;    
 <a href="http://dblp.uni-trier.de/pers/hd/m/Mutharaju:Raghava" target="_blank">DBLP listing</a>    
 
 ### Journal Papers
 
-  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *Reasoning on the Web of Data*. Under submission.   
+  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *Reasoning on the Web of Data*. Under review.   
   
 
 ### Conference Papers
+
+  * **Raghava Mutharaju**, Freddy L&eacute;cu&eacute;, Jeff Z. Pan, Jiewen Wu, Pascal Hitzler. *AI for Traffic Analytics*. In: IEEE Intelligent Informatics Bulletin. Vol. 17 (1), pp. 21-26, 2016. Invited paper. <a href="../files/AI-Traffic-Analytics-IEEE-IIB-2016.pdf" target="_blank">pdf</a>   
 
   * Zhangquan Zhou, Guilin Qi, Chang Liu, **Raghava Mutharaju**, Pascal Hitzler. *Reasoning with Large Scale OWL 2 EL Ontologies based on MapReduce*. In: Feifei Li et al. (Eds.), Proceedings of the 18th Asia Pacific Web Conference (APWeb), Suzhou, China, September 23-25, 2016. Lecture Notes in Computer Science, vol. 9932, pp. 429-433. Springer 2016. <a href="../files/EL-MR-APWeb2016.pdf" target="_blank">pdf</a>           
 
