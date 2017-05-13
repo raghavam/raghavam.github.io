@@ -1,21 +1,8 @@
 ---
 layout: page
-title: Awards and Recognition
+title: Activities
 share: false
 ---
-
-* Invited to present at the 6th student workshop on Cloud and Data Services  organized by IBM T.J Watson Research Center, NY. December 3-4, 2015.
-* Invited to attend NSF Data Science workshop 2015 at the University of Washington, Seattle. August 5-7, 2015.
-* Awarded Amazon AWS Research grant for a period of 2 years.
-* Awarded Microsoft Azure Research grant for a period of 1.5 year.
-* News article on my visit to University of Huddersfield appeared on the news of University of Huddersfield and Wright State University.
-* Travel awards for ISWC 2015, AAAI 2015, ISWC 2014, ISWC 2012, RR 2012, and DL 2010.
-* Spot award at CA Technologies.
-
-<br/>
-
-Activities
-==========
 
 * **Organizer**
   * Workshop titled <a href="https://industrial-knowledge-graphs.github.io/2017/" target="_blank">Industrial Knowledge Graphs 2015</a>, co-located with the 9th ACM Web Science 2017 Conference (WebSci'17). Co-chaired with Varish Mulwad. June 25, 2017. 
@@ -50,5 +37,17 @@ Activities
   * Joint International Semantic Technology Conference (JIST), 2011, 2013.
   * International Conference on World Wide Web (WWW), 2012.
   * International Symposium on Foundations of Information and Knowledge Systems (FoIKS), 2012.
-  * International Workshop on Description Logics (DL), 2010, 2011.
+  * International Workshop on Description Logics (DL), 2010, 2011. 
 
+<br/>
+
+Awards and Recognition
+==========
+
+* Invited to present at the 6th student workshop on Cloud and Data Services  organized by IBM T.J Watson Research Center, NY. December 3-4, 2015.
+* Invited to attend NSF Data Science workshop 2015 at the University of Washington, Seattle. August 5-7, 2015.
+* Awarded Amazon AWS Research grant for a period of 2 years.
+* Awarded Microsoft Azure Research grant for a period of 1.5 year.
+* News article on my visit to University of Huddersfield appeared on the news of University of Huddersfield and Wright State University.
+* Travel awards for ISWC 2015, AAAI 2015, ISWC 2014, ISWC 2012, RR 2012, and DL 2010.
+* Spot award at CA Technologies.
