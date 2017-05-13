@@ -18,17 +18,19 @@ Activities
 ==========
 
 * **Organizer**
+  * Workshop titled <a href="https://industrial-knowledge-graphs.github.io/2017/" target="_blank">Industrial Knowledge Graphs 2015</a>, co-located with the 9th ACM Web Science 2017 Conference (WebSci'17). Co-chaired with Varish Mulwad. June 25, 2017. 
   * Tutorial titled *AI for Smarter Cities. Are we there yet?* at the 25th International Joint Conference on Artificial Intelligence (IJCAI 2016), July 9-11, 2016, New York, USA. Co-organized with Freddy L&eacute;cu&eacute;, Jeff Z. Pan, Jiewen Wu and Pascal Hitzler.
-  * <a href="http://dase.cs.wright.edu/activities/diversity2015" target="_blank">Diversity++ 2015</a> workshop, co-located with the 14th International Semantic Web Conference (ISWC 2015). Co-chaired with Claudia d&#39;Amato, Freddy L&eacute;cu&eacute;, Tom Narock and Fabian Wirth. October 12, 2015. 
+  * Workshop titled <a href="http://dase.cs.wright.edu/activities/diversity2015" target="_blank">Diversity++ 2015</a>, co-located with the 14th International Semantic Web Conference (ISWC 2015). Co-chaired with Claudia d&#39;Amato, Freddy L&eacute;cu&eacute;, Tom Narock and Fabian Wirth. October 12, 2015. 
   * Tutorial titled <a href="http://researcher.watson.ibm.com/researcher/view_person_subpage.php?id=5854" target="_blank">AI for Smarter Cities, Hype or Reality? A Study in Dublin, Bologna, Miami and Rio</a> at the 29th AAAI Conference on Artificial Intelligence (AAAI 2015), January 26, 2015, Texas, USA. Co-organized with Freddy L&eacute;cu&eacute;, Jeff Z. Pan, Jiewen Wu and Pascal Hitzler. 
   * Tutorial titled <a href="http://homepages.abdn.ac.uk/jeff.z.pan/pages/research-ttl-iswc2014.shtml" target="_blank">Large Scale Reasoning over Semantic Data</a> at the 13th International Semantic Web Conference (ISWC 2014), October 19, 2015, Riva del Garda, Italy. Co-organized with Jeff Z. Pan, Ilias Tachmazidis and Guilin Qi.   
 &nbsp;
 
 * **Program Committee member**
-  * International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN), Semantic Web Technologies track, 2016.
+  * International Semantic Web Conference (ISWC); Research track, In-Use track, Resources track, Industry track, 2017. 
+  * International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN); Semantic Web Technologies track, 2016.
   * International Workshop on Understanding Situations through Multimodal Sensing (uSitu), 2016.
   * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2014, 2015. 
-  * Extended Semantic Web Conference (ESWC), Posters & Demo track, 2014, 2015.   
+  * Extended Semantic Web Conference (ESWC); Posters & Demo track, 2014, 2015.   
 &nbsp; 
 
 * **Reviewer**

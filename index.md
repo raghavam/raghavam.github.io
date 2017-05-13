@@ -4,7 +4,7 @@ title: Welcome
 share: false
 ---
 
-I am a Research Scientist in the Knowledge Discovery Lab of <a href="http://www.geglobalresearch.com/" target="_blank">GE Global Research</a>, <a href="https://en.wikipedia.org/wiki/Niskayuna,_New_York" target="_blank">Niskayuna, NY</a>, USA. 
+I am working as a Research Scientist in the Knowledge Discovery Lab of <a href="http://www.geglobalresearch.com/" target="_blank">GE Global Research</a>, <a href="https://en.wikipedia.org/wiki/Niskayuna,_New_York" target="_blank">Niskayuna, NY</a>, USA. 
 
 I was a PhD student in the Data Semantics Lab (<a href="http://dase.cs.wright.edu/" target="_blank">DaSe Lab</a>), affiliated to the Computer Science department of Wright State University (<a href="http://www.wright.edu/" target="_blank">WSU</a>), OH, USA. My advisor was <a href="http://www.pascal-hitzler.de/" target="_blank">Dr. Pascal Hitzler</a>. I also worked closely with <a href="http://cecs.wright.edu/~pmateti/PM/index.html" target="_blank">Dr. Prabhaker Mateti</a>. 
 
