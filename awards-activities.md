@@ -15,6 +15,7 @@ share: false
 * **Program Committee member**
   * International Conference on Data Intelligence and Security (ICDIS), 2018. 
   * International Semantic Web Conference (ISWC); Research track, In-Use track, Resources track, Industry track, 2017. 
+  * International Conference on Advances in Semantic Processing (SEMAPRO), 2017  
   * International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN); Semantic Web Technologies track, 2016.
   * International Workshop on Understanding Situations through Multimodal Sensing (uSitu), 2016.
   * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2014, 2015. 
