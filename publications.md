@@ -4,9 +4,7 @@ title: Publications
 share: false
 ---
 
-<a href="https://scholar.google.com/citations?user=69pEM_YAAAAJ&hl=en" target="_blank">Google Scholar profile</a>   
-&nbsp;   
-<a href="https://www.semanticscholar.org/author/Raghava-Mutharaju/3163243" target="_blank">Semantic Scholar profile</a>   
+<a href="https://scholar.google.com/citations?user=69pEM_YAAAAJ&hl=en" target="_blank">Google Scholar profile</a>   <a href="https://www.semanticscholar.org/author/Raghava-Mutharaju/3163243" target="_blank">Semantic Scholar profile</a>   
 &nbsp;    
 <a href="http://dblp.uni-trier.de/pers/hd/m/Mutharaju:Raghava" target="_blank">DBLP listing</a>    
 
