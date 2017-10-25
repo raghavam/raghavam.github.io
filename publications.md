@@ -6,9 +6,10 @@ share: false
 
 <a href="http://dblp.uni-trier.de/pers/hd/m/Mutharaju:Raghava" target="_blank">DBLP</a>   &nbsp;&nbsp;<a href="https://scholar.google.com/citations?user=69pEM_YAAAAJ&hl=en" target="_blank">Google Scholar</a>   &nbsp;&nbsp; <a href="https://www.semanticscholar.org/author/Raghava-Mutharaju/3163243" target="_blank">Semantic Scholar</a>      
 
-### Journal Papers
+### Manuscripts in preparation
 
-  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *Reasoning on the Web of Data*. Under review.   
+  * Sherif Sakr, Marcin Wylot, **Raghava Mutharaju**, Danh Le Phuoc, and Irini Fundulaki. *Linked Data: Storing, Querying, and Reasoning*. Book.
+  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *Reasoning on the Web of Data*. Journal article.   
   
 
 ### Conference Papers
