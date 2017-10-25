@@ -8,8 +8,9 @@ share: false
 
 ### Manuscripts in preparation
 
-  * Sherif Sakr, Marcin Wylot, **Raghava Mutharaju**, Danh Le Phuoc, and Irini Fundulaki. *Linked Data: Storing, Querying, and Reasoning*. Book.
-  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *Reasoning on the Web of Data*. Journal article.   
+  * Sherif Sakr, Marcin Wylot, **Raghava Mutharaju**, Danh Le Phuoc, and Irini Fundulaki. *Linked Data: Storing, Querying, and Reasoning*. Book.   
+  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *A Survey of Large-Scale Reasoning on the Web of Data*. Journal article.   
+  * **Raghava Mutharaju**, Sambhawa Priya, Pascal Hitzler, and Prabhaker Mateti. *Distributed OWL EL Reasoning over Large Knowledge Bases*. Journal article.    
   
 
 ### Conference Papers

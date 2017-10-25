@@ -16,7 +16,7 @@ share: false
     * Research intern from June 2013 to August 2013  
 &nbsp;
 
-  * <a href="https://www.alcatel-lucent.com/bell-labs" target="_blank">Alcatel-Lucent Bell Labs</a>, Dublin, Ireland
+  * <a href="https://www.bell-labs.com/" target="_blank">Bell Labs</a>, Dublin, Ireland
     * Research intern from June 2012 to August 2012   
 &nbsp;
 
@@ -28,7 +28,7 @@ share: false
     * Research intern from June 2010 to August 2010    
 &nbsp;
 
-  * <a href="http://www.ca.com/in/default.aspx" target="_blank">CA Technologies</a>, Hyderabad, India
+  * <a href="https://www.ca.com/" target="_blank">CA Technologies</a>, Hyderabad, India
     * Software Engineer from August 2006 to December 2008  
 
 <br/>
