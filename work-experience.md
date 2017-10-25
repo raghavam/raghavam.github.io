@@ -24,7 +24,7 @@ share: false
     * Research intern from June 2011 to August 2011   
 &nbsp;
 
-  * <a href="http://complexible.com/" target="_blank">Complexible Inc</a>, Boston, MA
+  * <a href="http://www.stardog.com/" target="_blank">Stardog Union</a>, Boston, MA
     * Research intern from June 2010 to August 2010    
 &nbsp;
 
