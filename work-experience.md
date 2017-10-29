@@ -45,7 +45,7 @@ Academic Experience
     * University of Huddersfield   
       * one month visit from December 2013 to January 2014.
       * met some of the well known researchers in the area of large scale reasoning and discussed the current state-of-the-art.   
-      * <a href="http://www.hud.ac.uk/news/2013/december/worldprojectmanaginglinkedopendatagetsunderway.php" target="_blank">News</a> item related to this visit.     
+      * <a href="http://www-old.hud.ac.uk/news/2013/december/worldprojectmanaginglinkedopendatagetsunderway.php" target="_blank">News</a> item related to this visit.     
 &nbsp;
 
 * ### Graduate Teaching Assistant
