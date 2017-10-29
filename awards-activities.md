@@ -13,6 +13,7 @@ share: false
 &nbsp;
 
 * **Program Committee member**
+  * The Web Conference (formerly WWW Conference); Web Content Analysis, Semantics and Knowledge track,  2018.   
   * International Conference on Data Intelligence and Security (ICDIS), 2018. 
   * International Semantic Web Conference (ISWC); Research track, In-Use track, Resources track, Industry track, 2017. 
   * International Conference on Knowledge Capture (K-CAP), 2017.     
