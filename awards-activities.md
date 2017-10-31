@@ -51,8 +51,8 @@ share: false
 Awards and Recognition
 ==========
 
-* Nominated for best reviewer award In-Use track at ISWC 2017.   
-* Invited to present at the 6th student workshop on Cloud and Data Services  organized by IBM T.J Watson Research Center, NY. December 3-4, 2015.
+* Best reviewer In-Use track at ISWC 2017.   
+* Invited to present at the 6th student workshop on Cloud and Data Services organized by IBM T.J Watson Research Center, NY. December 3-4, 2015.
 * Invited to attend NSF Data Science workshop 2015 at the University of Washington, Seattle. August 5-7, 2015.
 * Awarded Amazon AWS Research grant for a period of 2 years.
 * Awarded Microsoft Azure Research grant for a period of 1.5 year.
