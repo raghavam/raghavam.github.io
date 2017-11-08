@@ -13,6 +13,7 @@ share: false
 &nbsp;
 
 * **Program Committee member**
+  * Extended Semantic Web Conference (ESWC); Resources track, 2018.    
   * The Web Conference (formerly WWW Conference); Web Content Analysis, Semantics and Knowledge track,  2018.   
   * International Conference on Data Intelligence and Security (ICDIS), 2018. 
   * International Semantic Web Conference (ISWC); Research track, In-Use track, Resources track, Industry track, 2017. 
@@ -22,7 +23,7 @@ share: false
   * International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN); Semantic Web Technologies track, 2016.
   * International Workshop on Understanding Situations through Multimodal Sensing (uSitu), 2016.
   * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2014, 2015. 
-  * Extended Semantic Web Conference (ESWC); Posters & Demo track, 2014, 2015.   
+  * Extended Semantic Web Conference (ESWC); Posters & Demos track, 2014, 2015.   
 &nbsp; 
 
 * **Reviewer**
