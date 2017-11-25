@@ -13,6 +13,7 @@ share: false
 &nbsp;
 
 * **Program Committee member**
+  * International Joint Conference on Rules and Reasoning (RuleML+RR), 2018.   
   * Extended Semantic Web Conference (ESWC); Resources track, 2018.    
   * The Web Conference (formerly WWW Conference); Web Content Analysis, Semantics and Knowledge track,  2018.   
   * International Conference on Data Intelligence and Security (ICDIS), 2018. 
