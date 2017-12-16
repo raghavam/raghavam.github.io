@@ -19,6 +19,12 @@ I am interested in Semantic Web and building large scale systems. The work done 
   * RDF Query Processing      
   * Semantic Web Applications 
   * Big Data 
+  
+### Application Material
+
+  * <a href="../files/Raghava_CV.pdf" target="_blank">CV</a>   
+  * <a href="../files/raghava-research-statement.pdf" target="_blank">Research Statement</a>   
+  * <a href="../files/raghava-teaching-statement.pdf" target="_blank">Teaching Statement</a>   
 
   
 
