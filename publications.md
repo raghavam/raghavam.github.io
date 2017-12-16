@@ -14,7 +14,7 @@ share: false
 
 ### Books
 
-  * Sherif Sakr, Marcin Wylot, **Raghava Mutharaju**, Danh Le Phuoc, and Irini Fundulaki. *Linked Data: Storing, Querying, and Reasoning*. Springer 2018. ISBN 978-3319735146. \url{http://a.co/9FDuxwe}.   
+  * Sherif Sakr, Marcin Wylot, **Raghava Mutharaju**, Danh Le Phuoc, and Irini Fundulaki. *Linked Data: Storing, Querying, and Reasoning*. Springer 2018. ISBN 978-3319735146. <a href="http://a.co/9FDuxwe" target="_blank">Pre-order on Amazon</a>.   
    
 ### Conference Papers
 
