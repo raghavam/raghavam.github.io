@@ -13,6 +13,7 @@ share: false
 &nbsp;
 
 * **Program Committee member**
+  * International Workshop on Hybrid Question Answering with Structured and Unstructured Knowledge (HQA), 2018.   
   * International Joint Conference on Rules and Reasoning (RuleML+RR), 2018.   
   * Extended Semantic Web Conference (ESWC); Resources track, 2018.    
   * The Web Conference (formerly WWW Conference); Web Content Analysis, Semantics and Knowledge track,  2018.   

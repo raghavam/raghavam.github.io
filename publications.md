@@ -7,12 +7,15 @@ share: false
 <a href="http://dblp.uni-trier.de/pers/hd/m/Mutharaju:Raghava" target="_blank">DBLP</a>   &nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=69pEM_YAAAAJ&hl=en" target="_blank">Google Scholar</a>   &nbsp;&nbsp; <a href="https://www.semanticscholar.org/author/Raghava-Mutharaju/3163243" target="_blank">Semantic Scholar</a>      
 
 ### Manuscripts in preparation
-
-  * Sherif Sakr, Marcin Wylot, **Raghava Mutharaju**, Danh Le Phuoc, and Irini Fundulaki. *Linked Data: Storing, Querying, and Reasoning*. Book.   
-  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *A Survey of Large-Scale Reasoning on the Web of Data*. Journal article.   
-  * **Raghava Mutharaju**, Sambhawa Priya, Pascal Hitzler, and Prabhaker Mateti. *Distributed OWL EL Reasoning over Large Knowledge Bases*. Journal article.    
   
+  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *A Survey of Large-Scale Reasoning on the Web of Data*. Journal article.   
+  
+  * **Raghava Mutharaju**, Sambhawa Priya, Pascal Hitzler, and Prabhaker Mateti. *Distributed OWL EL Reasoning over Large Knowledge Bases*. Journal article.    
 
+### Books
+
+  * Sherif Sakr, Marcin Wylot, **Raghava Mutharaju**, Danh Le Phuoc, and Irini Fundulaki. *Linked Data: Storing, Querying, and Reasoning*. Springer 2018. ISBN 978-3319735146. \url{http://a.co/9FDuxwe}.   
+   
 ### Conference Papers
 
   * **Raghava Mutharaju**, Freddy L&eacute;cu&eacute;, Jeff Z. Pan, Jiewen Wu, Pascal Hitzler. *AI for Traffic Analytics*. In: IEEE Intelligent Informatics Bulletin. Vol. 17 (1), pp. 21-26, 2016. Invited paper. <a href="../files/AI-Traffic-Analytics-IEEE-IIB-2016.pdf" target="_blank">pdf</a>   
