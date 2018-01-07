@@ -13,6 +13,7 @@ share: false
 &nbsp;
 
 * **Program Committee member**
+  * International Conference on Big Data Innovations and Applications (Innovate-Data), 2018.   
   * IEEE International Congress on BigData 2018.   
   * International Workshop on Hybrid Question Answering with Structured and Unstructured Knowledge (HQA), 2018.   
   * International Joint Conference on Rules and Reasoning (RuleML+RR), 2018.   
