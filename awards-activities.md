@@ -13,6 +13,7 @@ share: false
 &nbsp;
 
 * **Program Committee member**
+  * International Workshop on Semantic Web of Things for Industry 4.0 (SWeTI), 2018.    
   * International Semantic Web Conference (ISWC); Research track, 2018.   
   * International Conference on Big Data Innovations and Applications (Innovate-Data), 2018.   
   * IEEE International Congress on BigData 2018.   
