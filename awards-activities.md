@@ -13,6 +13,7 @@ share: false
 &nbsp;
 
 * **Program Committee member**
+  * SEMANTiCS; Posters & Demos, 2017, 2018.   
   * International Workshop on Semantic Web of Things for Industry 4.0 (SWeTI), 2018.    
   * International Semantic Web Conference (ISWC); Research track, 2018.   
   * International Conference on Big Data Innovations and Applications (Innovate-Data), 2018.   
@@ -23,8 +24,7 @@ share: false
   * The Web Conference (formerly WWW Conference); Web Content Analysis, Semantics and Knowledge track,  2018.   
   * International Conference on Data Intelligence and Security (ICDIS), 2018. 
   * International Semantic Web Conference (ISWC); Research track, In-Use track, Resources track, Industry track, 2017. 
-  * International Conference on Knowledge Capture (K-CAP), 2017.     
-  * SEMANTiCS; Posters & Demos, 2017.  
+  * International Conference on Knowledge Capture (K-CAP), 2017.       
   * International Conference on Advances in Semantic Processing (SEMAPRO), 2017.  
   * International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN); Semantic Web Technologies track, 2016.
   * International Workshop on Understanding Situations through Multimodal Sensing (uSitu), 2016.
