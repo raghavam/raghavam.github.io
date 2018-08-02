@@ -13,23 +13,27 @@ share: false
 &nbsp;
 
 * **Program Committee member**
+  * International Semantic Web Conference (ISWC)
+      * Research track, 2018
+	  * In-Use track, 2017
+	  * Resources track, 2017
+	  * Industry track, 2017, 2018
+  * Extended Semantic Web Conference (ESWC)
+      * Resources track, 2018.   
+	  * Posters & Demos track, 2014, 2015.   
   * SEMANTiCS; Posters & Demos, 2017, 2018.   
-  * International Workshop on Semantic Web of Things for Industry 4.0 (SWeTI), 2018.    
-  * International Semantic Web Conference (ISWC); Research track, 2018.   
+  * International Workshop on Semantic Web of Things for Industry 4.0 (SWeTI), 2018.      
   * International Conference on Big Data Innovations and Applications (Innovate-Data), 2018.   
   * IEEE International Congress on BigData 2018.   
   * International Workshop on Hybrid Question Answering with Structured and Unstructured Knowledge (HQA), 2018.   
   * International Joint Conference on Rules and Reasoning (RuleML+RR), 2018.   
-  * Extended Semantic Web Conference (ESWC); Resources track, 2018.    
   * The Web Conference (formerly WWW Conference); Web Content Analysis, Semantics and Knowledge track,  2018.   
   * International Conference on Data Intelligence and Security (ICDIS), 2018. 
-  * International Semantic Web Conference (ISWC); Research track, In-Use track, Resources track, Industry track, 2017. 
   * International Conference on Knowledge Capture (K-CAP), 2017.       
   * International Conference on Advances in Semantic Processing (SEMAPRO), 2017.  
   * International Conference on Emerging Ubiquitous Systems and Pervasive Networks (EUSPN); Semantic Web Technologies track, 2016.
   * International Workshop on Understanding Situations through Multimodal Sensing (uSitu), 2016.
-  * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2014, 2015. 
-  * Extended Semantic Web Conference (ESWC); Posters & Demos track, 2014, 2015.   
+  * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2014, 2015, 2018.    
 &nbsp; 
 
 * **Reviewer**
