@@ -16,7 +16,7 @@ share: false
 
 ### Journal Papers
 
-	* Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *A Survey of Large-Scale Reasoning on the Web of Data*. The Knowledge Engineering Review. 2018.   
+  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *A Survey of Large-Scale Reasoning on the Web of Data*. The Knowledge Engineering Review. 2018.   
   
 ### Conference Papers
 
