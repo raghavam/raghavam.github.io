@@ -6,16 +6,18 @@ share: false
 
 <a href="http://dblp.uni-trier.de/pers/hd/m/Mutharaju:Raghava" target="_blank">DBLP</a>   &nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=69pEM_YAAAAJ&hl=en" target="_blank">Google Scholar</a>   &nbsp;&nbsp; <a href="https://www.semanticscholar.org/author/Raghava-Mutharaju/3163243" target="_blank">Semantic Scholar</a>      
 
-### Manuscripts in preparation
-  
-  * Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *A Survey of Large-Scale Reasoning on the Web of Data*. Journal article.   
+### Manuscripts in preparation   
   
   * **Raghava Mutharaju**, Sambhawa Priya, Pascal Hitzler, and Prabhaker Mateti. *Distributed OWL EL Reasoning over Large Knowledge Bases*. Journal article.    
 
 ### Books
 
-  * Sherif Sakr, Marcin Wylot, **Raghava Mutharaju**, Danh Le Phuoc, and Irini Fundulaki. *Linked Data: Storing, Querying, and Reasoning*. Springer 2018. ISBN 978-3319735146. <a href="http://a.co/9FDuxwe" target="_blank">Pre-order on Amazon</a>.   
-   
+  * Sherif Sakr, Marcin Wylot, **Raghava Mutharaju**, Danh Le Phuoc, and Irini Fundulaki. *Linked Data: Storing, Querying, and Reasoning*. Springer 2018. ISBN 978-3319735146. <a href="http://a.co/9FDuxwe" target="_blank">Order on Amazon</a>.   
+
+### Journal Papers
+
+	* Grigoris Antoniou, Sotiris Batsakis, **Raghava Mutharaju**, Jeff Z. Pan, Guilin Qi, Ilias Tachmazidis, Jacopo Urbani, and Zhangquan Zhou. *A Survey of Large-Scale Reasoning on the Web of Data*. The Knowledge Engineering Review. 2018.   
+  
 ### Conference Papers
 
   * **Raghava Mutharaju**, Freddy L&eacute;cu&eacute;, Jeff Z. Pan, Jiewen Wu, Pascal Hitzler. *AI for Traffic Analytics*. In: IEEE Intelligent Informatics Bulletin. Vol. 17 (1), pp. 21-26, 2016. Invited paper. <a href="../files/AI-Traffic-Analytics-IEEE-IIB-2016.pdf" target="_blank">pdf</a>   
@@ -33,6 +35,8 @@ share: false
   * Meenakshi Nagarajan, Karthik Gomadam, Amit Sheth, Ajith Ranabahu, **Raghava Mutharaju** and Ashutosh Jadhav. *Spatio-Temporal-Thematic Analysis of Citizen-Sensor Data - Challenges and Experiences*. In Gottfried Vossen et al. (Eds.), Tenth International Conference on Web Information Systems Engineering (WISE 2009), Oct 5-7, Poland, 2009, vol. 5802 of Lecture Notes in Computer Science, pp. 539-553. Springer, 2009. <a href="../files/SpatioTemporalThematic-WISE2009.pdf" target="_blank">pdf</a>       
 
 ### Edited Proceedings
+
+  * Proccedings of the 1st Industrial Knowledge Graphs Workshop, co-located with the 9th International ACM Web Science Conference 2017 (WebSci'17), Troy, NY, USA, June 25, 2017. Varish Mulwad, **Raghava Mutharaju** (Eds.). Part of the proceedings of the 2017 ACM Web Science Conference. <a href="http://doi.acm.org/10.1145/3091478.3162382" target="_blank">http://doi.acm.org/10.1145/3091478.3162382</a>    
 
   * Proceedings of the 1st International Diversity++ Workshop, co-located with the 14th International Semantic Web Conference (ISWC 2015), Bethlehem, Pensylvania, USA, October 12, 2015. Claudia d&#39;Amato, Freddy L&eacute;cu&eacute;, **Raghava Mutharaju**, Tom Narock, and Fabian Wirth (Eds.). CEUR Workshop Proceedings 1501, CEUR-WS.org, 2015. <a href="http://ceur-ws.org/Vol-1501/" target="_blank">http://ceur-ws.org/Vol-1501</a>
 
@@ -79,3 +83,6 @@ Ranabahu. *Twitris: Socially Influenced Browsing*. Semantic Web Challenge 2009, 
 
   * **Raghava Mutharaju**, Banshi D. Chaudhary. *Traceability from Use Case to .NET Assembly via Design Patterns*. July 2006. Department of Computer Science, MNNIT, Allahabad, India.   
 
+### Patents 
+
+  * Varish Mulwad, Ivan Bueno, **Raghava Mutharaju**. Apparatus, System and Method for Providing an Agent That Intelligently Solves Information Technology Issues. Filed at USPTO, 2018.     
