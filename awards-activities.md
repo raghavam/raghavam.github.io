@@ -15,9 +15,9 @@ share: false
 * **Program Committee member**
   * International Semantic Web Conference (ISWC)
       * Research track, 2018
+	  * Resources track, 2017, 2018  
+	  * Industry track, 2017, 2018  
 	  * In-Use track, 2017
-	  * Resources track, 2017
-	  * Industry track, 2017, 2018
   * Extended Semantic Web Conference (ESWC)
       * Resources track, 2018.   
 	  * Posters & Demos track, 2014, 2015.   
