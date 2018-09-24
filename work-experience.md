@@ -5,7 +5,7 @@ share: false
 ---
 
   * <a href="http://www.geglobalresearch.com/" target="_blank">GE Global Research</a>, Niskayuna, NY
-    * Research Scientist from July 2016 (ongoing)    
+    * Research Scientist from July 2016 to July 2018        
 &nbsp;    
 
   * <a href="http://www.research.ibm.com/labs/watson/" target="_blank">IBM T.J. Watson Research Center</a>, NY

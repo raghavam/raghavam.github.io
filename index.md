@@ -4,7 +4,9 @@ title: Welcome
 share: false
 ---
 
-I am working as a Research Scientist in the AI & Machine Learning Systems group of GE Global Research Center (<a href="http://www.geglobalresearch.com/" target="_blank">GE GRC</a>), Niskayuna, NY, USA. 
+I am an Assistant Professor in the Computer Science department of Indraprastha Institute of Information Technology, Delhi (<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>.   
+
+I worked as a Research Scientist in the AI & Machine Learning Systems group of GE Global Research Center (<a href="http://www.geglobalresearch.com/" target="_blank">GE GRC</a>), Niskayuna, NY, USA. My work involved building knowledge graphs from unstructured and semi-structured data, and using them for predictive analytics.   
 
 I was a PhD student in the Data Semantics Lab (<a href="http://dase.cs.wright.edu/" target="_blank">DaSe Lab</a>), affiliated to the Computer Science department of Wright State University (<a href="http://www.wright.edu/" target="_blank">WSU</a>), OH, USA. My advisor was <a href="http://www.pascal-hitzler.de/" target="_blank">Dr. Pascal Hitzler</a>. I also worked closely with <a href="http://cecs.wright.edu/~pmateti/PM/index.html" target="_blank">Dr. Prabhaker Mateti</a>. 
 
