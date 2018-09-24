@@ -3,6 +3,9 @@
 - title: Home
   url: /index.html
 
+- title: Teaching
+  url: /teaching  
+  
 - title: Projects
   url: /projects
 
@@ -10,10 +13,7 @@
   url: /publications
 
 - title: Work Experience
-  url: /work-experience
-  
-- title: Teaching
-  url: /teaching  
+  url: /work-experience  
   
 - title: Activities and Awards
   url: /awards-activities  
