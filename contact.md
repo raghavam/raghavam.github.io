@@ -4,7 +4,8 @@ title: Contact
 share: false
 ---
 
-**Email:** raghava.mutharaju@iiitd.ac.in, m.vijayaraghava@gmail.com   
+**Email:** raghava.mutharaju@iiitd.ac.in    
+           m.vijayaraghava@gmail.com   
 **LinkedIn:** <a href="https://www.linkedin.com/in/raghavamutharaju" target="_blank">https://www.linkedin.com/in/raghavamutharaju</a>   
 **Twitter:** <a href="https://twitter.com/mraghava" target="_blank">https://twitter.com/mraghava</a>   
 
