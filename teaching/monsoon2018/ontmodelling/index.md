@@ -1,0 +1,13 @@
+---
+layout: page
+title: Ontology Modelling
+share: false
+---
+
+Knowledge Graphs (semantic descriptions of entities and their relationships) are heavily used in knowledge enabled applications across several domains such as life science, geoscience, healthcare, Internet of Things, smart cities etc. Commercial enterprises such as Google, Microsoft, Amazon, LinkedIn, IBM, GE, Siemens, Accenture, etc., use knowledge graphs in several of their applications. Ontologies encode knowledge of a domain in a machine processable form and act as the schema for the data in the knowledge graphs. In this course, we will learn how to design ontologies to capture domain knowledge and use them to power intelligent applications. 
+
+
+
+  
+
+	
