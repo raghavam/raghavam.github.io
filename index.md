@@ -4,7 +4,7 @@ title: Welcome
 share: false
 ---
 
-I am an Assistant Professor in the Computer Science department of Indraprastha Institute of Information Technology, Delhi (<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>.   
+I am an Assistant Professor in the Computer Science department of Indraprastha Institute of Information Technology, Delhi (<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>).   
 
 I worked as a Research Scientist in the AI & Machine Learning Systems group of GE Global Research Center (<a href="http://www.geglobalresearch.com/" target="_blank">GE GRC</a>), Niskayuna, NY, USA. My work involved building knowledge graphs from unstructured and semi-structured data, and using them for predictive analytics.   
 
