@@ -49,19 +49,186 @@
 				</section>
 
 				<section>
-					
+					<h4><b>What is an Ontology (Philosophy)</b></h4>
+					<br/>
+					<ul style="font-size:30px">
+						<li>The term ontology has its origins in philosophy</li>
+						<li>It is the knowledge/study of being or existence</li>
+						<li>It is a discussion of how things exist</li>
+						<li>Eg: What are the fundamental parts of the World?</li>
+						<li>Eg: How are they related to each other?</li>
+						<li>Eg: What is a thing?</li>
+						<li>Eg: How can we categorize things?</li>
+						<li>It is a way to categorize the World into objects and relations</li>
+					</ul>
 				</section>
 				
 				<section>
-					<ul>
-						<li>Semantic Web perspective of ontology</li>
-						<li>Pizza example; perspectives (delicious food, recipe, calorie concious</li>
-						<li>What Ontology is not ...</li>
-							<li>Ontology vs ER diagrams
-							<li>Ontology vs UML/OOD
-							<li>Ontology vs Vocabulary</li>
-							<li>Ontology vs Taxonomy</li>
-						<li>Conceptual Modelling
+					<h4><b>What is an Ontology (Computer Science)</b></h4>
+					<section>
+					<ul style="font-size:30px">
+						<li>Gruber: “An ontology is a formal explicit specification of a shared conceptualization.”</li>
+						<ul>
+							<li><em>formal</em>: ontology should be defined in a formal language</li>
+							<li><em>explicit specification</em>: concepts, relations between them and the constraints on them should be explicitly defined</li>
+							<li><em>shared</em>: "ontology should be a shared view between several parties, a consensus rather than an individual view"</li>
+							<li><em>conceptualization</em>: "ontology should be an abstract, simplified view of the world that we wish to represent for some purpose"</li>
+						</ul>
+					</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>M. Uschold, M. Gruninger: “An ontology is a shared understanding of some domain of interest.”</li>
+						<ul>
+							<li><em>shared understanding</em>: ontology is the common vocabulary for the stakeholders to communicate. Eg: data integration</li>
+							<li><em>domain of interest</em>: ontology focusses on a particular piece of the World. There cannot be one big ontology of everything</li>
+						</ul>
+						<li>An ontology should be machine processable</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Different Perspectives of the World</h3>
+					<section>
+						<img src="figures/pizza.jpg" alt="Vegetable Pizza with extra cheese"/>
+					</section>
+
+					<section>
+						<h4><b>Perspective 1: Italian cuisine; delicious food</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Different types of cuisines such as Indian, Italian, Mexican, Japanese etc.</li>
+							<li>Different dishes in each cuisine</li>
+							<li>Characteristics of each dish such as spicy, grilled, steamed etc.</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Perspective 2: Recipe</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>What is the recipe for Pizza</li>
+							<li>What are the ingredients?</li>
+							<li>What kind of cooking utensils are required?</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Perspective 3: Calorie Concious</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>What ingredients go into making this Pizza?</li>
+							<li>How many calories does each ingredient contribute to?</li>
+							<li>What is the weight of this Pizza?</li>
+						</ul>
+					</section>
+						
+				</section>
+				
+				<section>
+					<h4><b>What is an Ontology (Computer Science)</b></h4>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Gruber: “An ontology is a formal explicit specification of a shared conceptualization.”</li>
+						<li>M. Uschold, M. Gruninger: “An ontology is a shared understanding of some domain of interest.”</li>
+						<li>An ontology should be machine processable</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Conceptual Modelling</h3>
+					<section>
+					<ul style="font-size:30px">
+						<li>It is a way to express our understanding of the system using concepts (abstract building blocks)</li>
+						<li>Several conceptual modelling techniques</li>
+						<ul>
+							<li>Entity Relationship (ER) models</li>
+							<li>UML diagrams</li>
+							<li>Ontologies</li>
+						</ul>
+					</ul>
+					</section>
+					
+					<section>
+						<h4><b>ER and Ontologies</b><h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>ER model consists of entities and the relationships between them</li>
+							<li>Entity can have properties associated with it</li>
+							<li>A property can have value associated with it</li>
+							<li>Eg: Employee has an ID. Employee works in an organization</li>
+							<li>Generally used in database modelling</li>
+							<li>In ontologies</li>
+							<ul>
+								<li>relationship among properties can be established</li>
+								<li>properties can exist independent of entities</li>
+								<li>hasSon is a subPropertyOf hasChild</li>
+								<li>complex relationships can be modelled</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>UML and Ontologies</b><h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>UML is short for Unified Modelling Language</li>
+							<li>It is used for modelling software systems</li>
+							<li>Provides different types of diagrams to model the structure (class diagram) and behaviour (activity diagram, use case diagram) of the system</li>
+							<li>Ontologies are more expressive but hard to model information and data flow in the system</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Which modelling technique to use?</b><h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Use the one that is appropriate for the application at hand</li>
+							<li>With expressivity comes complexity</li>
+							<li>Other factors</li>
+							<ul>
+								<li>familiarity of modelling techniques to the modelling team</li>
+								<li>bias for/against a modelling technique</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Ontology (Philosophy and CS)</h3>
+					<br/>
+					<table>
+						<tr>
+							<th>Philosophy</th>
+							<th>Computer Science</th>
+						</tr>
+						<tr>
+							<td>In natural language</td>
+							<td>In formal language</td>
+						</tr>
+						<tr>
+							<td>For debate among people</td>
+							<td>For machine processing</td>
+						</tr>
+						<tr>
+							<td>Solely abstract</td>
+							<td>Abstract and specific</td>
+						</tr>
+						<tr>
+							<td>For the gain of knowledge</td>
+							<td>For a specific use case</td>
+						</tr>
+					</table>
+				</section>	
+				
+				<section>
+					<h2>References</h2>
+					<br/>
+					<ul style="font-size:28px">
+						<li><a href="http://cit.fer.hr/index.php/CIT/article/view/2508" target="_blank">Actually, What Does “Ontology” Mean?</a> Johannes Busse et. al. Journal of Computing and Information Technology. 2015</li>
+						<li><a href="https://iaoa.org/isc2012/docs/Guarino2009_What_is_an_Ontology.pdf" target="_blank">What Is an Ontology?</a> Nicola Guarino et. al. Handbook on Ontologies. Steffen Staab and Rudi Studer. Springer. 2009</li>
 					</ul>
 				</section>
 				
