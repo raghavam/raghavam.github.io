@@ -13,7 +13,7 @@ Knowledge Graphs (semantic descriptions of entities and their relationships) are
   * Friday, 10:00am to 11:30am    
   * C208, New Seminar Block   
   * Office hours: Friday, 3:00pm to 4:00pm or send an email for appointment   
-  * Backpack URL: https://www.usebackpack.com/iiitd/m2018/cse5om      
+  * Backpack URL: <a href="https://www.usebackpack.com/iiitd/m2018/cse5om" target="_blank">https://www.usebackpack.com/iiitd/m2018/cse5om</a>      
   
 
 ### Slides
