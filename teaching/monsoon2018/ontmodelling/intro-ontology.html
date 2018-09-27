@@ -92,7 +92,11 @@
 				<section>
 					<h3>Different Perspectives of the World</h3>
 					<section>
-						<img src="figures/pizza.jpg" alt="Vegetable Pizza with extra cheese"/>
+						<figure>
+							<img src="figures/pizza.jpg" alt="Vegetable Pizza with extra cheese"/>
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/R26KN6" target="_blank">https://goo.gl/R26KN6</a>
+							</figcaption>
+						</figure>	
 					</section>
 
 					<section>
@@ -224,13 +228,105 @@
 				</section>	
 				
 				<section>
+					<h3>Ontologies and Knowledge Graphs</h3>
+					<section>
+						<br/>
+						<h4><b>Knowledge Graphs</b></h4>
+						<figure>
+							<img src="figures/knowledge-graph.jpg" alt="Knowledge Graph" height="400" width="700">
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/S2F3mH" target="_blank">https://goo.gl/S2F3mH</a></figcaption>
+						</figure>
+					</section>
+						
+					<section>
+						<h4><b>Knowledge Graphs</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>There is no standard definition of Knowledge Graphs</li>
+							<li>It is a directed labelled graph that represents knowledge</li>
+							<ul>
+								<li>"Things" not strings. Things should have semantics.</li>
+								<li>Eg: What does it mean to be a "Person", "Organization", etc.</li>
+								<li>Things are entities that have properties and are connected by relationships</li>
+							</ul>
+							<li>Optionally, provenance information should be enconded in the Knowledge Graphs</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Why build Ontologies?</h2>
+					<section>
+					<ul style="font-size:30px">
+						<li>Unambiguous formal semantics</li>
+						<ul>
+							<li>required for clearly defining and exchanging knowledge between humans as well as machines</li>
+						</ul>
+						<li>Reasoning</li>
+						<ul>
+							<li>infer new facts</li>
+							<li>consistency checking, generate explanations for inconsistencies</li>
+							<li style="color:blue">Fact 1: All birds can fly</li>
+							<li style="color:blue">Fact 2: Penguin is a bird</li>
+							<li style="color:green">Inference: Penguin can fly</li>
+							<li style="color:brown">Fact 3: Penguins cannot fly</li>
+							<li style="color:red">Knowledge Graph is inconsistent</li>
+						</ul>
+					</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:28px">
+							<li>An ontology gives an abstract view of the data and acts as documentation</li>
+						</ul>
+						<figure>
+							<img src="figures/csv-data-file.png" alt="CSV Data file" height="350" width="730">
+							<figcaption style="font-size:13px">Image source: <a href="https://i.stack.imgur.com/pjtbx.png" target="_blank">https://i.stack.imgur.com/pjtbx.png</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<figure>
+							<img src="figures/ontology-data-file.png" alt="Ontology Data file">
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/KfZtsA" target="_blank">https://goo.gl/KfZtsA</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<li>Models are declarative and are independent of implementation</li>
+					</section>
+				</section>
+				
+				<section>
 					<h2>References</h2>
 					<br/>
-					<ul style="font-size:28px">
+					<ol style="font-size:30px">
 						<li><a href="http://cit.fer.hr/index.php/CIT/article/view/2508" target="_blank">Actually, What Does “Ontology” Mean?</a> Johannes Busse et. al. Journal of Computing and Information Technology. 2015</li>
 						<li><a href="https://iaoa.org/isc2012/docs/Guarino2009_What_is_an_Ontology.pdf" target="_blank">What Is an Ontology?</a> Nicola Guarino et. al. Handbook on Ontologies. Steffen Staab and Rudi Studer. Springer. 2009</li>
-					</ul>
+						<li><a href="http://www.semantic-web-journal.net/system/files/swj1954.pdf" target="_blank">What is a Knowledge Graph?</a> James McCusker, et. al. Submitted to Semantic Web Journal. 2018</li>
+						<li><a href="http://ceur-ws.org/Vol-1879/invited2.pdf" target="_blank">Ontologies for Knowledge Graphs?</a> Markus Kr&ouml;tzsch. DL 2017 </li>
+					</ol>
 				</section>
+				
+				<section>
+					<h2>Course Overview</h2>					
+					<section>
+						<h3>Topics</h3>
+						<ol style="font-size:28px">
+							<li>Introduction to Ontologies</li>
+							<li><a href="intro-owl.html">Introduction to OWL (Web Ontology Language)</a></li>
+							<li>Designing an ontology</li>
+							<li>Introduction to Prot&eacute;g&eacute;</li>
+							<li>Design and build an ontology in the class</li>
+							<li>Ontology reasoning</li>
+							<li>Introduction to OWL API</li>
+							<li>Introduction to Ontology Design Patterns (ODPs)</li>
+							<li>Redesign and rebuild in-class ontology with ODPs</li>
+							<li>Anti-patterns</li>
+							<li>Open problems in modelling and building ontologies</li>
+						</ol>	
+					</section>
+				</section>	
 				
 			</div>
 			
