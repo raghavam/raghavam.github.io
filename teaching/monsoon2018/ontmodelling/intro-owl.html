@@ -52,22 +52,151 @@
 					<h3>OWL (Web Ontology Language)</h3>
 					<br/>
 					<ul style="font-size:30px">
-						<li>Brief history of OWL</li>
-						<li>Open World Assumption</li>
-						<li>Unique Name Assumption</li>
-						<li>Class consructors, properties etc. Follow the primer</li>
-						<li>Functional syntax. ThereExists, ForAll</li>
-						<li>OWL Profiles</li>
+						<li>OWL is a knowledge representation language used to build ontologies</li>
+						<li>OWL 2 is the latest version of the W3C standard</li>
+						<li>Three types of entities (elements used to refer to real-world objects)</li>
+						<ol>
+							<li>Classes: They are used to group sets of individuals that have something in common among them. <br/>
+							Eg: Car, Student, Employee, Father, Mother</li>
+							<li>Properties: They are the binary relations between the individuals. <br/>Eg: hasDaughter, hasSpouse, worksFor</li>
+							<li>Individuals: They are the instances or constants in the domain <br/>
+							Eg: mary (is a Woman), julie (is a Parent) </li>
+						</ol>
+						<li>All the entities are identified by using IRIs</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Identifiers and Naming Conventions</h3>
+					<section>
+						<h4><b>Identifiers</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>URL (Uniform Resource Locator)</li> 
+							<ul>
+								<li>It is a mechanism to specify and locate a web resource on a computer network.</li>
+								<li>Eg: http://, ftp://</li>
+							</ul>
+							<li>URN (Uniform Resource Name)</li> 
+							<ul>
+								<li>They are persistent location independent identifiers that use the urn scheme.</li>
+								<li>Eg: ISBN of a book is a URN used to identify a book uniquely</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Identifiers</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>URI (Uniform Resource Identifier) </li>
+							<ul>
+								<li>It is an identifier that can uniquely and unambiguously identify resources</li>
+								<li>ASCII encoding is used in the identifiers</li>
+								<li>URL and URN are type of URIs. URIs and URNs need not be resolvable to a location, which is the case with URL</li>
+								<li>Eg: http://www.w3.org/2002/07/owl#</li>
+							</ul>
+							<li>IRI (International Resource Identifier) </li>
+							<ul>
+								<li>IRI is similar to URI except that the character set for encoding the identifier is <em>Universal Character Set (UTF-8)</em></li>
+								<li>Eg: &eacute;, &ouml; could be used in IRI</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Naming Conventions</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Class: They are written in upper camel case (or Pascal case) where every first letter in a compound word is capitalized <br/>
+							Eg: Father, Parent, MyBirthdayGuests</li>
+							<li>Properties: They are written in lower camel case where every first letter in a compound word excluding the first word is capitalized <br/>
+							Eg: hasDaughter, hasAge</li>
+							<li>Individuals: same as Properties <br/>
+							Eg: mary, john, julie</li>
+						</ul>
+					</section>
+					
+				</section>
+				
+				<section>
+					<h3>OWL Syntax</h3>
+					<section>
+					<ul style="font-size:30px">
+						<li>Following syntaxes are supported by OWL</li>
+						<ul>
+							<li>Functional-Style syntax</li>
+							<li>RDF/XML</li>
+							<li>OWL/XML</li>
+							<li>Manchester syntax</li>
+						</ul>
+						<li>We will follow the functional syntax since it is human friendly</li>
+					</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Declaration(Class(Person))</li>
+							<li>Declaration(NamedIndividual(mary))</li>
+							<li>ClassAssertion(Person mary)</li>
+							<li>ClassAssertion(Women mary)</li>
+							<li>ObjectPropertyAssertion(hasWife John Mary) <br/> <br/></li>
+							<li>Axioms: Basic statements such as the above are called axioms of an OWL ontology</li>
+							<li>Entities: Class, Properties, and Individuals</li>
+							<li>Expression: combinations of entities to form complex descriptions from basic ones</li>
+							<li>All these together capture the <em>knowledge</em> of a domain</li>
+						</ul>
+					</section>
+			
+				</section>
+				
+				<section>
+					<h3>Class Hierarchy</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>SubClassOf(Woman Person)</li>
+						<li>SubClassOf(Mother Woman)</li>
+						<li>EquivalentClasses(Person Human)</li>
+						<ul>
+							<li>SubClassOf(Person Human)</li>
+							<li>SubClassOf(Human Person)</li>
+						</ul>
+						<li>DisjointClasses(Mother Father)</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Property Hierarchy</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>SubPropertyOf(hasDaughter hasChild)</li>
+						<li>SubPropertyOf(parentOf ancestorOf)</li>
+						<li>DisjointProperties(parentOf childOf)</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Object and Data Properties</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Object Property: One individual is related to another individual by a property</li>
+						<ul>
+							<li>Eg: ObjectPropertyAssertion(hasWife John Mary)</li>
+						</ul>
+						<li>Data Property: A property relates an individual to a data value</li>
+						<ul>
+							<li>Eg: DataPropertyAssertion(hasAge John "51"^^xsd:integer)</li>
+						</ul>	
 					</ul>
 				</section>
 				
 				<section>
 					<h2>References</h2>
 					<br/>
-					<ul style="font-size:28px">
-						<li></li>
-						<li></li>
-					</ul>
+					<ol style="font-size:30px">
+						<li><a href="https://www.w3.org/TR/owl2-primer/" target="_blank">OWL 2 Primer</a></li>
+						<li><a href="https://arxiv.org/pdf/1201.4089.pdf" target="_blank">A Description Logic Primer</a>. Markus Kr&ouml;tzsch et. al.</li>
+					</ol>
 				</section>
 				
 			</div>
