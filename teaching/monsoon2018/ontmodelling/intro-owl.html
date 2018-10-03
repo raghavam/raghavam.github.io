@@ -140,7 +140,7 @@
 							<li>Declaration(NamedIndividual(mary))</li>
 							<li>ClassAssertion(Person mary)</li>
 							<li>ClassAssertion(Women mary)</li>
-							<li>ObjectPropertyAssertion(hasWife John Mary) <br/> <br/></li>
+							<li>ObjectPropertyAssertion(hasWife john mary) <br/> <br/></li>
 							<li>Axioms: Basic statements such as the above are called axioms of an OWL ontology</li>
 							<li>Entities: Class, Properties, and Individuals</li>
 							<li>Expression: combinations of entities to form complex descriptions from basic ones</li>
@@ -181,20 +181,240 @@
 					<ul style="font-size:30px">
 						<li>Object Property: One individual is related to another individual by a property</li>
 						<ul>
-							<li>Eg: ObjectPropertyAssertion(hasWife John Mary)</li>
+							<li>Eg: ObjectPropertyAssertion(hasWife john mary)</li>
 						</ul>
 						<li>Data Property: A property relates an individual to a data value</li>
 						<ul>
-							<li>Eg: DataPropertyAssertion(hasAge John "51"^^xsd:integer)</li>
+							<li>Eg: DataPropertyAssertion(hasAge john "51"^^xsd:integer)</li>
 						</ul>	
 					</ul>
 				</section>
 				
 				<section>
+					<h3>Domain and Range of Properties</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Additional information about the properties can be provided using domain and range</li>
+						<li>They are the <em>"semantic link"</em> between classes and properties</li>
+						<li>Eg: ObjectPropertyDomain(hasOwner Vehicle)</li>
+						<li>Eg: ObjectPropertyRange(hasOwner Person)</li>
+						<li>Eg: DataPropertyDomain(hasAge Person)</li>
+						<li>Eg: DataPropertyRange(hasAge xsd:nonNegativeInteger)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Two Assumptions</h3>
+					<section>
+						<h4><b>Open World Assumption</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Closed World Assumption (CWA) is the assumption that anything not known to be true is false</li>
+							<li>Open World Assumption (OWA) is the assumption that anything not known to be true is unknown</li>
+							<ul>
+								<li>Eg: Italy is part of Europe</li>
+								<li>Eg: Is Spain part of Europe?</li>
+								<li>CWA: No</li>
+								<li>OWA: Unknown</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Open World Assumption</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>CWA is used when the system has complete information or if a definitive answer is required from the available information</li>
+							<ul>
+								<li>Eg: Relational tables with information on only Italy</li>
+								<li>Eg: Flight booking information</li>
+							</ul>
+							<li>OWA is useful when the system has incomplete information.</li>
+							<ul>
+								<li>Eg: Knowledge in an ontology is incomplete</li>
+								<li>Eg: Open nature of WWW where data is constantly changing</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>No Unique Name Assumption</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>In Unique Name Assumption (UNA), the assumption is that entities with different names (which act as IDs) represent different entities</li>
+								<ul>
+									<li>Italy is a country</li>
+									<li>Spain is a country</li>
+									<li>Under CWA, UNA is followed: Italy and Spain are different</li>
+								</ul>
+							<li>OWL makes the assumption that different names do not necessarily represent different individuals (no UNA)</li>
+							<ul>
+								<li>ClassAssertion(Person john)</li>
+								<li>ClassAssertion(Person bill)</li>
+								<li>john and bill are not different unless explicitly stated</li>
+							<ul>
+						</ul>
+					</section>
+					
+					<section>
+					<h4><b>No Unique Name Assumption</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Under OWA, UNA is not followed: unless explicitly stated, we do not know yet whether john and bill are different or the same</li>
+							<ul>
+								<li>DifferentIndividuals(john bill)</li>
+								<li>SameIndividual(john bill)</li>
+							</ul>
+							<li>Different organizations can build ontologies on the same theme and could have individuals with the same name</li>
+							<ul>
+								<li>Eg: http://www.example1.org/institute/IIIT-D</li>
+								<li>Eg: http://www.example2.org/institute/IIIT-D</li>
+							</ul>
+						</ul>
+					</section>	
+				</section>	
+				
+				<section>
+					<h3>Logical Class Constructors</h3>
+					<section>
+						<h4><b>Intersection</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Intersection of two classes consists of exactly those individuals which are instances of both the classes</li>
+							<ul>
+								<li>EquivalentClasses(Mother ObjectIntersectionOf(Woman Parent))</li>
+								<li>Class Mother consists of exactly those instances that belong to both Woman and Parent</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Union</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>union of two classes contains every individual which is contained in at least one of these classes</li>
+							<ul>
+								<li>EquivalentClasses(Parent ObjectUnionOf(Mother Father))</li>
+								<li>DisjointClasses(Mother Father)</li>
+								<li>Instance of Parent is either an instance of Mother or Father</li>
+							</ul>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>Complement</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Complement of a class consists of exactly those individuals that are not members of the other class</li>
+							<ul>
+								<li>EquivalentClasses(ChildlessPerson ObjectIntersectionOf(Person ObjectComplementOf(Parent))</li>
+							</ul>
+							<li>Class constructors can be nested</li>
+							<ul>
+								<li>SubClassOf(Grandfather <em style="color:green">ObjectIntersectionOf(Man Parent)</em>)</li>
+								<li>ClassAssertion(<em style="color:green">ObjectIntersectionOf(Person ObjectComplementOf(Parent))</em> Jack)</li>
+							</ul>
+						</ul>
+					</section>					
+				</section>	
+				
+				<section>
+					<h3>Logical Quantifiers</h3>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>A quantifier specifies the quantity of specimen from a domain of discourse over which a property acts on.</li>
+							<ul>
+								<li>Domain of discourse is the <em>universe</em> or the set of objects that we are interested in. Eg: Car, Person, Mother, Father</li>
+							</ul>
+							<li>Two quantifiers are of interest to us</li>
+							<ul>
+								<li>Existential quantifier ($\exists$)</li>
+								<li>Universal quantifier ($\forall$)</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Existential Quantifier</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>There should exist at least one instance from the domain of discourse (class) that participates in the given relation/property</li>
+							<ul>
+								<li>Eg: Any Exam must have at least one Examiner</li>
+								<li>SubClassOf(Exam ObjectSomeValuesFrom(hasExaminer Examiner))</li>
+								<li>Eg: Parent is someone who has at least one child</li>
+								<li>EquivalentClasses(Parent ObjectSomeValuesFrom(hasChild Person))</li>
+							</ul>
+							<li>Phrases such as "at least one", "for some" are used for this quantifier</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Universal Quantifier</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>A given property participates with all the instances of a particular domain of discourse (class)</li>
+							<ul>
+								<li>Eg: All Examiners of an Exam must be Professors</li>
+								<li>SubClassOf(Exam ObjectAllValuesFrom(hasExaminer Professor))</li>
+							</ul>
+							<li>Corner case: Exams which have no Examiner are also covered by this quantifier</li>
+							<li>"for all" is used for this quantifier</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Universal Quantifier</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Eg: A happy person is someone who has a happy child</li>
+							<li>EquivalentClasses(HappyPerson ObjectAllValuesFrom(hasChild HappyPerson))</li>
+							<li>The above quantification indicates that a childless person can also be happy</li>
+							<li>Intuitively, we want to say that in order to be happy, a person must have at least one happy child</li>
+							<li>EquivalentClasses(HappyPerson ObjectIntersectionOf(<em style="color:blue">ObjectAllValuesFrom(hasChild HappyPerson)</em> <em style="color:green">ObjectSomeValuesFrom(hasChild HappyPerson)</em>))</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Cardinality restriction</h3>
+					<section>
+						<h4><b>Max cardinality</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>John has at most 4 children</li>
+							<li>ClassAssertion(ObjectMaxCardinality(4 hasChild Parent) John)</li>
+							<li>This declares an upper bound on the number of children that John has</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Min cardinality</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>John has at least 2 children</li>
+							<li>ClassAssertion(ObjectMinCardinality(2 hasChild Parent) John)</li>
+							<li>This declares a lower bound on the number of children that John has</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Exact cardinality</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>John has exactly 3 children</li>
+							<li>ClassAssertion(ObjectExactCardinality(3 hasChild Parent) John)</li>
+							<li>This declares an exact number of children that John has</li>
+						</ul>
+					</section>
+				</section>			
+				
+				<section>
 					<h2>References</h2>
 					<br/>
 					<ol style="font-size:30px">
-						<li><a href="https://www.w3.org/TR/owl2-primer/" target="_blank">OWL 2 Primer</a></li>
+						<li><a href="https://www.w3.org/TR/owl2-primer/" target="_blank">OWL 2 Web Ontology Language Primer</a>. Pascal Hitzler et. al.</li>
 						<li><a href="https://arxiv.org/pdf/1201.4089.pdf" target="_blank">A Description Logic Primer</a>. Markus Kr&ouml;tzsch et. al.</li>
 					</ol>
 				</section>
