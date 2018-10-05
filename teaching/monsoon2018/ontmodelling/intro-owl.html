@@ -408,7 +408,149 @@
 							<li>This declares an exact number of children that John has</li>
 						</ul>
 					</section>
-				</section>			
+				</section>
+				
+				<section>
+					<h3>Enumeration of Individuals</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>List all possible and the only members of a class</li>
+						<li>EquivalentClasses(MyBirthdayGuests ObjectOneOf(Bill John Mary))</li>
+						<li>Classes defined this way are called <em>closed</em> classes</li>
+						<li>What if we add ClassAssertion(MyBirthdayGuests Jeff)?</li>
+						<li>Jeff must be equal to one of the 3 defined instances</li>
+					</ul>
+				</section>	
+
+				<section>
+					<h3>Property Characteristics</h3>
+					<section>
+						<h4><b>Inverse Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If one property can be obtained by inverting or changing the direction of the other then it is an inverse property</li>
+							<ul>
+								<li>InverseObjectProperties(hasParent hasChild)</li>
+								<li>ObjectPropertyAssertion(hasParent A B)</li>
+								<li>ObjectPropertyAssertion(hasChild B A)</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Symmetric Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If a property and its inverse are the same then it is called a symmetric property</li>
+							<ul>
+								<li>SymmetricObjectProperty(hasSpouse)</li>
+								<li>ObjectPropertyAssertion(hasSpouse A B)</li>
+								<li>ObjectPropertyAssertion(hasSpouse B A)</li>
+							</ul>
+						</ul>
+					</section>	
+						
+					<section>
+						<h4><b>Assymmetric Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>It explicitly states that if A is connected to B through a certain property then B cannot be connected to A by the same property</li>
+							<ul>
+								<li>AsymmetricObjectProperty(hasChild)</li>
+							</ul>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>Reflexive Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>A reflexive property connects everything to itself</li>
+							<ul>
+								<li>ReflexiveObjectProperty(hasRelative)</li>
+								<li>Everyone is related to himself/herself</li>
+							</ul>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>Irreflexive Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If an individual cannot be connected to itself by the given property then such a property is irreflexive</li>
+							<ul>
+								<li>IrreflexiveObjectProperty(parentOf)</li>
+								<li>Nobody can be one's own parent</li>
+							</ul>
+						</ul>
+					</section>						
+					
+					<section>
+						<h4><b>Functional Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If a property connects A to B then there can be only one unique value for B</li>
+							<ul>
+								<li>FunctionalObjectProperty(hasHusband)</li>
+								<li>ObjectPropertyAssertion(hasHusband Mary James)</li>
+								<li>ObjectPropertyAssertion(hasHusband Mary Jim)</li>
+								<li>Conclusion: Since hasHusband is functional, James and Jim should be the same</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Inverse Functional Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If a property connects A to B then there can be only one unique value for A</li>
+							<ul>
+								<li>InverseFunctionalObjectProperty(hasHusband)</li>
+								<li>An individual can be the husband of at most one another individual</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Transitive Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>A transitive property connects A with C if it connects A to B and B to C</li>
+							<ul>
+								<li>TransitiveObjectProperty(hasAncestor)</li>
+							</ul>
+							<li>Transitive properties can be used to connect whole-part relations</li>
+							<ul>
+								<li>TransitiveObjectProperty(subRegionOf)</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Disjoint Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Two properties are disjoint if there are no two individuals that are connected by the two properties</li>
+							<ul>
+								<li>DisjointObjectProperties(hasParent hasSpouse)</li>
+								<li>Parents and children cannot marry each other</li>
+							</ul>
+						</ul>
+					</section>					
+				</section>	
+				
+				<section>
+					<h3>Property Chains</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>It is a generalization of transitive property</li>
+						<ul>
+							<li>Eg: SubObjectPropertyOf(ObjectPropertyChain(hasParent hasParent) hasGrandparent)</li>
+							<li>Eg: If A hasParent B, and B hasParent C, then A hasGrandparent C</li>
+							<li>Eg: SubObjectPropertyOf(ObjectPropertyChain(hasFather hasBrother) hasUncle)</li>
+						</ul>
+					</ul>
+				</section>								
 				
 				<section>
 					<h2>References</h2>
@@ -417,6 +559,12 @@
 						<li><a href="https://www.w3.org/TR/owl2-primer/" target="_blank">OWL 2 Web Ontology Language Primer</a>. Pascal Hitzler et. al.</li>
 						<li><a href="https://arxiv.org/pdf/1201.4089.pdf" target="_blank">A Description Logic Primer</a>. Markus Kr&ouml;tzsch et. al.</li>
 					</ol>
+				</section>
+				
+				<section>
+					<h2>Next Topic</h2>		
+					<br/>
+					<a href="design-build-ontology.html">Designing and building an ontology</a>
 				</section>
 				
 			</div>

@@ -9,9 +9,9 @@ Knowledge Graphs (semantic descriptions of entities and their relationships) are
 
 ### Class Hours and Location   
 
-  * Wednesday, 11:30am to 1:00pm   
-  * Friday, 10:00am to 11:30am    
-  * C208, New Seminar Block   
+  * Wednesday, 8:30am to 10:00am   
+  * Friday, 6:00pm to 7:30pm    
+  * C03, Old Academic Building   
   * Office hours: Friday, 3:00pm to 4:00pm or send an email for appointment   
   * Backpack URL: <a href="https://www.usebackpack.com/iiitd/m2018/cse5om" target="_blank">https://www.usebackpack.com/iiitd/m2018/cse5om</a>      
   
@@ -21,6 +21,7 @@ Knowledge Graphs (semantic descriptions of entities and their relationships) are
   * <a href="course-overview.html" target="_blank">Course Overview</a>        
   * <a href="intro-ontology.html" target="_blank">Introduction to Ontologies</a>   
   * <a href="intro-owl.html" target="_blank">Introduction to OWL</a>   
+  * <a href="design-build-ontology.html" target="_blank">Designing and Building an Ontology</a>   
 
   
 
