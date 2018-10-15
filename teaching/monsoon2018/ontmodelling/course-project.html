@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Course Project</title>
+		
+		<meta name="description" content="Slides of Ontology Modeling course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../css/reveal.css">
+		<link rel="stylesheet" href="../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+			
+				<section>
+					<h2>Course Project</h2>
+					<br/>
+					Monsoon 2018
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Logistics</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Group project with team size of 2 or 3</li>
+						<li>Each group works on a <em>different</em> domain for designing and building an ontology</li>
+						<li>Two phases of the project</li>
+						<ul>
+							<li>Design and build an ontology for the domain of your choice</li>
+							<li>Use that ontology in a chatbot to answer questions*</li>
+						</ul>
+						<li>Expected deliverables</li>
+						<ul>
+							<li>Demo (team)</li>
+							<li>Code, OWL files (team)</li>
+							<li>Report* (Individual)</li>
+						</ul>
+					</ul>	
+					<p style="text-align:left"><small>*Template will be provided</small></p>
+				</section>
+
+				<section>
+					<h3>Choice of domains</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Healthcare</li>
+						<li>Movie</li>
+						<li>Transportation System</li>
+						<li>Sports (Cricket, Chess, Tennis, Football etc.)</li>
+						<li>Geography</li>
+						<li>Astronomy</li>
+						<li>University</li>
+						<li>Biomedicine</li>
+						<li>Chemical compounds</li>
+						<li></li>
+						<li></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Ontology (min. requirements)</h3>
+					<ul style="font-size:28px">
+						<li>15 classes</li>
+						<li>2 and 3 levels of class hierarchy</li>
+						<li>3-5 object properties</li>
+						<li>3-5 data properties</li>
+						<li>Property hierarchy</li>
+						<ul>
+							<li>1-2 subproperty relations</li>
+							<li>1 property chain (encouraged but optional)</li>
+						</ul>
+						<li>Domain and Range for all the properties</li>
+						<li>8-10 Existential class expressions</li>
+						<li>1-3 Universal class expressions</li>
+						<li>10 Individuals (2-3 differentAs)</li>
+						<li>1 Enumerated class</li>
+						<li>3-5 Disjoint classes</li>
+						<li>Use at least 2 ontology design patterns</li>
+					</ul>
+					<p><small>*Cooking Recipe ontology would be updated to reflect these requirements</small></p>
+				</section>
+			
+			</div>			
+		</div>
+
+		<script src="../../lib/js/head.min.js"></script>
+		<script src="../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../plugin/markdown/marked.js' },
+					{ src: '../../plugin/markdown/markdown.js' },
+					{ src: '../../plugin/notes/notes.js', async: true },
+					{ src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

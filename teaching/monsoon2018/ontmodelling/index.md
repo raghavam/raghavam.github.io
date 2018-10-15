@@ -22,6 +22,10 @@ Knowledge Graphs (semantic descriptions of entities and their relationships) are
   * <a href="intro-ontology.html" target="_blank">Introduction to Ontologies</a>   
   * <a href="intro-owl.html" target="_blank">Introduction to OWL</a>   
   * <a href="design-build-ontology.html" target="_blank">Designing and Building an Ontology</a>   
+  * <a href="course-project.html" target="_blank">Course Project</a>     
+  * <a href="intro-owl-api.html" target="_blank">Introduction to OWL API</a>     
+  
+
 
   
 
