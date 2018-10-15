@@ -1,0 +1,149 @@
+Prefix(:=<http://www.iiitd.ac.in/monsoon2018/om/cookingrecipe/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.iiitd.ac.in/monsoon2018/om/cookingrecipe/>
+
+Declaration(Class(:Chinese))
+Declaration(Class(:Continental))
+Declaration(Class(:CuisineType))
+Declaration(Class(:Dish))
+Declaration(Class(:Flavor))
+Declaration(Class(:HighCarb))
+Declaration(Class(:HighProtein))
+Declaration(Class(:Indian))
+Declaration(Class(:Ingredients))
+Declaration(Class(:NutritionalValue))
+Declaration(Class(:Quantity))
+Declaration(Class(:Recipe))
+Declaration(Class(:Utensils))
+Declaration(ObjectProperty(:hasCookingUtensils))
+Declaration(ObjectProperty(:hasCuisineType))
+Declaration(ObjectProperty(:hasFlavor))
+Declaration(ObjectProperty(:hasIngredients))
+Declaration(ObjectProperty(:hasNutritionalValue))
+Declaration(ObjectProperty(:hasQuantity))
+Declaration(DataProperty(:hasNumericValue))
+Declaration(DataProperty(:hasServingSize))
+Declaration(DataProperty(:hasUnit))
+Declaration(NamedIndividual(:sour))
+Declaration(NamedIndividual(:spicy))
+Declaration(NamedIndividual(:sweet))
+Declaration(NamedIndividual(:tangy))
+############################
+#   Object Properties
+############################
+
+# Object Property: :hasCookingUtensils (:hasCookingUtensils)
+
+ObjectPropertyDomain(:hasCookingUtensils :Recipe)
+ObjectPropertyRange(:hasCookingUtensils :Utensils)
+
+# Object Property: :hasCuisineType (:hasCuisineType)
+
+ObjectPropertyDomain(:hasCuisineType :Dish)
+ObjectPropertyRange(:hasCuisineType :CuisineType)
+
+# Object Property: :hasFlavor (:hasFlavor)
+
+ObjectPropertyDomain(:hasFlavor :Dish)
+ObjectPropertyRange(:hasFlavor :Flavor)
+
+# Object Property: :hasIngredients (:hasIngredients)
+
+ObjectPropertyDomain(:hasIngredients :Recipe)
+ObjectPropertyRange(:hasIngredients :Ingredients)
+ObjectPropertyRange(:hasIngredients ObjectMinCardinality(1 :hasIngredients :Ingredients))
+
+# Object Property: :hasQuantity (:hasQuantity)
+
+ObjectPropertyDomain(:hasQuantity :Ingredients)
+ObjectPropertyDomain(:hasQuantity :NutritionalValue)
+ObjectPropertyRange(:hasQuantity :Quantity)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :hasNumericValue (:hasNumericValue)
+
+DataPropertyDomain(:hasNumericValue :Quantity)
+DataPropertyRange(:hasNumericValue xsd:nonNegativeInteger)
+
+# Data Property: :hasServingSize (:hasServingSize)
+
+DataPropertyDomain(:hasServingSize :Dish)
+DataPropertyRange(:hasServingSize xsd:positiveInteger)
+
+# Data Property: :hasUnit (:hasUnit)
+
+DataPropertyDomain(:hasUnit :Quantity)
+DataPropertyRange(:hasUnit xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :Chinese (:Chinese)
+
+SubClassOf(:Chinese :CuisineType)
+
+# Class: :Continental (:Continental)
+
+SubClassOf(:Continental :CuisineType)
+
+# Class: :Dish (:Dish)
+
+SubClassOf(:Dish ObjectSomeValuesFrom(:hasCuisineType :CuisineType))
+SubClassOf(:Dish ObjectSomeValuesFrom(:hasFlavor :Flavor))
+SubClassOf(:Dish ObjectSomeValuesFrom(:hasNutritionalValue :NutritionalValue))
+
+# Class: :Flavor (:Flavor)
+
+EquivalentClasses(:Flavor ObjectOneOf(:sour :spicy :sweet :tangy))
+
+# Class: :HighCarb (:HighCarb)
+
+SubClassOf(:HighCarb :NutritionalValue)
+
+# Class: :HighProtein (:HighProtein)
+
+SubClassOf(:HighProtein :NutritionalValue)
+
+# Class: :Indian (:Indian)
+
+SubClassOf(:Indian :CuisineType)
+
+# Class: :Recipe (:Recipe)
+
+SubClassOf(:Recipe ObjectSomeValuesFrom(:hasCookingUtensils :Utensils))
+SubClassOf(:Recipe ObjectSomeValuesFrom(:hasIngredients :Ingredients))
+SubClassOf(:Recipe ObjectSomeValuesFrom(:hasQuantity :Quantity))
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :sour (:sour)
+
+
+# Individual: :spicy (:spicy)
+
+
+# Individual: :sweet (:sweet)
+
+
+# Individual: :tangy (:tangy)
+
+
+
+DifferentIndividuals(:sour :spicy :sweet :tangy)
+)
