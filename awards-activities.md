@@ -24,13 +24,13 @@ share: false
   * Extended Semantic Web Conference (ESWC)
       * Resources track, 2018   
 	  * Posters & Demos track, 2014, 2015   
+  * IEEE BigData Congress, 2018, 2019.   	  
   * International Conference on Data Intelligence and Security (ICDIS), 2018, 2019.    
   * SEMANTiCS; Posters & Demos, 2017, 2018.   
   * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2014, 2015, 2018.  
   * International Workshop on Semantic Web of Things for Industry 4.0 (SWeTI), 2018.      
   * Workshop on Natural Language Interfaces for the Web of Data (NLIWoD), 2018.   
   * International Conference on Big Data Innovations and Applications (Innovate-Data), 2018.   
-  * IEEE International Congress on BigData 2018.   
   * International Workshop on Hybrid Question Answering with Structured and Unstructured Knowledge (HQA), 2018.   
   * International Joint Conference on Rules and Reasoning (RuleML+RR), 2018.  
   * International Conference on Advances in Semantic Processing (SEMAPRO), 2017, 2018.    
