@@ -1,0 +1,43 @@
+Prefix(:=<http://www.iiitd.ac.in/monsoon2018/om/quiz/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.iiitd.ac.in/monsoon2018/om/quiz/>
+
+Declaration(Class(:City))
+Declaration(Class(:Country))
+Declaration(ObjectProperty(:partOf))
+Declaration(NamedIndividual(:EuropeanUnion))
+Declaration(NamedIndividual(:Spain))
+Declaration(NamedIndividual(:barcelona))
+Declaration(NamedIndividual(:madrid))
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :EuropeanUnion (:EuropeanUnion)
+
+ClassAssertion(:Country :EuropeanUnion)
+
+# Individual: :Spain (:Spain)
+
+ClassAssertion(:Country :Spain)
+ObjectPropertyAssertion(:partOf :Spain :EuropeanUnion)
+
+# Individual: :barcelona (:barcelona)
+
+ClassAssertion(:City :barcelona)
+
+# Individual: :madrid (:madrid)
+
+ClassAssertion(:City :madrid)
+ObjectPropertyAssertion(:partOf :madrid :Spain)
+
+
+)

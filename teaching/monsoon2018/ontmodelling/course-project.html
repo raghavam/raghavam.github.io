@@ -109,6 +109,90 @@
 					</ul>
 					<p><small>*Cooking Recipe ontology would be updated to reflect these requirements</small></p>
 				</section>
+
+				<section>
+					<h3>Questions for chatbot</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Is A SubClassOf B</li>
+						<li>Is a instanceOf A</li>
+						<li>Is KB consistent</li>
+						<li>Add an axiom and check for consistency</li>
+						<li>Generate explanation for inconsistency</li>
+						<li>Use ObjectPropertyAssertion + Domain/Range, to infer type of the individual</li>
+						<li>Is p SubPropertyOf q</li>
+						<li>List characteristics of property p</li>
+						<ul>
+							<li>Functional property etc.</li>
+							<li>Participates in a property chain, SubPropertyOf, ObjectPropertyAssertion, DataPropertyAssertion etc.</li>
+							<li>Domain, Range</li>
+						</ul>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Questions for chatbot</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Check for corner cases</li>
+						<ul>
+							<li>Class or property does not exist</li>
+							<li>Null or empty query</li>
+							<li>Class SubClassOf itself</li>
+						</ul>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Notations To Be Used</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>&lt;?Class&gt; SubClassOf &lt;Class&gt;</li>
+						<li>&lt;Class&gt; SubClassOf &lt;?Class&gt;</li>
+						<li>&lt;?Individual&gt; InstanceOf &lt;?Class&gt;</li>
+						<li>IsConsistent?</li>
+						<li>Add: &lt;syntactically correct axiom&gt;</li>
+						<li>Explain ClassExpression</li>
+						<li>GetTypes &lt;Individual&gt;</li>
+						<li>&lt;?Property&gt; SubPropertyOf &lt;?Property&gt;</li>
+						<li>CharacteristicsOf &lt;Property&gt;</li>
+					</ul>
+					<p><small>&lt;Class&gt; indicates a specific class whereas &lt;?Class&gt; indicates any class. Same for properties</small></p>
+				</section>
+				
+				<section>
+					<h3>Chatbot library</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>A simple UI with a scrollable display area + a text box</li>
+						<li>A command line tool</li>
+						<li>Any chatbot library of your choice</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Extra Credit</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>A simple UI (5%)</li>
+						<li>Chatbot library (5%)</li>
+						<li>Queries in natural language (10%)</li>
+						<ul>
+							<li>Is &lt;Individual&gt; a &lt;Class&gt;?</li>
+							<li>What are the subclasses of &lt;Class&gt;?</li>
+							<li>How are &lt;Class1&gt; and &lt;Class2&gt; related to each other?</li>
+							<li>...</li>
+							<li>Spell correction can also be used if the queries are in natural language</li>
+						</ul>
+						<li>Support for synonyms in queries from <a href="https://wordnet.princeton.edu/" target="_blank">WordNet</a> (5%)</li>
+						<li>A chatbot integrated UI for adding axioms (5%-10%)</li>
+						<ul>
+							<li>SubClassOf axioms</li>
+							<li>ObjectPropertyAssertions</li>
+							<li>...</li>
+						</ul>
+					</ul>
+				</section>
 			
 			</div>			
 		</div>

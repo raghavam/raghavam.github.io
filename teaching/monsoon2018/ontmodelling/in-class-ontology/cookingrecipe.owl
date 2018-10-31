@@ -8,28 +8,41 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 Ontology(<http://www.iiitd.ac.in/monsoon2018/om/cookingrecipe/>
 
-Declaration(Class(:Chinese))
-Declaration(Class(:Continental))
+Declaration(Class(:AndhraCuisine))
+Declaration(Class(:ChineseCuisine))
+Declaration(Class(:ContinentalCuisine))
 Declaration(Class(:CuisineType))
 Declaration(Class(:Dish))
+Declaration(Class(:EastIndianCuisine))
 Declaration(Class(:Flavor))
 Declaration(Class(:HighCarb))
 Declaration(Class(:HighProtein))
-Declaration(Class(:Indian))
+Declaration(Class(:IndianCuisine))
 Declaration(Class(:Ingredients))
+Declaration(Class(:KeralaCuisine))
+Declaration(Class(:NorthIndianCuisine))
 Declaration(Class(:NutritionalValue))
 Declaration(Class(:Quantity))
 Declaration(Class(:Recipe))
+Declaration(Class(:SouthIndianCuisine))
 Declaration(Class(:Utensils))
+Declaration(Class(:WestIndianCuisine))
 Declaration(ObjectProperty(:hasCookingUtensils))
 Declaration(ObjectProperty(:hasCuisineType))
 Declaration(ObjectProperty(:hasFlavor))
 Declaration(ObjectProperty(:hasIngredients))
 Declaration(ObjectProperty(:hasNutritionalValue))
 Declaration(ObjectProperty(:hasQuantity))
+Declaration(ObjectProperty(:hasRecipe))
 Declaration(DataProperty(:hasNumericValue))
 Declaration(DataProperty(:hasServingSize))
 Declaration(DataProperty(:hasUnit))
+Declaration(NamedIndividual(:Biryani))
+Declaration(NamedIndividual(:Paratha))
+Declaration(NamedIndividual(:Pulao))
+Declaration(NamedIndividual(:bitter))
+Declaration(NamedIndividual(:cake))
+Declaration(NamedIndividual(:cakeRecipe))
 Declaration(NamedIndividual(:sour))
 Declaration(NamedIndividual(:spicy))
 Declaration(NamedIndividual(:sweet))
@@ -65,6 +78,11 @@ ObjectPropertyDomain(:hasQuantity :Ingredients)
 ObjectPropertyDomain(:hasQuantity :NutritionalValue)
 ObjectPropertyRange(:hasQuantity :Quantity)
 
+# Object Property: :hasRecipe (:hasRecipe)
+
+ObjectPropertyDomain(:hasRecipe :Dish)
+ObjectPropertyRange(:hasRecipe :Recipe)
+
 
 ############################
 #   Data Properties
@@ -91,19 +109,28 @@ DataPropertyRange(:hasUnit xsd:string)
 #   Classes
 ############################
 
-# Class: :Chinese (:Chinese)
+# Class: :AndhraCuisine (:AndhraCuisine)
 
-SubClassOf(:Chinese :CuisineType)
+SubClassOf(:AndhraCuisine :SouthIndianCuisine)
+DisjointClasses(:AndhraCuisine :KeralaCuisine)
 
-# Class: :Continental (:Continental)
+# Class: :ChineseCuisine (:ChineseCuisine)
 
-SubClassOf(:Continental :CuisineType)
+SubClassOf(:ChineseCuisine :CuisineType)
+
+# Class: :ContinentalCuisine (:ContinentalCuisine)
+
+SubClassOf(:ContinentalCuisine :CuisineType)
 
 # Class: :Dish (:Dish)
 
 SubClassOf(:Dish ObjectSomeValuesFrom(:hasCuisineType :CuisineType))
 SubClassOf(:Dish ObjectSomeValuesFrom(:hasFlavor :Flavor))
 SubClassOf(:Dish ObjectSomeValuesFrom(:hasNutritionalValue :NutritionalValue))
+
+# Class: :EastIndianCuisine (:EastIndianCuisine)
+
+SubClassOf(:EastIndianCuisine :IndianCuisine)
 
 # Class: :Flavor (:Flavor)
 
@@ -117,9 +144,17 @@ SubClassOf(:HighCarb :NutritionalValue)
 
 SubClassOf(:HighProtein :NutritionalValue)
 
-# Class: :Indian (:Indian)
+# Class: :IndianCuisine (:IndianCuisine)
 
-SubClassOf(:Indian :CuisineType)
+SubClassOf(:IndianCuisine :CuisineType)
+
+# Class: :KeralaCuisine (:KeralaCuisine)
+
+SubClassOf(:KeralaCuisine :SouthIndianCuisine)
+
+# Class: :NorthIndianCuisine (:NorthIndianCuisine)
+
+SubClassOf(:NorthIndianCuisine :IndianCuisine)
 
 # Class: :Recipe (:Recipe)
 
@@ -127,10 +162,38 @@ SubClassOf(:Recipe ObjectSomeValuesFrom(:hasCookingUtensils :Utensils))
 SubClassOf(:Recipe ObjectSomeValuesFrom(:hasIngredients :Ingredients))
 SubClassOf(:Recipe ObjectSomeValuesFrom(:hasQuantity :Quantity))
 
+# Class: :SouthIndianCuisine (:SouthIndianCuisine)
+
+SubClassOf(:SouthIndianCuisine :IndianCuisine)
+
+# Class: :WestIndianCuisine (:WestIndianCuisine)
+
+SubClassOf(:WestIndianCuisine :IndianCuisine)
+
 
 ############################
 #   Named Individuals
 ############################
+
+# Individual: :Biryani (:Biryani)
+
+ClassAssertion(:AndhraCuisine :Biryani)
+
+# Individual: :Paratha (:Paratha)
+
+ClassAssertion(:IndianCuisine :Paratha)
+
+# Individual: :Pulao (:Pulao)
+
+ClassAssertion(:IndianCuisine :Pulao)
+
+# Individual: :bitter (:bitter)
+
+ClassAssertion(:Flavor :bitter)
+
+# Individual: :cake (:cake)
+
+ObjectPropertyAssertion(:hasRecipe :cake :cakeRecipe)
 
 # Individual: :sour (:sour)
 
@@ -145,5 +208,6 @@ SubClassOf(:Recipe ObjectSomeValuesFrom(:hasQuantity :Quantity))
 
 
 
+DifferentIndividuals(:Paratha :Pulao)
 DifferentIndividuals(:sour :spicy :sweet :tangy)
 )
