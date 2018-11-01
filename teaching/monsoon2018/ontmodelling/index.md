@@ -21,13 +21,26 @@ Knowledge Graphs (semantic descriptions of entities and their relationships) are
   * <a href="course-overview.html" target="_blank">Course Overview</a>        
   * <a href="intro-ontology.html" target="_blank">Introduction to Ontologies</a>   
   * <a href="intro-owl.html" target="_blank">Introduction to OWL</a>   
-  * <a href="design-build-ontology.html" target="_blank">Designing and Building an Ontology</a> &nbsp;&nbsp;&nbsp;   <a href="in-class-ontology/cookingrecipe.owl" target="_blank">cooking-recipe.owl</a>      
+  * <a href="design-build-ontology.html" target="_blank">Designing and Building an Ontology</a>          
   * <a href="course-project.html" target="_blank">Course Project</a>     
   * <a href="intro-owl-api.html" target="_blank">Introduction to OWL API</a>     
   * <a href="ontology-reasoning.html" target="_blank">Ontology Reasoning</a>     
   * <a href="odps.html" target="_blank">Ontology Design Patterns</a>     
-  
 
+  
+### Files
+
+  1. Code     
+    * ReasonerSample1.java    
+    * ReasonerSample2.java     
+	* pom.xml   
+	
+  2. Ontologies 
+    * <a href="in-class-ontology/cookingrecipe.owl" target="_blank">cookingrecipe.owl</a>         
+    * cookingrecipe-inconsistent.owl    
+    * om2018-quiz.owl    
+
+	
 
   
 
