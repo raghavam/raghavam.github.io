@@ -28,14 +28,13 @@ Knowledge Graphs (semantic descriptions of entities and their relationships) are
   * <a href="odps.html" target="_blank">Ontology Design Patterns</a>     
 
   
-### Files
-
+### Files    
   1. Code     
-    * ReasonerSample1.java    
-    * ReasonerSample2.java     
-	* pom.xml   
+     * ReasonerSample1.java    
+     * ReasonerSample2.java     
+	 * pom.xml   
 	
-  2. Ontologies 
+  2. Ontologies     
     * <a href="in-class-ontology/cookingrecipe.owl" target="_blank">cookingrecipe.owl</a>         
     * cookingrecipe-inconsistent.owl    
     * om2018-quiz.owl    
