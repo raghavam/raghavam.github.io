@@ -31,14 +31,14 @@ Knowledge Graphs (semantic descriptions of entities and their relationships) are
 ### Files    
 
   1. Code     
-   - <a href="code/ReasonerSample1.java" target="_blank">ReasonerSample1.java</a>    
-   - <a href="code/ReasonerSample2.java" target="_blank">ReasonerSample2.java</a>     
-   - <a href="code/pom.xml" target="_blank">pom.xml</a>   
+     * <a href="code/ReasonerSample1.java" target="_blank">ReasonerSample1.java</a>    
+     * <a href="code/ReasonerSample2.java" target="_blank">ReasonerSample2.java</a>     
+     * <a href="code/pom.xml" target="_blank">pom.xml</a>   
 	
   2. Ontologies     
-   * <a href="in-class-ontology/cookingrecipe.owl" target="_blank">cookingrecipe.owl</a>         
-   * <a href="in-class-ontology/cookingrecipe-inconsistent.owl" target="_blank">cookingrecipe-inconsistent.owl</a>    
-   * <a href="in-class-ontology/om2018-quiz.owl" target="_blank">om2018-quiz.owl</a>    
+     * <a href="in-class-ontology/cookingrecipe.owl" target="_blank">cookingrecipe.owl</a>         
+     * <a href="in-class-ontology/cookingrecipe-inconsistent.owl" target="_blank">cookingrecipe-inconsistent.owl</a>    
+     * <a href="in-class-ontology/om2018-quiz.owl" target="_blank">om2018-quiz.owl</a>    
 
 	
 
