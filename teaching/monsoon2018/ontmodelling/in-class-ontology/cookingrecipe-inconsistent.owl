@@ -175,10 +175,6 @@ SubClassOf(:WestIndianCuisine :IndianCuisine)
 #   Named Individuals
 ############################
 
-# Individual: :biryani (:biryani)
-
-ClassAssertion(:AndhraCuisine :biryani)
-
 # Individual: :bitter (:bitter)
 
 ClassAssertion(:Flavor :bitter)
@@ -193,7 +189,8 @@ ClassAssertion(:IndianCuisine :paratha)
 
 # Individual: :pulao (:pulao)
 
-ClassAssertion(:IndianCuisine :pulao)
+ClassAssertion(:AndhraCuisine :pulao)
+ClassAssertion(:KeralaCuisine :pulao)
 
 # Individual: :sour (:sour)
 
