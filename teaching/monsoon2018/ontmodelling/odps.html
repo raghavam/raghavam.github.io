@@ -75,18 +75,258 @@
 				
 				<section>
 					<h3>ODP Types</h3>
-					<br/>
-					<ul style="font-size:30px">
-						<li>Several types of ODPs</li>
-						<ul>
-							<li>Structural ODPs</li>
-							<li>Correspondence ODPs</li>
-							<li>Content ODPs</li>
-							<li>Reasoning ODPs</li>
-							<li>Presentation ODPs</li>
-							<li>Lexico-Syntactic ODPs</li>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Several types of ODPs</li>
+							<ul>
+								<li>Structural ODPs</li>
+								<li>Correspondence ODPs</li>
+								<li>Content ODPs</li>
+								<li>Reasoning ODPs</li>
+								<li>Presentation ODPs</li>
+								<li>Lexico-Syntactic ODPs</li>
+							</ul>
+							<li>Available at <a href="http://ontologydesignpatterns.org/" target="_blank"> ODP Repository</a></li>
+					</section>	
+					
+					<section>
+						<figure>
+							<img src="figures/Odptypes.jpg" alt="ODP Types" height="400" width="1200">
+							<figcaption style="font-size:13px">Image source: <a href="http://ontologydesignpatterns.org/wiki/Image:Odptypes.jpg" target="_blank">http://ontologydesignpatterns.org/wiki/Image:Odptypes.jpg</a></figcaption>
+						</figure>
+					</section>	
+					
+					<section>
+						<h4><b>Structural ODPs</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Logical ODPs and Architectural ODPs make up the Structural ODPs</li>
+							<li>Logical ODPs</li>
+							<ul>
+								<li>Composition of logical constructs that solve a problem of expressivity</li>
+								<li>Eg: Expressing n-ary relation between concepts</li>
+								<li>They are further divided into Logical Macros and Transformation patterns</li>
+								<li>Logical Macros are shortcuts to recurrent intuitive logical expressions</li>
+								<li>Transformation patterns translate a logical expression from one language to the other</li>
+							</ul>
 						</ul>
-						<li>Available at <a href="http://ontologydesignpatterns.org/" target="_blank"> ODP Repository</a></li>
+					</section>
+					
+					<section>
+						<h4><b>Structural ODPs</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Architectural ODPs</li>
+							<ul>
+								<li>They have an affect on the overall shape of the ontology</li>
+								<li>They aim to constrain how the ontology should look like</li>
+								<li>They are chosen if there are specific needs such as any computational complexity constraints</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Reasoning ODPs</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>They are applications of Logical ODPs to obtain certain reasoning results</li>
+							<li>Eg: Classification (all superclasses for each class in the ontology)</li>
+							<li>They provide hints to the reasoner as to what kind of reasoning has to be performed in order to answer queries</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Correspondence ODPs</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Correspondence ODPs are divided into Reengineering ODPs and Mapping (or Alignment) ODPs</li>
+							<li>Reengineering ODPs</li>
+							<ul>
+								<li>They are design solutions that transform a conceptual model into an ontological model</li>
+								<li>The source model can be a non-ontological model such as a thesaurus, UML model etc.</li>
+								<li>Schema reengineering patterns and Refactoring patterns are sub categories of Reengineering ODPs</li>
+								<li>Schema reengineering patterns are rules to transform a non-OWL ontology to an OWL ontology</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Correspondence ODPs</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Refactoring patterns transform (refactor) models in the same form. For example, from one OWL 2 DL ontology to another</li>
+							<ul>
+								<li>Eg: An ontology defines an object property to represent <em>preparing coffee</em> between <em>agent</em> and <em>coffee</em></li>
+								<li>Time of coffee preparation and the tool used should also be added</li>
+								<li>An n-ary Logical ODP needs to be used because the property <em>preparing coffee</em> needs to be associated with agent, coffee, time, tool</li>
+								<li>The n-ary Logical ODP and the mechanism to replace the existing object property together form the Refactoring ODP</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Correspondence ODPs</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Mapping patterns provide design solutions to relate two ontologies without changing the logical types of the ontology entities</li>
+							<ul>
+								<li>They provide semantic relations between mappable elements in the ontologies</li>
+								<li>There are 3 basic semantic relations used for mapping: equivalence, containment, and overlap</li>
+								<li>The negative counterparts are also included such as not equivalent, not contained, and no overlap or disjoint</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Presentation ODPs</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>They deal with usability and readability of ontologies from a user perspective</li>
+							<li>They are meant to be good practices that support reuse of ontologies</li>
+							<ul>
+								<li>Naming ODPs and Annotation ODPs are types of Presentation ODPs</li>
+								<li>Naming ODPs are naming conventions for files, namespaces, and ontological entities (class, property, instace)</li>
+								<li>Annotation ODPs provide annotation properties such as label (description of an entity, synonyms etc.), seeAlso, versionInfo etc.</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Lexico-Syntactic ODPs</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>They are linguistic structures or schemas that consist of words following specific order</li>
+							<li>They can be used to associate natural language sentences with other ODPs such as Logical and Content ODPs</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Content ODPs (CPs)</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Small ontologies that mediate between use cases (problem types) and design solutions</li>
+							<li>They are the building blocks to create ontologies</li>
+							<li>An ontology can be built by composing different CPs with appropriate dependencies between them and by expanding the CPs as needed</li>
+						</ul>
+					</section>
+					
+				</section>
+				
+				<section>
+					<h3>ODP Description</h3>
+					<section>
+					<ul style="font-size:30px">
+						<li>An ODP can be described using the following fields</li>
+						<ul>
+							<li>Name</li>
+							<li>Intent</li>
+							<li>Competency questions</li>
+							<li>Alternate names</li>
+							<li>Scenarios: Examples of requirements in natural language that can be modelled using this pattern</li>
+							<li>Diagram: UML diagram representing the pattern</li>
+							<li>Elements: list classes and relations in the pattern</li>
+						</ul>
+					</ul>	
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Consequences: description of benefits and trade-offs</li>
+							<li>Known uses: examples of realistic ontologies where the pattern can be used</li>
+							<li>Extracted/Reengineered from: reference ontology or conceptual schema from which the pattern has been extracted</li>
+							<li>Related patterns: other patterns that are either a specialization, generalization, composition, or component of this pattern. Also lists patterns that are generally used along with the described pattern</li>
+							<li>Building block: a reference implementation (URI or owl file)</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>AgentRole ODP</h3>
+					<section>
+						<figure>
+							<img src="figures/Agentrole.jpg" alt="AgentRole ODP" height="400" width="500">
+							<figcaption style="font-size:13px">Image source: <a href="http://ontologydesignpatterns.org/wiki/Image:Agentrole.jpg" target="_blank">http://ontologydesignpatterns.org/wiki/Image:Agentrole.jpg</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+						<li>Name: Agent Role</li>
+						<li>Intent: To represent agents and the role they play</li>
+						<li>Competency questions</li>
+						<ul>
+							<li>what is the role that is played by an agent?</li>
+							<li>which agent plays this role?</li>
+						</ul>
+						<li>Consequences: allows designers to make assertions on roles played by agents without involving the agents that play those roles, and vice versa. It does not allow to express temporariness of roles</li>
+						<li>Scenarios: She greeted us all in her various roles of mother, friend, and daughter</li>
+					</ul>
+					</section>
+					
+					<section>
+						<figure>
+							<img src="figures/Agentrole2.jpg" alt="AgentRole ODP">
+							<figcaption style="font-size:13px">Image source: <a href="http://daselab.cs.wright.edu/pub2/2017-05-ESWC-Tutorial-Hitzler-Part-1.pdf" target="_blank">http://daselab.cs.wright.edu/pub2/2017-05-ESWC-Tutorial-Hitzler-Part-1.pdf</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<figure>
+							<img src="figures/Agentrole2-concrete.jpg" alt="AgentRole ODP">
+							<figcaption style="font-size:13px">Image source: <a href="http://daselab.cs.wright.edu/pub2/2017-05-ESWC-Tutorial-Hitzler-Part-1.pdf" target="_blank">http://daselab.cs.wright.edu/pub2/2017-05-ESWC-Tutorial-Hitzler-Part-1.pdf</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<figure>
+							<img src="figures/Agentrole2-concrete-align.jpg" alt="AgentRole ODP">
+							<figcaption style="font-size:13px">Image source: <a href="http://daselab.cs.wright.edu/pub2/2017-05-ESWC-Tutorial-Hitzler-Part-1.pdf" target="_blank">http://daselab.cs.wright.edu/pub2/2017-05-ESWC-Tutorial-Hitzler-Part-1.pdf</a></figcaption>
+						</figure>
+					</section>
+					
+				</section>
+				
+				<section>
+					<h3>Information Realization ODP</h3>
+					<section>
+						<figure>
+							<img src="figures/InformationRealization.jpg" alt="Information Realization ODP" height="300" width="600">
+							<figcaption style="font-size:13px">Image source: <a href="http://ontologydesignpatterns.org/wiki/Image:Informationrealization.jpg" target="_blank">http://ontologydesignpatterns.org/wiki/Image:Informationrealization.jpg</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<ul style="font-size:28px">
+							<li>Name: Information Realization</li>
+							<li>Description: It represents the relations between information objects like
+poems, songs, formulas, etc., and their physical realizations like printed books, registered tracks, physical files, etc</li>
+							<li>Intent: To represent information objects and their physical realization.</li>
+							<li>Competency questions</li>
+						<ul>
+							<li>what are the physical realizations of this information object?</li>
+							<li>what information objects are realized by this physical object?</li>
+						</ul>
+						<li>Consequences: This pattern allows to distinguish information objects from their concrete realizations</li>
+						<li>Scenarios: The book of the "Divina Commedia"</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Provenance ODP</h3>
+					<figure>
+							<img src="figures/Provenance.png" alt="Provenance ODP" height="300" width="500">
+							<figcaption style="font-size:13px">Image source: <a href="http://ontologydesignpatterns.org/wiki/Image:Provenance.png" target="_blank">http://ontologydesignpatterns.org/wiki/Image:Provenance.png</a></figcaption>
+					</figure>
+				</section>
+				
+				<section>
+					<h3>List ODP</h3>
+					<figure>
+							<img src="figures/List.png" alt="Provenance ODP" height="400" width="600">
+							<figcaption style="font-size:13px">Image source: <a href="http://ontologydesignpatterns.org/wiki/Image:List.png" target="_blank">http://ontologydesignpatterns.org/wiki/Image:List.png</a></figcaption>
+					</figure>
 				</section>
 			
 				<section>
@@ -94,6 +334,7 @@
 					<br/>
 					<ol style="font-size:30px">
 						<li><a href="https://geog.ucsb.edu/~jano/odpnutshell.pdf" target="_blank">Ontology Design Patterns in a Nutshell</a>. Krzysztof Janowicz et. al. Ontology Engineering with Ontology Design Patterns: Foundations and Applications. IOS Press.</li>
+						<li><a href="https://www.researchgate.net/publication/227215903_Ontology_Design_Patterns" target="_blank">Ontology Design Patterns</a>. Aldo Gangemi and Valentina Presutti. Handbook on Ontologies. 2009</li>
 					</ol>
 				</section>
 					
