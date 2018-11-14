@@ -22,9 +22,11 @@ share: false
 	  * Industry track, 2017, 2018  
 	  * In-Use track, 2017
   * Extended Semantic Web Conference (ESWC)
+      * Semantic Data Management and Data Infrastructures track, 2019    
       * Resources track, 2018   
 	  * Posters & Demos track, 2014, 2015   
-  * IEEE BigData Congress, 2018, 2019.   	  
+  * IEEE BigData Congress, 2018, 2019.   	
+  *  International Conference on Big Data Innovations and Applications, 2019.       
   * International Conference on Data Intelligence and Security (ICDIS), 2018, 2019.    
   * SEMANTiCS; Posters & Demos, 2017, 2018.   
   * International Workshop on Scalable Semantic Web Knowledge Base Systems (SSWS), 2014, 2015, 2018.  
