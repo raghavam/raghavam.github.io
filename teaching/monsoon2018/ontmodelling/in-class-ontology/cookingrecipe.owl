@@ -19,6 +19,7 @@ Declaration(Class(:HighCarb))
 Declaration(Class(:HighProtein))
 Declaration(Class(:IndianCuisine))
 Declaration(Class(:Ingredients))
+Declaration(Class(:IngredientsList))
 Declaration(Class(:KeralaCuisine))
 Declaration(Class(:NorthIndianCuisine))
 Declaration(Class(:NutritionalValue))
@@ -29,8 +30,11 @@ Declaration(Class(:Utensils))
 Declaration(Class(:WestIndianCuisine))
 Declaration(ObjectProperty(:hasCookingUtensils))
 Declaration(ObjectProperty(:hasCuisineType))
+Declaration(ObjectProperty(:hasFirstIngredient))
 Declaration(ObjectProperty(:hasFlavor))
 Declaration(ObjectProperty(:hasIngredients))
+Declaration(ObjectProperty(:hasLastIngredient))
+Declaration(ObjectProperty(:hasNextIngredient))
 Declaration(ObjectProperty(:hasNutritionalValue))
 Declaration(ObjectProperty(:hasQuantity))
 Declaration(ObjectProperty(:hasRecipe))
@@ -39,13 +43,17 @@ Declaration(DataProperty(:hasServingSize))
 Declaration(DataProperty(:hasUnit))
 Declaration(NamedIndividual(:biryani))
 Declaration(NamedIndividual(:bitter))
+Declaration(NamedIndividual(:boondi))
+Declaration(NamedIndividual(:boondiRaitaIngredients))
 Declaration(NamedIndividual(:cake))
 Declaration(NamedIndividual(:cakeRecipe))
+Declaration(NamedIndividual(:curd))
 Declaration(NamedIndividual(:paratha))
 Declaration(NamedIndividual(:pulao))
 Declaration(NamedIndividual(:sour))
 Declaration(NamedIndividual(:spicy))
 Declaration(NamedIndividual(:sweet))
+Declaration(NamedIndividual(:tadka))
 Declaration(NamedIndividual(:tangy))
 ############################
 #   Object Properties
@@ -61,6 +69,11 @@ ObjectPropertyRange(:hasCookingUtensils :Utensils)
 ObjectPropertyDomain(:hasCuisineType :Dish)
 ObjectPropertyRange(:hasCuisineType :CuisineType)
 
+# Object Property: :hasFirstIngredient (:hasFirstIngredient)
+
+ObjectPropertyDomain(:hasFirstIngredient :IngredientsList)
+ObjectPropertyRange(:hasFirstIngredient :Ingredients)
+
 # Object Property: :hasFlavor (:hasFlavor)
 
 ObjectPropertyDomain(:hasFlavor :Dish)
@@ -71,6 +84,16 @@ ObjectPropertyRange(:hasFlavor :Flavor)
 ObjectPropertyDomain(:hasIngredients :Recipe)
 ObjectPropertyRange(:hasIngredients :Ingredients)
 ObjectPropertyRange(:hasIngredients ObjectMinCardinality(1 :hasIngredients :Ingredients))
+
+# Object Property: :hasLastIngredient (:hasLastIngredient)
+
+ObjectPropertyDomain(:hasLastIngredient :IngredientsList)
+ObjectPropertyRange(:hasLastIngredient :Ingredients)
+
+# Object Property: :hasNextIngredient (:hasNextIngredient)
+
+ObjectPropertyDomain(:hasNextIngredient :Ingredients)
+ObjectPropertyRange(:hasNextIngredient :Ingredients)
 
 # Object Property: :hasQuantity (:hasQuantity)
 
@@ -183,9 +206,25 @@ ClassAssertion(:AndhraCuisine :biryani)
 
 ClassAssertion(:Flavor :bitter)
 
+# Individual: :boondi (:boondi)
+
+ClassAssertion(:Ingredients :boondi)
+ObjectPropertyAssertion(:hasNextIngredient :boondi :curd)
+
+# Individual: :boondiRaitaIngredients (:boondiRaitaIngredients)
+
+ClassAssertion(:IngredientsList :boondiRaitaIngredients)
+ObjectPropertyAssertion(:hasFirstIngredient :boondiRaitaIngredients :boondi)
+ObjectPropertyAssertion(:hasLastIngredient :boondiRaitaIngredients :tadka)
+
 # Individual: :cake (:cake)
 
 ObjectPropertyAssertion(:hasRecipe :cake :cakeRecipe)
+
+# Individual: :curd (:curd)
+
+ClassAssertion(:Ingredients :curd)
+ObjectPropertyAssertion(:hasNextIngredient :curd :tadka)
 
 # Individual: :paratha (:paratha)
 
@@ -203,6 +242,10 @@ ClassAssertion(:IndianCuisine :pulao)
 
 # Individual: :sweet (:sweet)
 
+
+# Individual: :tadka (:tadka)
+
+ClassAssertion(:Ingredients :tadka)
 
 # Individual: :tangy (:tangy)
 
