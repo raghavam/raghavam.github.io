@@ -130,6 +130,143 @@
 				</section>
 				
 				<section>
+					<h3>Modelling Suggestions</h3>
+					<section>
+						<ol style="font-size:30px">
+							<li>Don't forget disjointness</li>
+							<li>Don't forget property characteristics</li>
+							<li>Don't choose too specific domains or ranges</li>
+							<li>Be careful with quantifiers</li>
+							<li>Don't mistake parts for subclasses</li>
+							<li>Watch the direction of properties</li>
+							<li>Don't confuse class subsumption and class equivalence</li>
+							<li>Don't translate too verbally</li>
+						</ol>	
+					</section>
+					
+					<section>
+						<h4><b>Disjointness</b></h4>
+						<ul style="font-size:30px">
+							<li>Class disjointness axioms are usually forgotten</li>
+							<li>But unless specifically stated that classes are disjoint, they are not</li>
+							<ul>
+								<li>Man $\sqsubseteq$ Human</li>
+								<li>Woman $\sqsubseteq$ Human</li>
+								<li>Human $\sqsubseteq$ Man $\sqcup$ Woman</li>
+								<li>Man(john)</li>
+								<li>Woman(mary)</li>
+								<li>Is john not a Woman? ($\neg$ Woman(john))</li>
+								<li>Add Man and Woman are disjoint (Man $\sqcap$ Woman $\sqsubseteq$ $\bot$)</li>
+							</ul>
+							<li>Consider siblings in a class hierarchy and if an individual cannot be an instance of both the classes, then declare them as disjoint</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Role Characteristics</b></h4>
+						<ul style="font-size:30px">
+							<li>For each property declared in the ontology consider if the following characteristics apply to it</li>
+							<ul>
+								<li>transitive</li>
+								<li>symmetric</li>
+								<li>functional</li>
+								<li>inverse functional</li>
+								<li>reflexivity</li>
+								<li>irreflexivity</li>
+								<li>antisymmetry</li>
+								<li>property chain</li>
+								<li>property disjointness</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Domain and Range</b></h4>
+						<ul style="font-size:30px">
+							<li>For each property declared in the ontology check the usage and verify whether the declared domain and range applies to all the usages</li>
+							<li>Multiple ranges (domains) for a property should be interpreted as intersection of all the ranges (domains)</li>
+							<ul>
+								<li>ObjectPropertyRange(authorOf Textbook)</li>
+								<li>ObjectPropertyRange(authorOf Storybook)</li>
+								<li>range of authorOf is <em>both</em> Textbook and Storybook</li>
+							</ul>
+							<li>If the domain (range) has to be union of classes, then state it explicitly using class union</li>
+							<ul>
+								<li>ObjectPropertyDomain(hasBankAccount ObjectUnionOf(Person Corporation))</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Quantifiers</b></h4>
+						<ul style="font-size:30px">
+							<li>In general, existential quantifiers occur far more frequently than universal quantifiers</li>
+							<li>"Birds have wings" should be translated to Bird $\sqsubseteq$ $\exists$hasWing.Wing rather than Bird $\sqsubseteq$ $\forall$hasWing.Wing</li>
+							<li>Bird $\sqsubseteq$ $\forall$hasWing.Wing conveys that birds have only wings (if they have anything at all) and nothing else</li>
+							<li>Keywords for universal quantifier: only, exclusively, nothing but</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Parts as Subclasses</b></h4>
+						<ul style="font-size:30px">
+							<li>Part of relationship should not be modelled as subclasses</li>
+							<ul>
+								<li>Finger $\sqsubseteq$ Hand</li>
+								<li>Hand $\sqsubseteq$ Arm</li>
+								<li>ClassAssertion(Finger johnsRightThumb)</li>
+								<li>Conclusion: ClassAssertion(Arm johnsRightThumb)</li>
+							</ul>
+							<li>Use partOf instead</li>
+							<ul>
+								<li>Finger $\sqsubseteq$ $\exists$partOf.Hand</li>
+								<li>Hand $\sqsubseteq$ $\exists$partOf.Arm</li>
+							</ul>
+							<li>A can be modelled as a subclass of B only if the statement "every A is a B" makes sense and is correct</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Direction of properties</b></h4>
+						<ul style="font-size:30px">
+							<li>Property names could lead to confusion in the direction</li>
+							<ul>
+								<li>macbeth author shakespeare</li>
+							</ul>
+							<li>For nouns, use "of" or "has" (authorOf or hasAuthor)</li>
+							<li>For verbs like "to write" use wrote or writes or writtenBy</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Subclass vs Equivalence</b></h4>
+						<ul style="font-size:30px">
+							<li>There could be a confusion as to whether two classes should have subclass or equivalence relation</li>
+							<li>If "every A is a B" and "every B is a A" then it is an equivalence between A and B</li>
+							<ul>
+								<li>Fish is an aquatic animal (subclass)</li>
+								<li>Person $\equiv$ Human</li>
+								<li>EquivalentClasses(Mother ObjectIntersectionOf(Woman Parent))</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Natural language to axiom translation</b></h4>
+						<ul style="font-size:30px">
+							<li>"and" does not always correspond to class intersection</li>
+							<ul>
+								<li>University staff members and students will get a login</li>
+								<li>UniStaffMember $\sqcup$ Student $\sqsubseteq$ $\exists$gets.Login (intended axiom)</li>
+								<li>UniStaffMember $\sqcap$ Student $\sqsubseteq$ $\exists$gets.Login (not intended axiom)</li>
+								<li>Somebody will get a login, if he/she is a university staff member or a student</li>
+							</ul>
+						</ul>
+					</section>
+					
+				</section>
+				
+				<section>
 					<h3>References</h3>
 					<br/>
 					<ol style="font-size:30px">

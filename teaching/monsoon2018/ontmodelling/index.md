@@ -27,6 +27,7 @@ Knowledge Graphs (semantic descriptions of entities and their relationships) are
   * <a href="ontology-reasoning.html" target="_blank">Ontology Reasoning</a>     
   * <a href="odps.html" target="_blank">Ontology Design Patterns</a>    
   * <a href="ont-quality.html" target="_blank">Ontology Quality Assessment</a>       
+  * <a href="research-problems.html" target="_blank">Research Problems in Ontology Modelling and Reasoning</a>       
 
   
 ### Files    
