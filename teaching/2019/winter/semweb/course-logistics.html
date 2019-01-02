@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Course Logistics</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+				
+				<section>
+					<h2>Semantic Web</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h2>Instructor Details</h2>
+					<br/>
+					Name: Raghava Mutharaju
+					<br/>
+					Email: raghava.mutharaju@iiitd.ac.in
+					<br/>
+					Office: B-511 (Research & Development Block)
+					<br/>
+					Office Hours: send an email to setup an appointment 
+				</section>
+				
+				<section>
+					<h2>TA Details</h2>
+					<br/>
+					Nihit Jain (nihit18077@iiitd.ac.in)
+					<br/>
+					Aayush Jain (aayush18122@iiitd.ac.in)
+					<br/>
+					Office Hours: 2:30pm to 3:30pm 
+					<br/>
+					Office Location: Library ground floor 
+				</section>
+				
+					
+				<section>
+					<h2>Grade distribution</h2>
+					<br/>
+					<ol>
+						<li>Quiz: 2*10 = 20%	
+						<li>Mid sem: 20%</li>
+						<li>In-class activity: 2*5 = 10%</li>
+						<li>Project = 25%</li>
+						<li>End sem: 25%</li>
+					</ol>
+				</section>
+					
+				<section>
+					<h2>References</h2>
+					<br/>
+					<ul style="font-size:28px">
+						<li>Textbook: <a href="http://www.semantic-web-book.org/" target="_blank">Foundations of Semantic Web Technologies</a>. Pascal Hitzler et. al. CRC Press.</li>
+						<li>Reference book: Linked Data: Storing, Querying, and Reasoning. Sherif Sakr, Marcin Wylot, Raghava Mutharaju, Danh Le Phuoc, Irini Fundulaki. Springer</li>
+						<li>Reference book: Knowledge Representation and Reasoning. Ronald Brachman, Hector Levesque. Morgan Kaufmann</li>
+						<li>Reference book: Artificial Intelligence. Stuart Russell, Peter Norvig. Pearson
+</li>
+					</ul>
+				</section>					
+				
+			</div>
+			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../../../plugin/markdown/marked.js' },
+					{ src: '../../../../../plugin/markdown/markdown.js' },
+					{ src: '../../../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

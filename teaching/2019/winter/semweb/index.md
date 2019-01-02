@@ -11,13 +11,15 @@ Knowledge Representation and Reasoning (KRR) is a field of AI that deals with ca
 
   * Course name: Semantic Web
   * Course code: CSE632
-  * Class hours: Tuesday, 11:30am to 1:00pm and Thursday, 10:00am to 11:30am        
+  * Class hours 
+     * Tuesday, 11:30am to 1:00pm    
+	 * Thursday, 10:00am to 11:30am            
   * Class location: C12, Old Academic Building   
   * Teaching Assistants 
      * Nihit Jain (nihit18077@iiitd.ac.in)    
 	 * Aayush Jain (aayush18122@iiitd.ac.in)    
   * Office hours 
-     * TA:    
+     * TA: Wednesday, 2:30pm to 3:30pm at Library ground floor      
 	 * Instructor: send an email (raghava.mutharaju@iiitd.ac.in) for appointment   
   * Google Classroom:         
   
