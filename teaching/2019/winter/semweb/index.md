@@ -26,6 +26,6 @@ Knowledge Representation and Reasoning (KRR) is a field of AI that deals with ca
 
 ### Slides
 
-  * <a href="course-logistics.html" target="_blank">Course Logistics</a>        
-  * <a href="ai-krr-semweb.html" target="_blank">AI, KRR, and the Semantic Web</a>   
+  * <a href="course-logistics.html" target="_blank">Course Logistics</a> <a href="course-logistics.html?print-pdf" target="_blank">pdf version</a>        
+  * <a href="ai-krr-semweb.html" target="_blank">AI, KRR, and the Semantic Web</a> <a href="ai-krr-semweb.html?print-pdf" target="_blank">pdf version</a>     
        
