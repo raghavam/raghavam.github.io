@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>AI, KRR, and the Semantic Web</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+				
+				<section>
+					<h2>AI, KRR, and the Semantic Web</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+				
+				<section>
+					<h3>Artificial Intelligence</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>It is the study of the general principles of building intelligent agents.</li>
+							<li>An agent is any device that can perceive its environment through sensors and react to it by taking action to achieve a stated goal.</li>
+							<li>Mimicking human senses, i.e., sight, sound, touch, smell, taste, is a form of perception.</li>
+							<li>Intelligent agents should be able to interpret and process other forms of input such as text, semi-structured, and structured data.</li>
+							<li>Output of an intelligent agent could be in multiple forms such as movement (reaching a destination), decision taken, sound etc.</li>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Several applications of AI that have not only improved our day-to-day lives but help in saving lives</li>
+							<ul>
+								<li>Google Maps</li>
+								<li>Web Search</li>
+								<li>Intelligent Assistants (Siri, Cortana etc.)</li>
+								<li>Targeted advertising</li>
+								<li>Diagnosis of diseases</li>
+								<li>Autonomous vehicles</li>
+								<li>Playing games (Jeopardy, Chess, Go etc.)</li>
+								<li>Robots</li>
+							</ul>	
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Subfields of AI</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Planning</li>
+							<li>Natural Language Processing</li>
+							<li>Learning (Machine Learning)</li>
+							<li>Computer Vision</li>
+							<li>Robotics</li>
+							<li>Knowledge Representation and Reasoning</li>
+							<li>Artificial Neural Networks</li>
+						</ul>	
+					</section>
+				</section>
+				
+				<section>
+					<h3>Knowledge Representation and Reasoning (KRR)</h3>
+					<section>
+						<ul style="font-size:28px">
+							<li>Techniques to capture knowledge about the world in a form that machines can understand</li>
+							<ul>
+								<li>A Car is a type of Vehicle</li>
+								<li>Car has exactly four wheels</li>
+								<li>Car has at least two doors and at most four doors</li>
+							</ul>
+							<li>Reasoning is the process of deriving new facts (knowledge) based on existing facts</li>
+							<ul>
+								<li>All birds fly</li>
+								<li>Pigeon is a bird</li>
+								<li>Can Pigeon fly?</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<br/>
+						<h4><b>KRR Formalisms</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Different mechanisms to capture knowledge and reason over it</li>
+							<ul>
+								<li>Frames</li>
+								<li>Semantic Nets</li>
+								<li>Logic</li>
+								<ul>
+									<li>First Order Logic</li>
+									<li>Description Logics</li>
+									<li>Ontologies</li>
+									<li>Resource Description Framework (RDF)</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Semantic Web</h3>
+					<ul style="font-size:30px">
+						<li>It is a vision to provide structure to the Web and to the data in general</li>
+						<li>Move from web of documents to web of data (Linked Data)</li>
+						<li>Semantic Web technologies and W3C standards</li>
+						<ul>
+							<li>RDF (Resource Description Framework)</li>
+							<li>OWL (Web Ontology Language)</li>
+							<li>SHACL (Shapes Constraint Language)</li>
+						</ul>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Knowledge Graphs</h3>
+					<section>
+						<figure>
+							<img src="figures/knowledge-graph.jpg" alt="Knowledge Graph" height="400" width="700">
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/S2F3mH" target="_blank">https://goo.gl/S2F3mH</a></figcaption>
+						</figure>
+					</section>
+						
+					<section>
+						<ul style="font-size:30px">
+							<li>There is no standard definition of Knowledge Graphs</li>
+							<li>It is a directed labelled graph that represents knowledge</li>
+							<ul>
+								<li>"Things" not strings. Things should have semantics.</li>
+								<li>Eg: What does it mean to be a "Person", "Organization", etc.</li>
+								<li>Things are entities that have properties and are connected by relationships</li>
+							</ul>
+							<li>Optionally, provenance information should be enconded in the Knowledge Graphs</li>
+						</ul>
+					</section>
+				</section>
+					
+				<section>
+					<h2>References</h2>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Textbook: <a href="http://www.semantic-web-book.org/" target="_blank">Foundations of Semantic Web Technologies</a>. Pascal Hitzler et. al. CRC Press.</li>
+						<li>Reference book: Knowledge Representation and Reasoning. Ronald Brachman, Hector Levesque. Morgan Kaufmann</li>
+						<li>Reference book: Artificial Intelligence. Stuart Russell, Peter Norvig. Pearson
+</li>
+					</ul>
+				</section>					
+				
+			</div>
+			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../../../plugin/markdown/marked.js' },
+					{ src: '../../../../../plugin/markdown/markdown.js' },
+					{ src: '../../../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
