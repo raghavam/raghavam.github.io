@@ -85,7 +85,7 @@
 							<li>Learning (Machine Learning)</li>
 							<li>Computer Vision</li>
 							<li>Robotics</li>
-							<li>Knowledge Representation and Reasoning</li>
+							<li><em style="color:red">Knowledge Representation and Reasoning</em></li>
 							<li>Artificial Neural Networks</li>
 						</ul>	
 					</section>
@@ -94,19 +94,20 @@
 				<section>
 					<h3>Knowledge Representation and Reasoning (KRR)</h3>
 					<section>
-						<ul style="font-size:28px">
+						<ul style="font-size:26px">
 							<li>Techniques to capture knowledge about the world in a form that machines can understand</li>
-							<ul>
+							<ul style="font-size:24px">
 								<li>A Car is a type of Vehicle</li>
 								<li>Car has exactly four wheels</li>
 								<li>Car has at least two doors and at most four doors</li>
 							</ul>
 							<li>Reasoning is the process of deriving new facts (knowledge) based on existing facts</li>
-							<ul>
+							<ul style="font-size:24px">
 								<li>All birds fly</li>
 								<li>Pigeon is a bird</li>
 								<li>Can Pigeon fly?</li>
 							</ul>
+							<li>KRR is the field of AI that helps an agent to use what it knows (background knowledge) to decide what to do</li>
 						</ul>
 					</section>
 					
@@ -133,21 +134,80 @@
 				
 				<section>
 					<h3>Semantic Web</h3>
-					<ul style="font-size:30px">
-						<li>It is a vision to provide structure to the Web and to the data in general</li>
-						<li>Move from web of documents to web of data (Linked Data)</li>
-						<li>Semantic Web technologies and W3C standards</li>
-						<ul>
-							<li>RDF (Resource Description Framework)</li>
-							<li>OWL (Web Ontology Language)</li>
-							<li>SHACL (Shapes Constraint Language)</li>
+					<section>
+						<h4><b>Three Themes</b></h4>
+						<br/>
+						<ol style="font-size:30px">
+							<li>Building Models</li>
+							<ul>
+								<li>Describe the world in abstract terms to simplify its understanding</li>
+							</ul>
+							<li>Computing with Knowledge</li>
+							<ul>
+								<li>Machines that can do logical deduction/inference from encoded knowledge in order to draw meaningful conclusions</li>
+							</ul>
+							<li>Exchanging Information</li>
+							<ul>
+								<li>Transimission of complex information between machines that allows distribution, interlinking, and reconciliation of knowledge</li>
+								<li>RSS - some versions of RSS use RDF</li>
+						</ol>
+					</section>
+					
+					<section>
+						<h4><b>Enabling Technologies</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Purpose is to provide structure to the Web and to the data in general</li>
+							<li>Move from web of documents to web of data (Linked Data)</li>
+							<li>Semantic Web technologies and W3C standards</li>
+							<ul>
+								<li>RDF (Resource Description Framework)</li>
+								<li>OWL (Web Ontology Language)</li>
+								<li>SPARQL (query language)</li>
+								<li>SHACL (Shapes Constraint Language)</li>
+							</ul>
 						</ul>
-					</ul>
+					</section>
+					
+					<section>
+						<h4><b>Linked Data</b></h4>
+						<br/>
+						<a href="https://lod-cloud.net/" target="_blank"><u>https://lod-cloud.net/</u></a>
+					</section>
+				
+					<section>
+						<h4><b>Structured Data (RDF) Demo</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+						<li><a href="https://support.google.com/webmasters/answer/3069489?topic=3070267" target="_blank"><u>Google Structured Data Markup Helper</u></a></li>
+						<br/>
+						<li><a href="http://rdf-translator.appspot.com/" target="_blank"><u>RDF Translator</u></a></li>
+						</ul>
+					</section>
 				</section>
 				
 				<section>
-					<h3>Knowledge Graphs</h3>
+					<h4><b>RDF Graph, Property Graph, Knowledge Graph</b></h4>
 					<section>
+						<h4><b>RDF Graph</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Triples that describe any resource</li>
+							<li>&lt;Delhi&gt; &lt;capitalOf&gt; &lt;India&gt;</li>
+							<li>Triples are directed labelled graphs</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Property Graph</b></h4>
+						<figure>
+							<img src="figures/property-graph.jpg" alt="Property Graph" height="350" width="650">
+							<figcaption style="font-size:13px">Image source: <a href="https://neo4j.com/developer/graph-database/" target="_blank">https://neo4j.com/developer/graph-database/</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<h4><b>Knowledge Graph</b></h4>
 						<figure>
 							<img src="figures/knowledge-graph.jpg" alt="Knowledge Graph" height="400" width="700">
 							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/S2F3mH" target="_blank">https://goo.gl/S2F3mH</a></figcaption>
@@ -155,16 +215,42 @@
 					</section>
 						
 					<section>
+						<h4><b>Knowledge Graph</b></h4>
+						<br/>
 						<ul style="font-size:30px">
 							<li>There is no standard definition of Knowledge Graphs</li>
-							<li>It is a directed labelled graph that represents knowledge</li>
+							<li>It is a graph that captures knowledge in the form of entities, relationships between them, properties, and additional information including provenance</li>
 							<ul>
 								<li>"Things" not strings. Things should have semantics.</li>
 								<li>Eg: What does it mean to be a "Person", "Organization", etc.</li>
 								<li>Things are entities that have properties and are connected by relationships</li>
 							</ul>
-							<li>Optionally, provenance information should be enconded in the Knowledge Graphs</li>
 						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Applications</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Knowledge Graphs are used in several domains and by several commercial enterprises</li>
+							<ul>
+								<li>Healthcare</li>
+								<li>Geoscience</li>
+								<li>Industrial domains such as manufacturing, power, oil and gas</li>
+								<li>Web Search</li>
+								<li>Recommender systems</li>
+								<li>Conversational agents (chatbots, QA systems)</li>
+								<li>Google, Microsoft, Amazon, Ebay, LinkedIn, GE, Accenture etc.</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Gartner's Hype Cycle</b></h4>
+						<figure>
+							<img src="figures/Gartner-KG-Hype-Cycle-2018.jpg" alt="Gartner's Hype Cycle of Emerging Technologies, 2018" height="450" width="700">
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/LDGrwP" target="_blank">https://goo.gl/LDGrwP</a></figcaption>
+						</figure>
 					</section>
 				</section>
 					
@@ -173,9 +259,9 @@
 					<br/>
 					<ul style="font-size:30px">
 						<li>Textbook: <a href="http://www.semantic-web-book.org/" target="_blank">Foundations of Semantic Web Technologies</a>. Pascal Hitzler et. al. CRC Press.</li>
-						<li>Reference book: Knowledge Representation and Reasoning. Ronald Brachman, Hector Levesque. Morgan Kaufmann</li>
 						<li>Reference book: Artificial Intelligence. Stuart Russell, Peter Norvig. Pearson
 </li>
+						<li>Reference book: Knowledge Representation and Reasoning. Ronald Brachman, Hector Levesque. Morgan Kaufmann</li>
 					</ul>
 				</section>					
 				

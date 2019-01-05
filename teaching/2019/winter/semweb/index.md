@@ -21,7 +21,7 @@ Knowledge Representation and Reasoning (KRR) is a field of AI that deals with ca
   * Office hours 
      * TA: Wednesday, 2:30pm to 3:30pm at Library ground floor      
 	 * Instructor: send an email (raghava.mutharaju@iiitd.ac.in) for appointment   
-  * Google Classroom:         
+  * Google Classroom code: v4usc6           
   
 
 ### Slides
