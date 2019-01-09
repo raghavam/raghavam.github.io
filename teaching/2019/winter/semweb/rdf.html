@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>RDF</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+				
+				<section>
+					<h2>RDF</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+				
+				<section>
+					<h3>Introduction</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Resource Description Framework (RDF) is a data model that is used to describe resources</li>
+							<ul>
+								<li>Physical things</li>
+								<li>Abstract concepts</li>
+								<li>Numbers and strings</li>
+							</ul>
+							<li>We use the term resource and entity synonymously here</li>
+							<li>It is a universal, machine readable data exchange format</li>
+							<li>Resources are described using triples (subject, predicate, object)</li>
+							<li>A triple captures the relationship (predicate) between a subject and an object
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>&lt;Delhi&gt; &lt;capitalOf&gt; &lt;India&gt;</li>
+							<li>RDF triple is called a RDF Statement</li>
+							<li>Triple can be represented as a directed labelled graph</li>
+						</ul>
+						<figure>
+							<img src="figures/rdf-graph.svg" alt="RDF Graph" height="200" width="400">
+							<figcaption style="font-size:13px">Image source: <a href="https://www.w3.org/TR/rdf11-concepts/rdf-graph.svg" target="_blank">https://www.w3.org/TR/rdf11-concepts/rdf-graph.svg</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<figure>
+							<img src="figures/rdf-graph-sample.gif" alt="Sample RDF Graph" height="400" width="600">
+							<figcaption style="font-size:13px">Image source: <a href="http://www.obitko.com/tutorials/ontologies-semantic-web/rdf-graph-and-syntax.html" target="_blank">http://www.obitko.com/tutorials/ontologies-semantic-web/rdf-graph-and-syntax.html</a></figcaption>
+						</figure>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Identifiers</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>URL (Uniform Resource Locator)</li> 
+							<ul>
+								<li>It is a mechanism to specify and locate a web resource on a computer network.</li>
+								<li>Eg: http://, ftp://</li>
+							</ul>
+							<li>URN (Uniform Resource Name)</li> 
+							<ul>
+								<li>They are persistent location independent identifiers that use the urn scheme.</li>
+								<li>Eg: ISBN of a book is a URN used to identify a book uniquely</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:28px">
+							<li>URI (Uniform Resource Identifier) </li>
+							<ul>
+								<li>It is an identifier that can uniquely and unambiguously identify resources</li>
+								<li>ASCII encoding is used in the identifiers</li>
+								<li>URL and URN are type of URIs. URIs and URNs need not be resolvable to a location, which is the case with URL</li>
+								<li>Eg: http://www.w3.org/2002/07/owl#</li>
+							</ul>
+							<li>IRI (International Resource Identifier) </li>
+							<ul>
+								<li>IRI is similar to URI except that the character set for encoding the identifier is <em>Universal Character Set (UTF-8)</em></li>
+								<li>Eg: &eacute;, &ouml; could be used in IRI</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Subject, Predicate, and Object in a triple are identified by IRIs</li>
+							<ul>
+								<li>http://www.example.org/~joe/contact.rdf#joesmith</li>
+								<li>http://xmlns.com/foaf/0.1/homepage</li>
+								<li>http://www.example/org/~joe</li>
+							</ul>
+						</ul>
+					</section>
+				</section>	
+
+				<section>
+					<h3>Namespace</h3>
+					<br/>
+					<ul style="font-size:28px">
+						<li>It is a logical grouping of unique identifiers</li>
+						<ul>
+							<li>Packages in Java (java.util.concurrent, org.w3c.dom)</li>
+							<li>Namespace in C++ (std)</li>
+							<li>XML namespace: xmlns="http://www.w3.org/1999/xhtml"</li>
+							<li>RDF namespace: rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"</li>
+							<li>RDFS namespace: rdfs="http://www.w3.org/2000/01/rdf-schema#"</li>
+							<li>XSD namespace: xsd="http://www.w3.org/2001/XMLSchema#"</li>
+						</ul>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Literals</h3>
+					<br/>
+					<ul style="font-size:28px">
+						<li>Objects in a triple can be literals</li>
+						<li>Literals are constants. They can be values of strings, numbers, and dates</li>
+						<li>Literal consists of the following parts</li>
+						<ul>
+							<li>a lexical form, which is a unicode string</li>
+							<li>a datatype IRI</li>
+							<li>a language tag (only for string datatype)</li>
+						</ul>
+						<li>"That Seventies Show"^^xsd:string</li>
+						<li>"That Seventies Show"@en</li>
+						<li>"1"^^xs:integer</li>
+					</ul>
+				</section>		
+				
+				<section>
+					<h3>RDF Serialization Formats</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>There are different serialization formats for writing RDF graphs</li>
+						<li>They are all logically equivalent and lead to same triples</li>
+						<ul>
+							<li>Turtle family of RDF serialization formats</li>
+							<ul>
+								<li>N-Triples</li>
+								<li>Turtle</li>
+								<li>TriG</li>
+								<li>N-Quads</li>
+							</ul>
+							<li>JSON-LD</li>
+							<li>RDFa</li>
+							<li>RDF/XML</li>
+						</ul>
+					</ul>	
+				</section>
+					
+				<section>
+					<h2>References</h2>
+					<br/>
+					<ul style="font-size:30px">
+						<li><a href="http://www.semantic-web-book.org/" target="_blank">Foundations of Semantic Web Technologies</a>. Pascal Hitzler et. al. CRC Press.</li>
+						<li><a href="https://www.w3.org/TR/rdf11-primer/" target="_blank">RDF 1.1 Primer</a></li>
+					</ul>
+				</section>					
+				
+			</div>
+			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../../../plugin/markdown/marked.js' },
+					{ src: '../../../../../plugin/markdown/markdown.js' },
+					{ src: '../../../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
