@@ -127,6 +127,7 @@
 								<li>http://xmlns.com/foaf/0.1/homepage</li>
 								<li>http://www.example/org/~joe</li>
 							</ul>
+							<li>Literals and blank nodes do not have IRIs</li>
 						</ul>
 					</section>
 				</section>	
@@ -161,29 +162,202 @@
 						</ul>
 						<li>"That Seventies Show"^^xsd:string</li>
 						<li>"That Seventies Show"@en</li>
+						<li>"La Joconde"@fr</li>
 						<li>"1"^^xs:integer</li>
 					</ul>
 				</section>		
 				
 				<section>
-					<h3>RDF Serialization Formats</h3>
-					<br/>
-					<ul style="font-size:30px">
-						<li>There are different serialization formats for writing RDF graphs</li>
-						<li>They are all logically equivalent and lead to same triples</li>
-						<ul>
-							<li>Turtle family of RDF serialization formats</li>
-							<ul>
-								<li>N-Triples</li>
-								<li>Turtle</li>
-								<li>TriG</li>
-								<li>N-Quads</li>
-							</ul>
-							<li>JSON-LD</li>
-							<li>RDFa</li>
-							<li>RDF/XML</li>
+					<h3>Blank Nodes</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>A blank node does not have a name associated with it</li>
+							<li>It is similar to anonymous classes in Java, C++</li>
+							<li>It indicates the existence of something but we will not be using or saying anything about the name of that thing</li>
 						</ul>
-					</ul>	
+					</section>
+					
+					<section>
+						<figure>
+							<img src="figures/bnode-example.png" alt="RDF Graph with Blank Nodes" height="400" width="600">
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/u7P6wU" target="_blank">https://goo.gl/u7P6wU</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>It does not have an IRI</li>
+							<ul>
+								<li>Blank node identifiers have only local scope</li>
+								<li>No global identity unlike other nodes with IRIs</li>
+							</ul>
+							<li>It is not a literal</li>
+							<li>It can be used as a subject or object</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Multiple Graphs</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>RDF statements can be grouped into multiple graphs</li>
+							<li>Each graph can have a name associated with it (named graphs), which is an IRI</li>
+							<li>An RDF dataset is a collection of graphs</li>
+							<ul>
+								<li>Exactly one default (unnamed) graph that may be empty</li>
+								<li>Zero or more named graphs</li>
+								<li>Graph names are unique within a RDF dataset</li>
+								<li>Blank nodes can be shared by graphs in a RDF dataset</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<ol style="font-size:30px">
+							<li>Graph name (IRI): http://example.org/bob</li>
+							<ul>
+								<li>&lt;Bob&gt; &lt;is a&gt; &lt;person&gt;. </li>
+								<li>&lt;Bob&gt; &lt;is a friend of&gt; &lt;Alice&gt;.</li>
+								<li>&lt;Bob&gt; &lt;is born on&gt; &lt;the 4th of July 1990&gt;.</li>
+								<li>&lt;Bob&gt; &lt;is interested in&gt; &lt;the Mona Lisa&gt;.</li>
+							</ul>
+							<li>Graph name (IRI): https://www.wikidata.org/wiki/Special:EntityData/Q12418</li>
+							<ul>
+								<li>&lt;Leonardo da Vinci&gt; &lt;is the creator of&gt; &lt;the Mona Lisa&gt;.</li>
+								<li>&lt;The video 'La Joconde à Washington'&gt; &lt;is about&gt; &lt;the Mona Lisa&gt;</li>
+							</ul>
+						</ol>
+					</section>
+				</section>
+				
+				<section>
+					<h3>RDF Serialization Formats</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>There are different serialization formats for writing RDF graphs</li>
+							<li>They are all logically equivalent and lead to same triples</li>
+							<ul>
+								<li>Turtle family of RDF serialization formats</li>
+								<ul>
+									<li>N-Triples</li>
+									<li>Turtle</li>
+									<li>TriG</li>
+									<li>N-Quads</li>
+								</ul>
+								<li>JSON-LD</li>
+								<li>RDFa</li>
+								<li>RDF/XML</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<figure>
+							<img src="figures/rdf-serialization-formats.png" alt="RDF Serialization Formats" height="350" width="550">
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/AsV5vR" target="_blank">https://goo.gl/AsV5vR</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<h4><b>N-Triples</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>It is a line based, plain text format to encode a RDF graph</li>
+							<li>It is a sequence of subject, predicate, and object separated by whitespace and terminated by dot</li>
+							<li>IRIs are written as absolute IRIs (not shortcuts) and are enclosed in angular brackets</li>
+							<li>Literals are written in double quotes followed by datatype or language tag</li>
+							<li>Datatype IRI is preceded by "^^"</li>
+							<li>Language tag is preceded by "@"</li>
+							<li>Blank nodes are expressed as _: followed by blank node label</li>
+							<ul>
+								<li>_:alice &lt;http://xmlns.com/foaf/0.1/knows&gt; _:bob .</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<figure>
+							<img src="figures/example-graph-iris.jpg" alt="Sample RDF Graph" height="500" width="700">
+							<figcaption style="font-size:13px">Image source: <a href="https://www.w3.org/TR/rdf11-primer/example-graph-iris.jpg" target="_blank">https://www.w3.org/TR/rdf11-primer/example-graph-iris.jpg</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<h4><b>N-Triples</b></h4>
+						<ol style="font-size:26px">
+							<li>&lt;http://example.org/bob#me&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://xmlns.com/foaf/0.1/Person&gt; .</li>
+    <li>&lt;http://example.org/bob#me&gt; &lt;http://xmlns.com/foaf/0.1/knows&gt; &lt;http://example.org/alice#me&gt; .</li>
+    <li>&lt;http://example.org/bob#me&gt; &lt;http://schema.org/birthDate&gt; "1990-07-04"^^&lt;http://www.w3.org/2001/XMLSchema#date&gt; .</li>
+    <li>&lt;http://example.org/bob#me&gt; &lt;http://xmlns.com/foaf/0.1/topic_interest&gt; &lt;http://www.wikidata.org/entity/Q12418&gt; .</li>
+    <li>&lt;http://www.wikidata.org/entity/Q12418&gt; &lt;http://purl.org/dc/terms/title&gt; "Mona Lisa" .</li>
+    <li>&lt;http://www.wikidata.org/entity/Q12418&gt; &lt;http://purl.org/dc/terms/creator&gt; &lt;http://dbpedia.org/resource/Leonardo_da_Vinci&gt; .</li>
+    <li>&lt;http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619&gt; &lt;http://purl.org/dc/terms/subject&gt; &lt;http://www.wikidata.org/entity/Q12418&gt; .</li>
+						</ol>
+					</section>
+					
+					<section>
+						<h4><b>Turtle</b></h4>
+							<br/>
+							<ul style="font-size:28px">
+								<li>Turtle is the Terse RDF Triple Language</li>
+								<li>It is an extension of N-Triples with syntactic shortcuts</li>
+								<ul>
+									<li>Namespace prefix</li>
+									<li>Predicate list and Object list</li>
+									<li>Datatyped literals</li>
+								</ul>
+							</ul>
+					</section>
+					
+					<section>
+						<h4><b>Turtle</b></h4>
+						<br/>
+						<pre><code>BASE   &lt;http://example.org/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+PREFIX schema: &lt;http://schema.org/&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX wd: &lt;http://www.wikidata.org/entity/&gt;
+						</code></pre>	
+					</section>
+					
+					<section>
+						<h4><b>Turtle</b></h4>
+						<br/>
+						<pre><code>&lt;bob#me&gt;
+	a foaf:Person ;
+	foaf:knows &lt;alice#me&gt; ;
+	schema:birthDate "1990-07-04"^^xsd:date ;
+	foaf:topic_interest wd:Q12418 .
+						</code></pre>	
+					</section>
+					
+				</section>
+				
+				
+				<section>
+					<h3>Revisiting Blank Nodes</h3>
+					<section>
+						<h4><b>Uses</b></h4>
+						<ul style="font-size:30px">
+							<li>describe multi-component structures (RDF containers like sequence, bag)</li>
+							<li></li>
+							<li></li>
+						</ul>
+					</section>
+				</section>
+					
+				<section>
+					<ul style="font-size:30px">
+						<li>Explain IRIs and the different parts of it. Then give examples of literals and non-literals</li>
+						<li>Each of the serialization formats</li>
+						<li>Why are blank nodes considered bad?</li>
+						<li>Reification</li>
+						<li>Difference between RDF and RDFS with examples</li>
+						<li>Entailment rules</li>
+						<li>RDF Editor</li>
+					</ul>
 				</section>
 					
 				<section>
