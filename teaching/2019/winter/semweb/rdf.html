@@ -304,8 +304,8 @@
 								<li>It is an extension of N-Triples with syntactic shortcuts</li>
 								<ul>
 									<li>Namespace prefix</li>
-									<li>Predicate list and Object list</li>
-									<li>Datatyped literals</li>
+									<li>Predicate lists</li>
+									<li>Object lists</li>
 								</ul>
 							</ul>
 					</section>
@@ -325,6 +325,11 @@ PREFIX wd: &lt;http://www.wikidata.org/entity/&gt;
 					<section>
 						<h4><b>Turtle</b></h4>
 						<br/>
+						<ul style="font-size:26px">
+							<li><em>Predicate lists</em> are triples with the same subject but different predicates and objects</li>
+							<li>Semi colon is used as a separator</li>
+						</ul>
+						<br/>
 						<pre><code>&lt;bob#me&gt;
 	a foaf:Person ;
 	foaf:knows &lt;alice#me&gt; ;
@@ -333,30 +338,252 @@ PREFIX wd: &lt;http://www.wikidata.org/entity/&gt;
 						</code></pre>	
 					</section>
 					
+					<section>
+						<h4><b>Turtle</b></h4>
+						<br/>
+						<ul style="font-size:26px">
+							<li><em>Object lists</em> are triples with the same subject and predicate, but different object</li>
+							<li>Comma is used as a separator</li>
+						</ul>
+						<br/>
+						<pre><code>&lt;ex:spiderman&gt; foaf:name "Spiderman", "Человек-паук"@ru  .
+						</code></pre>	
+					</section>
+					
+					<section>
+						<h4><b>Turtle</b></h4>
+						<br/>
+						<ul style="font-size:26px">
+							<li>Two types of IRIs - relative and absolute</li>
+							<li>Absolute IRI</li>
+							<ul>
+								<li>&lt;http://one.example/subject1&gt;</li>
+							</ul>	
+							<li>Relative IRI</li>	
+						</ul>
+						<br/>
+						<pre><code>BASE &lt;http://one.example/&gt;
+&lt;subject1&gt; &lt;predicate1&gt; &lt;object1&gt; .
+						</code></pre>	
+						
+						<pre><code>PREFIX p: &lt;http://one.example/&gt;
+p:subject1 p:predicate1 p:object1&gt; .
+						</code></pre>						
+					</section>
+					
+					<section>
+						<h4><b>TriG</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Extension of Turtle that supports multiple graphs</li>
+						</ul>
+						<br/>
+						<pre><code>GRAPH &lt;http://example.org/bob&gt;
+{
+    &lt;bob#me&gt;
+	a foaf:Person ;
+        foaf:knows &lt;alice#me&gt; ;
+        schema:birthDate "1990-07-04"^^xsd:date ;
+        foaf:topic_interest wd:Q12418 .
+}
+						</code></pre>
+					</section>
+					
+					<section>
+						<h4><b>TriG</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Default graphs</li>
+						</ul>
+						<br/>
+						<pre><code>&lt;http://example.org/bob&gt;
+        dcterms:publisher &lt;http://example.org/crc&gt; ;
+        dcterms:rights &lt;http://creativecommons.org/licenses/by/3.0/&gt; .
+						</code></pre>
+					</section>
+					
+					<section>
+						<h4><b>TriG</b></h4>
+						<figure>
+							<img src="figures/example-multiple-graphs-iris.jpg" alt="TriG Named Graphs" height="420" width="500">
+							<figcaption style="font-size:13px">Image source: <a href="https://www.w3.org/TR/rdf11-primer/example-multiple-graphs-iris.jpg" target="_blank">https://www.w3.org/TR/rdf11-primer/example-multiple-graphs-iris.jpg</a></figcaption>
+						</figure>
+					</section>
+					
+					<section>
+						<h4><b>N-Quads</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Extends N-Triples with a fourth element to the line which is the graph IRI of the triple</li>
+						</ul>
+						<br/>
+						<pre><code>&lt;http://example.org/bob#me&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://xmlns.com/foaf/0.1/Person&gt; &lt;http://example.org/bob&gt; .
+&lt;http://example.org/bob#me&gt; &lt;http://xmlns.com/foaf/0.1/knows&gt; &lt;http://example.org/alice#me&gt; &lt;http://example.org/bob&gt; .
+						</code></pre>
+						<pre><code>&lt;http://example.org/bob&gt; &lt;http://purl.org/dc/terms/publisher&gt; &lt;http://example.org&gt; .
+&lt;http://example.org/bob&gt; &lt;http://purl.org/dc/terms/rights&gt; &lt;http://creativecommons.org/licenses/by/3.0/&gt; .
+						</code></pre>
+					</section>
+					
+					<section>
+						<h4><b>JSON-LD</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Provides JSON sytanx for RDF graphs</li>
+							<li>JSON-LD can be used to transform JSON to RDF</li>
+							<li>JSON objects are given universal identifiers in JSON-LD</li>
+							<ul>
+								<li>This helps in referring to objects in other JSON documents anywhere on the Web</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>JSON-LD</b></h4>
+						<br/>
+						<pre><code>{
+"@context": "example-context.json",
+"@id": "http://example.org/bob#me",
+"@type": "Person",
+"birthdate": "1990-07-04",
+"knows": "http://example.org/alice#me",
+"interest": {
+	"@id": "http://www.wikidata.org/entity/Q12418",
+	"title": "Mona Lisa",
+	"subject_of": "http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619",
+	"creator": "http://dbpedia.org/resource/Leonardo_da_Vinci"
+    }
+}
+						</code></pre>
+					</section>
+					
+					<section>
+						<h4><b>RDFa</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>It is used to embed RDF within HTML and XML documents</li>
+							<li>Search engines can make use of the structured data (schema.org, Rich Snippets) to enrich search results</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>RDFa</b></h4>
+						<pre><code>&lt;body prefix="foaf: http://xmlns.com/foaf/0.1/
+	schema: http://schema.org/
+	dcterms: http://purl.org/dc/terms/"&gt;
+&lt;div resource="http://example.org/bob#me" typeof="foaf:Person"&gt;
+	&lt;p&gt;
+		Bob knows &lt;a property="foaf:knows" href="http://example.org/alice#me">Alice&lt;/a&gt;
+        and was born on the &lt;time property="schema:birthDate" datatype="xsd:date">1990-07-04&lt;/time&gt;.
+    &lt;/p&gt;
+	&lt;p&gt;
+		Bob is interested in &lt;span property="foaf:topic_interest"
+        resource="http://www.wikidata.org/entity/Q12418"&gt;the Mona Lisa&lt;/span&gt;.
+      &lt;/p&gt;
+  <&lt;/div&gt;
+&lt;/body&gt;
+						</code></pre>
+					</section>
+					
+					<section>
+						<h4><b>RDF/XML</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Provides XML syntax for RDF graphs</li>
+							<li>There is good tool support for XML</li>
+							<li>This used to be the only syntax that was available to serialize RDF</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>RDF/XML</b></h4>
+						<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;rdf:RDF
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"&gt;
+	&lt;rdf:Description rdf:about="http://example.org/bob#me"&gt;
+		&lt;rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/&gt;
+		&lt;schema:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1990-07-04&lt;/schema:birthDate&gt;
+		&lt;foaf:knows rdf:resource="http://example.org/alice#me"/&gt;
+		&lt;foaf:topic_interest rdf:resource="http://www.wikidata.org/entity/Q12418"/&gt;
+	&lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+						</code></pre>
+					</section>
+					
 				</section>
 				
-				
 				<section>
-					<h3>Revisiting Blank Nodes</h3>
+					<h3>RDFS</h3>
 					<section>
-						<h4><b>Uses</b></h4>
-						<ul style="font-size:30px">
-							<li>describe multi-component structures (RDF containers like sequence, bag)</li>
-							<li></li>
-							<li></li>
+						<ul style="font-size:28px">
+							<li>RDFS is a semantic extension of RDF</li>
+							<li>It provides the vocabulary for the RDF data</li>
+							<li>It provides a mechanism to describe groups of related resources (classes) and the relationships between these resources (properties)</li>
+							<li>Classes</li>
+							<ul>
+								<li>Related resources can be categorized as a <em>class</em></li>
+								<li>A class is defined using <em>rdfs:Class</em></li>
+								<li>Members of the class are known as instances</li>
+								<li>Classes can be subclass of another class. This is defined using <em>rdfs:subClassOf</em></li>
+							</ul>
+							<li>A <em>Resource</em> is the class of everything, i.e., class of all classes</li>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:28px">
+							<li>Properties</li>
+							<ul>
+								<li>It is a relation between subject resources and object resources</li>
+								<li>A property/predicate is defined using <em>rdf:Property</em></li>
+								<li>Subproperties can be stated using <em>rdfs:subPropertyOf</em></li>
+								<ul>
+									<li>hasSon rdfs:subPropertyOf hasChild</li>
+								</ul>
+								<li>A property can have domain and range, which can be defined using <em>rdfs:domain</em> and <em>rdfs:range</em> respectively<li>
+								<ul>
+									<li>If multiple domains/ranges are defined then the domain/range of the property is the intersection of all the defined domains/ranges</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:28px">
+							<li>Other frequently used RDFS schema elements</li>
+							<ul>
+								<li>rdf:type</li>
+								<li>rdfs:Literal</li>
+								<li>rdfs:Datatype</li>
+								<li>rdfs:label</li>
+							</ul>
 						</ul>
 					</section>
 				</section>
+				
+				<section>
+					<h3>Reification</h3>
+					<br/>
+						<ul style="font-size:28px">
+							<li>Used to capture provenance information</li>
+							<li>Describe other RDF statements using statements</li>
+						</ul>
+						<br/>
+						<pre><code>exproducts:triple12345   rdf:type        rdf:Statement .
+exproducts:triple12345   rdf:subject     exproducts:item10245 . 
+exproducts:triple12345   rdf:predicate   exterms:weight . 
+exproducts:triple12345   rdf:object      "2.4"^^xsd:decimal .
+exproducts:triple12345   dc:creator      exstaff:85740 . 
+						</code></pre>
+				</section>
 					
 				<section>
+					<h3>Entailment Rules</h3>
 					<ul style="font-size:30px">
-						<li>Explain IRIs and the different parts of it. Then give examples of literals and non-literals</li>
-						<li>Each of the serialization formats</li>
-						<li>Why are blank nodes considered bad?</li>
-						<li>Reification</li>
-						<li>Difference between RDF and RDFS with examples</li>
-						<li>Entailment rules</li>
-						<li>RDF Editor</li>
+						<li></li>
 					</ul>
 				</section>
 					
