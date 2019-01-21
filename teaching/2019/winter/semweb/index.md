@@ -17,11 +17,14 @@ Knowledge Representation and Reasoning (KRR) is a field of AI that deals with ca
   * Class location: C21, Old Academic Building   
   * Teaching Assistants 
      * Nihit Jain (nihit18077@iiitd.ac.in)    
-	 * Aayush Jain (aayush18122@iiitd.ac.in)    
+	 * Aayush Jain (aayush18122@iiitd.ac.in)   
+     * Naresh Nunna (naresh17030@iiitd.ac.in)    
+     * Akash Gosain (akash18063@iiitd.ac.in)     	 
   * Office hours 
-     * TA: Wednesday, 2:30pm to 3:30pm at Library ground floor      
+     * TA: Wednesday, 2:30pm to 3:30pm at Library ground floor (send an email beforehand)    
+     * TA: Monday, 2:30pm to 3:30pm at Library ground floor (send an email beforehand)	   
 	 * Instructor: send an email (raghava.mutharaju@iiitd.ac.in) for appointment   
-  * Google Classroom code:            
+  * Backpack URL: https://www.usebackpack.com/iiitd/w2019/cse632            
   
 
 ### Slides
