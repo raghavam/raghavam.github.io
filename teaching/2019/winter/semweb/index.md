@@ -24,7 +24,7 @@ Knowledge Representation and Reasoning (KRR) is a field of AI that deals with ca
      * TA: Wednesday, 2:30pm to 3:30pm at Library ground floor (send an email beforehand)    
      * TA: Monday, 2:30pm to 3:30pm at Library ground floor (send an email beforehand)	   
 	 * Instructor: send an email (raghava.mutharaju@iiitd.ac.in) for appointment   
-  * Backpack URL: https://www.usebackpack.com/iiitd/w2019/cse632            
+  * Backpack URL: <a href="https://www.usebackpack.com/iiitd/w2019/cse632" target="_blank">https://www.usebackpack.com/iiitd/w2019/cse632</a>                 
   
 
 ### Slides
