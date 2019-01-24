@@ -552,15 +552,30 @@ p:subject1 p:predicate1 p:object1&gt; .
 					</section>
 					
 					<section>
-						<ul style="font-size:28px">
+						<ul style="font-size:30px">
 							<li>Other frequently used RDFS schema elements</li>
 							<ul>
 								<li>rdf:type</li>
 								<li>rdfs:Literal</li>
-								<li>rdfs:Datatype</li>
 								<li>rdfs:label</li>
+								<li>rdfs:comment</li>
 							</ul>
 						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Examples</b></h4>
+						<br/>
+						<ol style="font-size:30px">
+							<li>Person <em style="color:blue">rdf:type</em> <em style="color:green">rdfs:Class</em> .</li>
+							<li>Father <em style="color:blue">rdfs:subClassOf</em> Person .</li>
+							<li>hasAge <em style="color:blue">rdf:type</em> <em style="color:green">rdf:Property</em> .</li>
+							<li>hasSon <em style="color:blue">rdfs:subPropertyOf</em> hasChild .</li>
+							<li>hasAge <em style="color:blue">rdfs:domain</em> Person</li>
+							<li>hasAge <em style="color:blue">rdfs:range</em> <em style="color:green">rdfs:Literal</em> .</li>
+							<li>wd:Q12418 <em style="color:blue">rdfs:Label</em> "Mona Lisa" .</li>
+							<li>wd:Q12418 <em style="color:blue">rdfs:comment</em> "Wikidata ID for Mona Lisa" .</li>
+						</ol>
 					</section>
 				</section>
 				
@@ -586,6 +601,29 @@ exproducts:triple12345   dc:creator      exstaff:85740 .
 						<li></li>
 					</ul>
 				</section>
+				
+				<section>
+					<h3>Representing Knowleding using RDF</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Online RDF Editor: <a href="http://linkeddata.uriburner.com/rdf-editor/" target="_blank">http://linkeddata.uriburner.com/rdf-editor/</a></li>
+							<li>Online RDF Visualization: <a href="http://visgraph3.org/" target="_blank">http://visgraph3.org/</a></li>
+							<li>Domain: Delhi Public Transportation</li>
+							<ul>
+								<li>Road Transport (Bus, AutoRickshaw, Taxi, CycleRickshaw)</li>
+								<li>Rail Transport (Metro)</li>
+								<li>Air Transport</li>
+								<li>Properties: hasCapacity, hasLocation, hasSource, hasDestination</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Pick a domain of your choice and build an RDF graph</li>
+						</ul>
+					</section>
+				</section>
 					
 				<section>
 					<h2>References</h2>
@@ -593,6 +631,9 @@ exproducts:triple12345   dc:creator      exstaff:85740 .
 					<ul style="font-size:30px">
 						<li><a href="http://www.semantic-web-book.org/" target="_blank">Foundations of Semantic Web Technologies</a>. Pascal Hitzler et. al. CRC Press.</li>
 						<li><a href="https://www.w3.org/TR/rdf11-primer/" target="_blank">RDF 1.1 Primer</a></li>
+						<li><a href="https://www.w3.org/TR/rdf-schema/" target="_blank">RDF 1.1 Schema</a></li>
+						<li><a href="https://www.w3.org/TR/turtle/" target="_blank">RDF 1.1 Turtle</a></li>
+						<li><a href="https://www.w3.org/TR/rdf11-mt/" target="_blank">RDF 1.1 Semantics</a></li>
 					</ul>
 				</section>					
 				
