@@ -1,0 +1,59 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:schemaorg="http://schema.org/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:iiitd-sweb="http://www.iiitd.ac.in/course/sweb/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema#" > 
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/PublicTransportation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/hasDestinationLocation">
+    <rdfs:subPropertyOf rdf:resource="http://www.iiitd.ac.in/course/sweb/hasLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/Taxi">
+    <rdfs:subClassOf rdf:resource="http://www.iiitd.ac.in/course/sweb/RoadTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/hasSourceLocation">
+    <rdfs:subPropertyOf rdf:resource="http://www.iiitd.ac.in/course/sweb/hasLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/BlueLine">
+    <iiitd-sweb:hasDestinationLocation rdf:resource="http://www.iiitd.ac.in/course/sweb/noidaCityCenter"/>
+    <iiitd-sweb:hasSourceLocation rdf:resource="http://www.iiitd.ac.in/course/sweb/dwarka"/>
+    <iiitd-sweb:hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</iiitd-sweb:hasCapacity>
+    <rdf:type rdf:resource="http://www.iiitd.ac.in/course/sweb/Metro"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/Metro">
+    <rdfs:subClassOf rdf:resource="http://www.iiitd.ac.in/course/sweb/RailTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/AirTransport">
+    <rdfs:subClassOf rdf:resource="http://www.iiitd.ac.in/course/sweb/PublicTransportation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/RoadTransport">
+    <rdfs:subClassOf rdf:resource="http://www.iiitd.ac.in/course/sweb/PublicTransportation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/hasLocation">
+    <rdfs:range rdf:resource="http://schema.org/Place"/>
+    <rdfs:domain rdf:resource="http://www.iiitd.ac.in/course/sweb/PublicTransportation"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/noidaCityCenter">
+    <rdf:type rdf:resource="http://schema.org/Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/BusTransport">
+    <rdfs:subClassOf rdf:resource="http://www.iiitd.ac.in/course/sweb/RoadTransport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/hasCapacity">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/dwarka">
+    <rdf:type rdf:resource="http://schema.org/Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.iiitd.ac.in/course/sweb/RailTransport">
+    <rdfs:subClassOf rdf:resource="http://www.iiitd.ac.in/course/sweb/PublicTransportation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+</rdf:RDF>

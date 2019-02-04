@@ -1,0 +1,30 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>. 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>. 
+@prefix schemaorg: <http://schema.org/>. 
+@prefix xs: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix	iiitd-sweb: <http://www.iiitd.ac.in/course/sweb/>.
+
+iiitd-sweb:PublicTransportation a rdfs:Class . 
+iiitd-sweb:RoadTransport a rdfs:Class . 
+iiitd-sweb:RailTransport a rdfs:Class . 
+iiitd-sweb:AirTransport a rdfs:Class . 
+iiitd-sweb:hasCapacity a rdf:Property . 
+iiitd-sweb:hasLocation a rdf:Property . 
+iiitd-sweb:hasSourceLocation a rdf:Property . 
+iiitd-sweb:hasDestinationLocation a rdf:Property . 
+iiitd-sweb:BlueLine a iiitd-sweb:Metro . 
+iiitd-sweb:dwarka a schemaorg:Place . 
+iiitd-sweb:noidaCityCenter a schemaorg:Place . 
+iiitd-sweb:BlueLine iiitd-sweb:hasCapacity "150"^^xs:integer . 
+iiitd-sweb:BlueLine iiitd-sweb:hasSourceLocation iiitd-sweb:dwarka . 
+iiitd-sweb:BlueLine iiitd-sweb:hasDestinationLocation iiitd-sweb:noidaCityCenter . 
+iiitd-sweb:hasSourceLocation rdfs:subPropertyOf iiitd-sweb:hasLocation . 
+iiitd-sweb:hasDestinationLocation rdfs:subPropertyOf iiitd-sweb:hasLocation . 
+iiitd-sweb:hasLocation rdfs:domain iiitd-sweb:PublicTransportation . 
+iiitd-sweb:hasLocation rdfs:range schemaorg:Place . 
+iiitd-sweb:RoadTransport rdfs:subClassOf iiitd-sweb:PublicTransportation . 
+iiitd-sweb:RailTransport rdfs:subClassOf iiitd-sweb:PublicTransportation . 
+iiitd-sweb:AirTransport rdfs:subClassOf iiitd-sweb:PublicTransportation . 
+iiitd-sweb:BusTransport rdfs:subClassOf iiitd-sweb:RoadTransport . 
+iiitd-sweb:Taxi rdfs:subClassOf iiitd-sweb:RoadTransport . 
+iiitd-sweb:Metro rdfs:subClassOf iiitd-sweb:RailTransport . 

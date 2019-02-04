@@ -35,5 +35,10 @@ Knowledge Representation and Reasoning (KRR) is a field of AI that deals with ca
   * <a href="logic-notes-simpson-psu.pdf" target="_blank">Prof. Simpson's notes on Mathematical Logic</a>       
       * Raymond M. Smullyan. First-Order Logic. Dover Publications, New York, 1995.     
       * Uwe Schöning. Logic for Computer Scientists, Birkhäuser, 2008.    
-      * Mordechai Ben-Ari. Mathematical Logic for Computer Science, Springer, 1993.    	  
+      * Mordechai Ben-Ari. Mathematical Logic for Computer Science, Springer, 1993.    	 
+
+
+### Files
+
+  * Delhi Public Transport RDF file: <a href="files/delhi-public-transport-namespace.ttl" target="_blank">ttl</a> &nbsp;&nbsp; <a href="files/delhi-public-transport-namespace.rdf" target="_blank">RDF/XML</a> &nbsp;&nbsp; <a href="files/delhi-public-transport-namespace.svg" target="_blank">SVG graph</a>    	  
        
