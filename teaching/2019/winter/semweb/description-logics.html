@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Description Logics</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+				
+				<section>
+					<h2>Description Logics</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>				
+				
+				<section>
+					<h3>Introduction</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Description Logics are a family of knowledge representation languages</li>
+							<li>They provide the formal underpinnings for OWL (Web Ontology Language)</li>
+							<li>They are decidable fragments of First Order Logic (FOL)</li>
+							<ul>
+								<li>Decidability: Decision (yes/no) problem with a method to arrive at the decision (no matter how long it takes)</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Since DLs are logics, they have formal semantics</li>
+							<ul>
+								<li>Precise specification of meaning of the constructs</li>
+								<li>Logical deduction to infer additional facts based on explicitly stated facts</li>
+							</ul>
+							<li>The computation of inferences is called <em>reasoning</em></li>
+							<li>Differences between DLs and other modelling languages (UML, ER)</li>
+							<ul>
+								<li>Reasoning</li>
+								<li>Ability to represent complex relationships</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Basic Building Blocks</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>DLs are used to model entities and the relationships between them in a domain of interest</li>
+							<ul>
+								<li>RDF is also used for the same purpose except that DLs are more expressive</li>
+							</ul>
+							<li>There are three types of entities</li>
+							<ol>
+								<li>Individuals: same as constants (FOL), resources (RDF), instances</li>
+								<li>Concepts: sets of individuals or unary predicates (FOL)</li>
+								<li>Roles: binary relation between the individuals or binary predicates (FOL)</li>
+							</ol>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Naming Conventions</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Individuals: lower camelcase is used</li>
+							<ul>
+								<li>Eg: sebastianRudolph</li>
+							</ul>
+							<li>Concepts: camelcase is used</li>
+							<ul>
+								<li>Eg: Parent, ChildlessPerson</li>
+							</ul>
+							<li>Roles: lower camelcase is used</li>
+							<ul>
+								<li>Eg: hasDaughter</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>DL Syntax</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Person(mary)</li>
+							<ul>
+								<li>(RDF) :mary rdf:type :Person .</li>
+								<li>This is called <em>concept assertion</em></li>
+							</ul>
+							<li>hasWife(john,mary)</li>
+							<ul>
+								<li>(RDF) :john :hasWife :mary .</li>
+								<li>This is called <em>role assertion</em></li>
+							</ul>
+							<li>Concept assertions and role assertions together are called <em style="color:green">ABox axioms</em> (Assertional Knowledge)
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Woman $\sqsubseteq$ Person</li>
+							<ul>
+								<li>(RDF) :Woman rdfs:subClassOf :Person .</li>
+								<li>This is called concept inclusion</li>
+								<li>Woman is <em>subsumed</em> by Person</li>
+							</ul>
+							<li>Person $\equiv$ Human</li>
+							<ul>
+								<li>This is called concept equivalence</li>
+							</ul>
+							<li>Such type of concept level axioms are called <em style="color:green">TBox axioms</em> (Terminological Knowledge)
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>hasWife $\sqsubseteq$ hasSpouse</li>
+							<ul>
+								<li>:hasWife rdfs:subPropertyOf :hasSpouse .</li>
+								<li>This is called role inclusion</li>
+							</ul>
+							<li>Role equivalence is also supported</li>
+							<li>hasFather $\circ$ hasBrother $\sqsubseteq$ hasUncle</li>
+							<ul>
+								<li>This is <em>role composition</em></li>
+							</ul>
+							<li>Axioms that talk about relationship between roles are called <em style="color:green">RBox axioms</em>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Woman $\sqsubseteq$ Person</li>
+							<ul>
+								<li>(FOL) $\forall$x (Woman(x) $\rightarrow$ Person(x))</li>
+							</ul>
+							<li>hasWife $\sqsubseteq$ hasSpouse</li>
+							<ul>
+								<li></li>
+							</ul>(FOL) $\forall$x $\forall$y (hasWife(x,y) $\rightarrow$ hasSpouse(x,y))
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h2>References</h2>
+					<br/>
+					<ol style="font-size:30px">
+						<li><a href="http://www.semantic-web-book.org/" target="_blank">Foundations of Semantic Web Technologies</a>. Pascal Hitzler et. al. CRC Press.</li>
+						<li><a href="https://arxiv.org/pdf/1201.4089.pdf" target="_blank">A Description Logic Primer</a>. Markus Krötzsch, František Simančík, Ian Horrocks. In CoRR abs/1201.4089. arxiv.org 2012.</li>
+					</ol>
+				</section>
+				
+			</div>
+			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../plugin/markdown/marked.js' },
+					{ src: '../../../plugin/markdown/markdown.js' },
+					{ src: '../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
