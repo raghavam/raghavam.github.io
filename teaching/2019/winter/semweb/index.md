@@ -29,14 +29,14 @@ Knowledge Representation and Reasoning (KRR) is a field of AI that deals with ca
 
 ### Slides
 
-  * <a href="course-logistics.html" target="_blank">Course Logistics</a> &nbsp;&nbsp; <a href="course-logistics.html?print-pdf" target="_blank">pdf version</a>        
-  * <a href="ai-krr-semweb.html" target="_blank">AI, KRR, and the Semantic Web</a> &nbsp;&nbsp; <a href="ai-krr-semweb.html?print-pdf" target="_blank">pdf version</a>     
-  * <a href="rdf.html" target="_blank">RDF</a> &nbsp;&nbsp; <a href="rdf.html?print-pdf" target="_blank">pdf version</a>    
+  * <a href="course-logistics.html" target="_blank">Course Logistics</a> &nbsp;&nbsp;&nbsp; <a href="course-logistics.html?print-pdf" target="_blank">pdf</a>        
+  * <a href="ai-krr-semweb.html" target="_blank">AI, KRR, and the Semantic Web</a> &nbsp;&nbsp;&nbsp; <a href="ai-krr-semweb.html?print-pdf" target="_blank">pdf</a>     
+  * <a href="rdf.html" target="_blank">RDF</a> &nbsp;&nbsp;&nbsp; <a href="rdf.html?print-pdf" target="_blank">pdf</a>    
   * <a href="logic-notes-simpson-psu.pdf" target="_blank">Prof. Simpson's notes on Mathematical Logic</a>       
       * Raymond M. Smullyan. First-Order Logic. Dover Publications, New York, 1995.     
       * Uwe Schöning. Logic for Computer Scientists, Birkhäuser, 2008.    
       * Mordechai Ben-Ari. Mathematical Logic for Computer Science, Springer, 1993.    	 
-  * <a href="description-logics.html" target="_blank">Description Logics</a> &nbsp;&nbsp; <a href="description-logics.html?print-pdf" target="_blank">pdf</a>     	  
+  * <a href="description-logics.html" target="_blank">Description Logics</a> &nbsp;&nbsp;&nbsp; <a href="description-logics.html?print-pdf" target="_blank">pdf</a>     	  
 
 
 ### Files
