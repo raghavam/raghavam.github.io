@@ -61,7 +61,7 @@
 							<li>We use the term resource and entity synonymously here</li>
 							<li>It is a universal, machine readable data exchange format</li>
 							<li>Resources are described using triples (subject, predicate, object)</li>
-							<li>A triple captures the relationship (predicate) between a subject and an object
+							<li>A triple captures the relationship (predicate) between a subject and an object</li>
 						</ul>
 					</section>
 					
@@ -597,13 +597,369 @@ exproducts:triple12345   dc:creator      exstaff:85740 .
 					
 				<section>
 					<h3>Entailment Rules</h3>
-					<ul style="font-size:30px">
-						<li></li>
-					</ul>
+					<section>
+						<h4><b>Conventions</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>We use the following conventions in the entailment rules</li>
+							<ul>
+								<li><b>S</b> represents an RDF graph</li>
+								<li>aaa, bbb represents predicate of a triple</li>
+								<li>xxx, yyy, zzz represents either the subject or object of a triple</li>
+								<li>sss represents a literal</li>
+								<li>ddd represents a datatype</li>
+							</ul>
+						</ul>
+					</section>
+						
+					<section>
+						<h4><b>RDF Entailment Patterns</b></h4>
+						<br/>
+							<table style="font-size:35px">
+								<tr>
+									<th></th>
+									<th>If S contains</th>
+									<th>then S RDF entails</th>
+								</tr>
+								<tr>
+									<td>rdf1</td>
+									<td>xxx aaa "sss"^^ddd .</td>
+									<td>
+										xxx aaa _:nnn .<br/>
+										_:nnn  rdf:type ddd .
+									</td>
+								</tr>
+							</table>
+							<br/>
+							<ul style="font-size:30px">
+								<li>If <em style="color:blue">ex:a &nbsp;&nbsp; ex:p &nbsp;&nbsp; "123"^^xsd:integer .</em> &nbsp; then</li>
+								<ul>
+									<li><em style="color:green">ex:a &nbsp;&nbsp; ex:p &nbsp;&nbsp; _:x .</em> &nbsp; and</li>
+									<li><em style="color:green">_:x &nbsp;&nbsp; rdf:type &nbsp;&nbsp; xsd:integer .</em></li>
+								</ul>
+							</ul>
+					</section>	
+						
+					<section>
+						<h4><b>RDF Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDF entails</th>
+							</tr>
+							<tr>
+								<td>rdf2</td>
+								<td>xxx aaa yyy .</td>
+								<td>aaa rdf:type rdf:Property .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:a &nbsp;&nbsp; ex:p &nbsp;&nbsp; "123"^^xsd:integer .</em> &nbsp; then</li>
+							<ul>
+								<li><em style="color:green">ex:p &nbsp;&nbsp; rdf:type &nbsp;&nbsp; rdf:Property .</em></li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs1</td>
+								<td>xxx aaa "sss"^^ddd .</td>
+								<td>ddd rdf:type rdfs:Datatype .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:a &nbsp;&nbsp; ex:p &nbsp;&nbsp; "123"^^xsd:integer .</em> &nbsp; then</li>
+							<ul>
+								<li><em style="color:green">xsd:integer &nbsp;&nbsp; rdf:type &nbsp;&nbsp; rdfs:Datatype .</em></li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs2</td>
+								<td>
+									aaa rdfs:domain xxx . <br/>
+									yyy aaa zzz .
+								</td>
+								<td>yyy rdf:type xxx .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:worksAt &nbsp;&nbsp; rdfs:domain &nbsp;&nbsp; ex:Employee .</em> &nbsp; and <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; ex:john &nbsp;&nbsp; ex:worksAt &nbsp;&nbsp; ex:ibm .</em> &nbsp; then </li>
+							<ul>
+								<li><em style="color:green">ex:john &nbsp;&nbsp; rdf:type &nbsp;&nbsp; ex:Employee .</em></li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs3</td>
+								<td>
+									aaa rdfs:range xxx . <br/>
+									yyy aaa zzz .
+								</td>
+								<td>zzz rdf:type xxx .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:worksAt &nbsp;&nbsp; rdfs:range &nbsp;&nbsp; ex:Organization .</em> &nbsp; and <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; ex:john &nbsp;&nbsp; ex:worksAt &nbsp;&nbsp; ex:ibm .</em> &nbsp; then </li>
+							<ul>
+								<li><em style="color:green">ex:ibm &nbsp;&nbsp; rdf:type &nbsp;&nbsp; ex:Organization .</em></li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs4a</td>
+								<td>xxx aaa yyy .</td>
+								<td>xxx rdf:type rdfs:Resource .</td>
+							</tr>
+							<tr>
+								<td>rdfs4b</td>
+								<td>xxx aaa yyy .</td>
+								<td>yyy rdf:type rdfs:Resource .</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:32px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs5</td>
+								<td>
+									xxx rdfs:subPropertyOf yyy . <br/>
+									yyy rdfs:subPropertyOf zzz .
+								</td>
+								<td>xxx rdfs:subPropertyOf zzz .</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:33px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs6</td>
+								<td>xxx rdf:type rdf:Property .</td>
+								<td>xxx rdfs:subPropertyOf xxx .</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs7</td>
+								<td>
+									aaa rdfs:subPropertyOf bbb . <br/>
+									xxx aaa yyy .
+								</td>
+								<td>xxx bbb yyy .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:hasSon &nbsp;&nbsp; rdfs:subPropertyOf &nbsp;&nbsp; ex:hasChild .</em> &nbsp; and <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; ex:john &nbsp;&nbsp; ex:hasSon &nbsp;&nbsp; ex:mike .</em> &nbsp; then </li>
+							<ul>
+								<li><em style="color:green">ex:john &nbsp;&nbsp; ex:hasChild &nbsp;&nbsp; ex:mike .</em></li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:31px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs8</td>
+								<td>xxx rdf:type rdfs:Class .</td>
+								<td>xxx rdfs:subClassOf rdfs:Resource .</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs9</td>
+								<td>
+									xxx rdfs:subClassOf yyy . <br/>
+									zzz rdf:type xxx .
+								</td>
+								<td>zzz rdf:type yyy .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:Employee &nbsp;&nbsp; rdfs:subClassOf &nbsp;&nbsp; ex:Person .</em> &nbsp; and <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; ex:john &nbsp;&nbsp; rdf:type &nbsp;&nbsp; ex:Employee .</em> &nbsp; then </li>
+							<ul>
+								<li><em style="color:green">ex:john &nbsp;&nbsp; rdf:type &nbsp;&nbsp; ex:Person .</em></li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:31px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs10</td>
+								<td>xxx rdf:type rdfs:Class .</td>
+								<td>xxx rdfs:subClassOf xxx .</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:32px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs11</td>
+								<td>
+									xxx rdfs:subClassOf yyy . <br/>
+									yyy rdfs:subClassOf zzz .
+								</td>
+								<td>xxx rdfs:subClassOf zzz .</td>
+							</tr>
+						</table>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:29px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs12</td>
+								<td>xxx rdf:type rdfs:ContainerMembershipProperty .</td>
+								<td>xxx rdfs:subPropertyOf rdfs:member .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:CarBrandsBag &nbsp;&nbsp; rdf:_1 &nbsp;&nbsp; ex:honda .</em> &nbsp; and <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; ex:CarBrandsBag &nbsp;&nbsp; rdf:_2 &nbsp;&nbsp; ex:toyota .</em> &nbsp; <br/> 
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; rdf:_1 &nbsp;&nbsp; rdf:type &nbsp;&nbsp; rdfs:ContainerMembershipProperty .</em> &nbsp; then</li>
+							<ul>
+								<li><em style="color:green">rdf:_1 &nbsp;&nbsp; rdfs:subPropertyOf &nbsp;&nbsp; rdfs:member .</em></li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:30px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs13</td>
+								<td>xxx rdf:type rdfs:Datatype .</td>
+								<td>xxx rdfs:subClassOf rdfs:Literal .</td>
+							</tr>
+						</table>
+					</section>
+					
 				</section>
 				
 				<section>
-					<h3>Representing Knowleding using RDF</h3>
+					<h3>Representing Knowledge using RDF</h3>
 					<section>
 						<ul style="font-size:30px">
 							<li>Online RDF Editor: <a href="http://linkeddata.uriburner.com/rdf-editor/" target="_blank">http://linkeddata.uriburner.com/rdf-editor/</a></li>
@@ -622,6 +978,49 @@ exproducts:triple12345   dc:creator      exstaff:85740 .
 						<ul style="font-size:30px">
 							<li>Pick a domain of your choice and build an RDF graph</li>
 						</ul>
+					</section>
+					
+					<section>
+						<br/>
+						<h4><b>RDF Editors</b></h4>
+						<br/>
+						<ol style="font-size:30px">
+							<li><a href="http://linkeddata.uriburner.com/rdf-editor/" target="_blank">http://linkeddata.uriburner.com/rdf-editor/</a></li>
+							<li><a href="https://bitbucket.org/dotnetrdf/dotnetrdf/wiki/UserGuide/Tools/rdfEditor" target="_blank">https://bitbucket.org/dotnetrdf/dotnetrdf/wiki/UserGuide/Tools/rdfEditor</a></li>
+                            <li><a href="http://www.linkeddatatools.com/rdf-studio" target="_blank">http://www.linkeddatatools.com/rdf-studio</a></li>
+							<li><a href="https://marketplace.eclipse.org/content/komma-rdf-eclipse" target="_blank">https://marketplace.eclipse.org/content/komma-rdf-eclipse</a></li>
+							<li><a href="https://github.com/AKSW/Xturtle" target="_blank">https://github.com/AKSW/Xturtle</a></li> 
+							<li><a href="https://atom.io/packages/language-rdf" target="_blank">https://atom.io/packages/language-rdf</a></li>
+							<li><a href="https://github.com/e-e-e/sublime-turtle-syntax" target="_blank">https://github.com/e-e-e/sublime-turtle-syntax</a>, <a href="https://github.com/abcoates/sublime-text-turtle-sparql"  target="_blank">https://github.com/abcoates/sublime-text-turtle-sparql</a></li>
+							<li><a href="https://sourceforge.net/projects/veudas/" target="_blank">https://sourceforge.net/projects/veudas/</a></li>
+						</ol>
+					</section>
+					
+					<section>
+						<br/>
+						<h4><b>RDF Visualization Tools</b></h4>
+						<br/>
+						<ol style="font-size:30px">
+							<li><a href="http://www.easyrdf.org/converter" target="_blank">http://www.easyrdf.org/converter</a></li>
+							<li><a href="http://rhizomik.net/html/redefer/rdf2svg-form/" target="_blank">http://rhizomik.net/html/redefer/rdf2svg-form/</a></li>
+							<li><a href="https://github.com/usc-isi-i2/ontology-visualization" target="_blank">https://github.com/usc-isi-i2/ontology-visualization</a></li>
+							<li><a href="https://franz.com/agraph/gruff/" target="_blank">https://franz.com/agraph/gruff/</a></li>
+							<li><a href="https://github.com/idafensp/ar2dtool" target="_blank">https://github.com/idafensp/ar2dtool</a></li>
+							<li><a href="https://github.com/dyreriket/rdfvizler" target="_blank">https://github.com/dyreriket/rdfvizler</a></li>
+							<li><a href="http://activearchives.org/wiki/Visualizing_RDF" target="_blank">http://activearchives.org/wiki/Visualizing_RDF</a></li>
+							<li><a href="http://visgraph3.org/" target="_blank">http://visgraph3.org/</a></li>
+						</ol>
+					</section>
+					
+					<section>
+						<br/>
+						<h4><b>RDF Validators</b></h4>
+						<br/>
+						<ol style="font-size:30px">
+							<li><a href="https://www.w3.org/RDF/Validator/ target="_blank">https://www.w3.org/RDF/Validator/</a></li>
+							<li><a href="http://rdfvalidator.mybluemix.net/ target="_blank">http://rdfvalidator.mybluemix.net/</a></li>
+							<li><a href="http://ttl.summerofcode.be/" target="_blank">http://ttl.summerofcode.be/</a></li>
+						</ol>
 					</section>
 				</section>
 					
