@@ -495,15 +495,47 @@
 
 				<section>
 					<h3>OWL 2 Profiles</h3>
-					<br/>
-					<ul style="font-size:30px">
-						<li>It is a generalization of transitive property</li>
-						<ul>
-							<li>Eg: SubObjectPropertyOf(ObjectPropertyChain(hasParent hasParent) hasGrandparent)</li>
-							<li>Eg: If A hasParent B, and B hasParent C, then A hasGrandparent C</li>
-							<li>Eg: SubObjectPropertyOf(ObjectPropertyChain(hasFather hasBrother) hasUncle)</li>
+					<section>
+						<ul style="font-size:30px">
+							<li>An OWL 2 profile is a fragment or a sublanguage of OWL 2</li>
+							<li>Each profile is a trimmed down version of OWL 2 that trades expressivity with efficiency of reasoning</li>
+							<li>OWL 2 Full, OWL 2 DL, OWL 2 EL, OWL 2 QL, and OWL 2 RL</li>
+							<li>OWL 2 DL</li>
+							<ul>
+								<li>$SROIQ(D)$ is the description logic behind OWL 2 DL</li>
+								<li>Reasoning complexity is N2ExpTime</li>
+							</ul>
+							<li>OWL 2 Full</li>
+							<ul>
+								<li>OWL 2 DL + RDF(S)</li>
+								<li>Undecidable</li>
+							</ul>
 						</ul>
-					</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:28px">
+							<li>OWL 2 EL, OWL 2 QL, OWL 2 RL are the tractable profiles of OWL 2</li>
+							<li>OWL 2 EL</li>
+							<ul>
+								<li>$EL^{++}$ is the formal description logic underpinning for OWL 2 EL</li>
+								<li>Useful in applications that contain very large number of classes and properties</li>
+								<li>Large biomedical ontologies such as SNOMED CT is in OWL 2 EL</li>
+							</ul>
+							<li>OWL 2 QL</li>
+							<ul>
+								<li>The description logic underpinning for OWL 2 QL is DL-Lite</li>
+								<li>Useful in applications that have large instance data</li>
+								<li>Query answering is the most important reasoning task in this profile</li>
+							</ul>
+							<li>OWL 2 RL</li>
+							<ul>
+								<li>Useful for applications that require scalable reasoning</li>
+								<li>OWL 2 RL is inspired by Description Logic Programs (DLP) and pD$^{*}$</li>
+								<li>Rule-based reasoning techniques are used in this profile</li>
+							</ul>
+						</ul>
+					</section>
 				</section>		
 				
 				<section>
