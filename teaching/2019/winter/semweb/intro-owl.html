@@ -1,0 +1,551 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introduction to OWL</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+			
+				<section>
+					<h2>Introduction to OWL</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>OWL (Web Ontology Language)</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>OWL is a knowledge representation language used to build ontologies</li>
+						<li>OWL 2 is the latest version of the W3C standard</li>
+						<li>Three types of entities (elements used to refer to real-world objects)</li>
+						<ol>
+							<li>Classes: They are used to group sets of individuals that have something in common among them. <br/>
+							Eg: Car, Student, Employee, Father, Mother</li>
+							<li>Properties: They are the binary relations between the individuals. <br/>Eg: hasDaughter, hasSpouse, worksFor</li>
+							<li>Individuals: They are the instances or constants in the domain <br/>
+							Eg: mary (is a Woman), julie (is a Parent) </li>
+						</ol>
+						<li>All the entities are identified by using IRIs</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Identifiers and Naming Conventions</h3>
+					<section>
+						<h4><b>Identifiers</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>URL (Uniform Resource Locator)</li> 
+							<ul>
+								<li>It is a mechanism to specify and locate a web resource on a computer network.</li>
+								<li>Eg: http://, ftp://</li>
+							</ul>
+							<li>URN (Uniform Resource Name)</li> 
+							<ul>
+								<li>They are persistent location independent identifiers that use the urn scheme.</li>
+								<li>Eg: ISBN of a book is a URN used to identify a book uniquely</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Identifiers</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>URI (Uniform Resource Identifier) </li>
+							<ul>
+								<li>It is an identifier that can uniquely and unambiguously identify resources</li>
+								<li>ASCII encoding is used in the identifiers</li>
+								<li>URL and URN are type of URIs. URIs and URNs need not be resolvable to a location, which is the case with URL</li>
+								<li>Eg: http://www.w3.org/2002/07/owl#</li>
+							</ul>
+							<li>IRI (International Resource Identifier) </li>
+							<ul>
+								<li>IRI is similar to URI except that the character set for encoding the identifier is <em>Universal Character Set (UTF-8)</em></li>
+								<li>Eg: &eacute;, &ouml; could be used in IRI</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Naming Conventions</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Class: They are written in upper camel case (or Pascal case) where every first letter in a compound word is capitalized <br/>
+							Eg: Father, Parent, MyBirthdayGuests</li>
+							<li>Properties: They are written in lower camel case where every first letter in a compound word excluding the first word is capitalized <br/>
+							Eg: hasDaughter, hasAge</li>
+							<li>Individuals: same as Properties <br/>
+							Eg: mary, john, julie</li>
+						</ul>
+					</section>
+					
+				</section>
+				
+				<section>
+					<h3>OWL Syntax</h3>
+					<section>
+					<ul style="font-size:30px">
+						<li>Following syntaxes are supported by OWL</li>
+						<ul>
+							<li>Functional-Style syntax</li>
+							<li>RDF/XML</li>
+							<li>OWL/XML</li>
+							<li>Manchester syntax</li>
+						</ul>
+						<li>We will follow the functional syntax since it is human friendly</li>
+					</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Declaration(Class(Person))</li>
+							<li>Declaration(NamedIndividual(mary))</li>
+							<li>ClassAssertion(Person mary)</li>
+							<li>ClassAssertion(Women mary)</li>
+							<li>ObjectPropertyAssertion(hasWife john mary) <br/> <br/></li>
+							<li>Axioms: Basic statements such as the above are called axioms of an OWL ontology</li>
+							<li>Entities: Class, Properties, and Individuals</li>
+							<li>Expression: combinations of entities to form complex descriptions from basic ones</li>
+							<li>All these together capture the <em>knowledge</em> of a domain</li>
+						</ul>
+					</section>
+			
+				</section>
+				
+				<section>
+					<h3>Class Hierarchy</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>SubClassOf(Woman Person)</li>
+						<li>SubClassOf(Mother Woman)</li>
+						<li>EquivalentClasses(Person Human)</li>
+						<ul>
+							<li>SubClassOf(Person Human)</li>
+							<li>SubClassOf(Human Person)</li>
+						</ul>
+						<li>DisjointClasses(Mother Father)</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Property Hierarchy</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>SubPropertyOf(hasDaughter hasChild)</li>
+						<li>SubPropertyOf(parentOf ancestorOf)</li>
+						<li>DisjointProperties(parentOf childOf)</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Object and Data Properties</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Object Property: One individual is related to another individual by a property</li>
+						<ul>
+							<li>Eg: ObjectPropertyAssertion(hasWife john mary)</li>
+						</ul>
+						<li>Data Property: A property relates an individual to a data value</li>
+						<ul>
+							<li>Eg: DataPropertyAssertion(hasAge john "51"^^xsd:integer)</li>
+						</ul>	
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Domain and Range of Properties</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Additional information about the properties can be provided using domain and range</li>
+						<li>They are the <em>"semantic link"</em> between classes and properties</li>
+						<li>Eg: ObjectPropertyDomain(hasOwner Vehicle)</li>
+						<li>Eg: ObjectPropertyRange(hasOwner Person)</li>
+						<li>Eg: DataPropertyDomain(hasAge Person)</li>
+						<li>Eg: DataPropertyRange(hasAge xsd:nonNegativeInteger)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Two Assumptions</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>As discussed in Description Logics, OWL follows the following two assumptions</li>
+						<ul>
+							<li>Open World Assumption</li>
+							<li>No Unique Name Assumption</li>
+						</ul>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Logical Class Constructors</h3>
+					<section>
+						<h4><b>Intersection</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Intersection of two classes consists of exactly those individuals which are instances of both the classes</li>
+							<ul>
+								<li>EquivalentClasses(Mother ObjectIntersectionOf(Woman Parent))</li>
+								<li>Class Mother consists of exactly those instances that belong to both Woman and Parent</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Union</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>union of two classes contains every individual which is contained in at least one of these classes</li>
+							<ul>
+								<li>EquivalentClasses(Parent ObjectUnionOf(Mother Father))</li>
+								<li>DisjointClasses(Mother Father)</li>
+								<li>Instance of Parent is either an instance of Mother or Father</li>
+							</ul>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>Complement</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Complement of a class consists of exactly those individuals that are not members of the other class</li>
+							<ul>
+								<li>EquivalentClasses(ChildlessPerson ObjectIntersectionOf(Person ObjectComplementOf(Parent))</li>
+							</ul>
+							<li>Class constructors can be nested</li>
+							<ul>
+								<li>SubClassOf(Grandfather <em style="color:green">ObjectIntersectionOf(Man Parent)</em>)</li>
+								<li>ClassAssertion(<em style="color:green">ObjectIntersectionOf(Person ObjectComplementOf(Parent))</em> Jack)</li>
+							</ul>
+						</ul>
+					</section>					
+				</section>	
+				
+				<section>
+					<h3>Logical Quantifiers</h3>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>A quantifier specifies the quantity of specimen from a domain of discourse over which a property acts on.</li>
+							<ul>
+								<li>Domain of discourse is the <em>universe</em> or the set of objects that we are interested in. Eg: Car, Person, Mother, Father</li>
+							</ul>
+							<li>Two quantifiers are of interest to us</li>
+							<ul>
+								<li>Existential quantifier ($\exists$)</li>
+								<li>Universal quantifier ($\forall$)</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Existential Quantifier</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>There should exist at least one instance from the domain of discourse (class) that participates in the given relation/property</li>
+							<ul>
+								<li>Eg: Any Exam must have at least one Examiner</li>
+								<li>SubClassOf(Exam ObjectSomeValuesFrom(hasExaminer Examiner))</li>
+								<li>Eg: Parent is someone who has at least one child</li>
+								<li>EquivalentClasses(Parent ObjectSomeValuesFrom(hasChild Person))</li>
+							</ul>
+							<li>Phrases such as "at least one", "for some" are used for this quantifier</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Universal Quantifier</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>A given property participates with all the instances of a particular domain of discourse (class)</li>
+							<ul>
+								<li>Eg: All Examiners of an Exam must be Professors</li>
+								<li>SubClassOf(Exam ObjectAllValuesFrom(hasExaminer Professor))</li>
+							</ul>
+							<li>Corner case: Exams which have no Examiner are also covered by this quantifier</li>
+							<li>"for all" is used for this quantifier</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Universal Quantifier</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Eg: A happy person is someone who has a happy child</li>
+							<li>EquivalentClasses(HappyPerson ObjectAllValuesFrom(hasChild HappyPerson))</li>
+							<li>The above quantification indicates that a childless person can also be happy</li>
+							<li>Intuitively, we want to say that in order to be happy, a person must have at least one happy child</li>
+							<li>EquivalentClasses(HappyPerson ObjectIntersectionOf(<em style="color:blue">ObjectAllValuesFrom(hasChild HappyPerson)</em> <em style="color:green">ObjectSomeValuesFrom(hasChild HappyPerson)</em>))</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Cardinality restriction</h3>
+					<section>
+						<h4><b>Max cardinality</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>John has at most 4 children</li>
+							<li>ClassAssertion(ObjectMaxCardinality(4 hasChild Parent) John)</li>
+							<li>This declares an upper bound on the number of children that John has</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Min cardinality</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>John has at least 2 children</li>
+							<li>ClassAssertion(ObjectMinCardinality(2 hasChild Parent) John)</li>
+							<li>This declares a lower bound on the number of children that John has</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Exact cardinality</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>John has exactly 3 children</li>
+							<li>ClassAssertion(ObjectExactCardinality(3 hasChild Parent) John)</li>
+							<li>This declares an exact number of children that John has</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Enumeration of Individuals</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>List all possible and the only members of a class</li>
+						<li>EquivalentClasses(MyBirthdayGuests ObjectOneOf(Bill John Mary))</li>
+						<li>Classes defined this way are called <em>closed</em> classes</li>
+						<li>What if we add ClassAssertion(MyBirthdayGuests Jeff)?</li>
+						<li>Jeff must be equal to one of the 3 defined instances</li>
+					</ul>
+				</section>	
+
+				<section>
+					<h3>Property Characteristics</h3>
+					<section>
+						<h4><b>Inverse Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If one property can be obtained by inverting or changing the direction of the other then it is an inverse property</li>
+							<ul>
+								<li>InverseObjectProperties(hasParent hasChild)</li>
+								<li>ObjectPropertyAssertion(hasParent A B)</li>
+								<li>ObjectPropertyAssertion(hasChild B A)</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Symmetric Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If a property and its inverse are the same then it is called a symmetric property</li>
+							<ul>
+								<li>SymmetricObjectProperty(hasSpouse)</li>
+								<li>ObjectPropertyAssertion(hasSpouse A B)</li>
+								<li>ObjectPropertyAssertion(hasSpouse B A)</li>
+							</ul>
+						</ul>
+					</section>	
+						
+					<section>
+						<h4><b>Assymmetric Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>It explicitly states that if A is connected to B through a certain property then B cannot be connected to A by the same property</li>
+							<ul>
+								<li>AsymmetricObjectProperty(hasChild)</li>
+							</ul>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>Reflexive Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>A reflexive property connects everything to itself</li>
+							<ul>
+								<li>ReflexiveObjectProperty(hasRelative)</li>
+								<li>Everyone is related to himself/herself</li>
+							</ul>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>Irreflexive Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If an individual cannot be connected to itself by the given property then such a property is irreflexive</li>
+							<ul>
+								<li>IrreflexiveObjectProperty(parentOf)</li>
+								<li>Nobody can be one's own parent</li>
+							</ul>
+						</ul>
+					</section>						
+					
+					<section>
+						<h4><b>Functional Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If a property connects A to B then there can be only one unique value for B</li>
+							<ul>
+								<li>FunctionalObjectProperty(hasHusband)</li>
+								<li>ObjectPropertyAssertion(hasHusband Mary James)</li>
+								<li>ObjectPropertyAssertion(hasHusband Mary Jim)</li>
+								<li>Conclusion: Since hasHusband is functional, James and Jim should be the same</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Inverse Functional Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If a property connects A to B then there can be only one unique value for A</li>
+							<ul>
+								<li>InverseFunctionalObjectProperty(hasHusband)</li>
+								<li>An individual can be the husband of at most one another individual</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Transitive Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>A transitive property connects A with C if it connects A to B and B to C</li>
+							<ul>
+								<li>TransitiveObjectProperty(hasAncestor)</li>
+							</ul>
+							<li>Transitive properties can be used to connect whole-part relations</li>
+							<ul>
+								<li>TransitiveObjectProperty(subRegionOf)</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Disjoint Property</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Two properties are disjoint if there are no two individuals that are connected by the two properties</li>
+							<ul>
+								<li>DisjointObjectProperties(hasParent hasSpouse)</li>
+								<li>Parents and children cannot marry each other</li>
+							</ul>
+						</ul>
+					</section>					
+				</section>	
+				
+				<section>
+					<h3>Property Chains</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>It is a generalization of transitive property</li>
+						<ul>
+							<li>Eg: SubObjectPropertyOf(ObjectPropertyChain(hasParent hasParent) hasGrandparent)</li>
+							<li>Eg: If A hasParent B, and B hasParent C, then A hasGrandparent C</li>
+							<li>Eg: SubObjectPropertyOf(ObjectPropertyChain(hasFather hasBrother) hasUncle)</li>
+						</ul>
+					</ul>
+				</section>	
+
+				<section>
+					<h3>OWL 2 Profiles</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>It is a generalization of transitive property</li>
+						<ul>
+							<li>Eg: SubObjectPropertyOf(ObjectPropertyChain(hasParent hasParent) hasGrandparent)</li>
+							<li>Eg: If A hasParent B, and B hasParent C, then A hasGrandparent C</li>
+							<li>Eg: SubObjectPropertyOf(ObjectPropertyChain(hasFather hasBrother) hasUncle)</li>
+						</ul>
+					</ul>
+				</section>		
+				
+				<section>
+					<h2>References</h2>
+					<br/>
+					<ol style="font-size:30px">
+						<li><a href="https://www.w3.org/TR/owl2-primer/" target="_blank">OWL 2 Web Ontology Language Primer</a>. Pascal Hitzler et. al.</li>
+						<li><a href="https://www.w3.org/TR/owl2-profiles/" target="_blank">OWL 2 Web Ontology Language Profiles</a>. Boris Motik et. al.</li>
+						<li><a href="http://korrekt.org/papers/Kroetzsch_OWL_2_Profiles_Reasoning_Web_2012.pdf" target="_blank">OWL 2 Profiles: An Introduction to Lightweight Ontology Languages</a>. Markus Kr&ouml;tzsch. Reasoning Web 2012.</li>
+						<li><a href="https://arxiv.org/pdf/1201.4089.pdf" target="_blank">A Description Logic Primer</a>. Markus Kr&ouml;tzsch et. al.</li>
+					</ol>
+				</section>
+				
+			</div>
+			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../plugin/markdown/marked.js' },
+					{ src: '../../../plugin/markdown/markdown.js' },
+					{ src: '../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

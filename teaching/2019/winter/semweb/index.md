@@ -37,6 +37,8 @@ Knowledge Representation and Reasoning (KRR) is a field of AI that deals with ca
       * Uwe Schöning. Logic for Computer Scientists, Birkhäuser, 2008.    
       * Mordechai Ben-Ari. Mathematical Logic for Computer Science, Springer, 1993.    	 
   * <a href="description-logics.html" target="_blank">Description Logics</a> &nbsp;&nbsp;&nbsp; <a href="description-logics.html?print-pdf" target="_blank">pdf</a>     	  
+  * <a href="intro-owl.html" target="_blank">Introduction to OWL</a> &nbsp;&nbsp;&nbsp; <a href="intro-owl.html?print-pdf" target="_blank">pdf</a>     	  
+  * <a href="design-build-ontology.html" target="_blank">Designing and Building an Ontology</a> &nbsp;&nbsp;&nbsp; <a href="design-build-ontology.html?print-pdf" target="_blank">pdf</a>     	  
 
 
 ### Files

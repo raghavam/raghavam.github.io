@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Design and Build an Ontology</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+			
+				<section>
+					<h2>Designing and Building an Ontology</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Designing an Ontology</h3>
+					<section>
+						<h4><b>Notes</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>There is no one correct way to model a domain</li>
+							<ul>
+								<li>It is your view of the World</li>
+								<li>The level of detail depends on the application at hand the its possible extensions</li>
+							</ul>
+							<li>Ontology development is an iterative process</li>
+							<ul>
+								<li>We evaluate the ontology using the application, discuss with the domain experts and keep changing it</li>
+							</ul>
+							<li>Generally nouns in the domain become concepts in the ontology and verbs become the properties</li>
+						</ul>
+					</section>
+						
+					<section>
+						<h4><b>Steps</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Determine the domain and scope of the ontology</li>
+							<ul>
+								<li>What is the domain that the ontology will cover?</li>
+								<li>How will the ontology be used?</li>
+									<ul>
+										<li>If it is used to assist natural language queries then synonyms of concepts and relations can be included</li>
+									</ul>
+								<li>What are the questions that the ontology should provide an answer for?</li>
+								<li>Who will use and maintain the ontology?</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>In-class ontology</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Determine the domain and scope of the ontology</li>
+							<ul>
+								<li>Domain: <em style="color:green">Cooking Recipes</em></li>
+								<li>This ontology will be used for a <em>"recipe discovery"</em> website</li>
+								<li>Integrate cooking recipes from different websites</li>
+								<li>Enable fine grained search for recipes</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Steps</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Competency questions</li>
+							<ul>
+								<li>List the type of questions that the ontology should be able to answer</li>
+								<li>Does the ontology contain enough information to answer them?</li>
+								<li>What kind of detail would the answers require?</li>
+								<li>Competency questions need not be exhaustive but they should capture different types of questions that could be asked</li>
+								<li>These questions serve as the litmus test of the ontology later on</li>
+							</ul>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>In-class ontology</b></h4>
+						<br/>
+						<ul style="font-size:26px">
+							<li>Competency questions</li>
+							<ul>
+								<li>Retrieval of cooking instructions</li>
+								<ul>
+									<li>Recipe for paneer tikka masala</li>
+								</ul>
+								<li>Search by ingredients</li>
+								<ul>
+									<li>Recipes using yogurt and tomatoes</li>
+								</ul>
+								<li>Search by properties of the prepared food, e.g. calorie or carb content</li>
+								<ul>
+									<li>Sweet breakfast under 100 calories</li>
+								</ul>
+								<li>Search by properties such as cooking time, simplicity</li>
+								<ul>
+									<li>A breakfast dish that can be prepared under 30 minutes using flattened rice and potatoes</li>
+								</ul>
+								<li>Search by cooking utensils used</li>
+								<ul>
+									<li>Butter chicken in a slow cooker</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>In-class ontology</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Recipe data</li>
+							<ul>
+								<li><a href="http://allrecipes.co.in/" target="_blank">http://allrecipes.co.in/</a></li>
+								<li><a href="http://www.bawarchi.com/recipe/" target="_blank">http://www.bawarchi.com/recipe/</a></li>
+								<li><a href="http://www.indianfoodforever.com/" target="_blank">http://www.indianfoodforever.com/</a></li>
+							</ul>
+							<li>Look at the data and re-evaluate the competency questions</li>
+							<ul>
+								<li>Are cooking utensils part of the recipe data?</li>
+								<li>Are there tags associated with the recipe such as sweet, low-carb, gluten-free, level of difficulty, side dish?</li>
+							</ul>
+							<li>Determine the scope: what to model now versus later</li>
+						</ul>
+					</section>		
+					
+					<section>
+						<h4><b>Steps</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Reuse existing ontologies</li>
+							<ul>
+								<li>Save time and effort by reusing existing ontologies</li>
+								<li>If our application is part of a larger system that has an ontology then our ontology should be compatible with the existing ones</li>
+								<li>Existing ontologies can be imported into the ontology development environment (Prot&eacute;g&eacute;) and reused</li>
+								<li>Repositories of ontologies are available</li>
+								<ul>
+									<li><a href="https://bioportal.bioontology.org/" target="_blank">BioPortal</a></li>
+									<li><a href="http://ontologydesignpatterns.org/wiki/Main_Page" target="_blank">Ontology Design Patterns</a></li>
+									<li><a href="http://swl.slis.indiana.edu/repository/index.html" target="_blank">VIVO</a></li>
+								</ul>
+							</ul>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>Steps</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Enumerate important terms in the domain</li>
+							<ul>
+								<li>Domain expert should list the important nouns, phrases, and verbs in the domain</li>
+								<li>Generate classes and properties based on this list</li>
+							</ul>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>In-class ontology</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Enumerate important terms in the domain</li>
+							<ul class="fragment">
+								<li>Recipe</li>
+								<li>Preparation time</li>
+								<li>Ingredients</li>
+								<li>Classification of the dish (side, main, breakfast etc.)</li>
+								<li>Difficulty level</li>
+								<li>Cooking utensils</li>
+								<li>Nutritional information</li>
+								<li>Quantity</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>In-class ontology</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Enumerate important terms in the domain</li>
+							<ul class="fragment">
+								<li>serving size</li>
+								<li>number of calories</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Steps</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Define classes and the class hierarchy</li>
+							<ul>
+								<li>Top-down approach: Start with the most general classes and then build the specialized ones</li>
+								<li>Bottom-up approach: Start with the most specific classes (leaves in the hierarchy) and group them under more general classes</li>
+								<li>Combination: Use a combination of top-down and bottom-up approach. List the classes and generalize, specialize them appropriately</li>
+							</ul>
+						</ul>
+					</section>	
+
+					<section>
+						<h4><b>Steps</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Define the properties of classes</li>
+							<ul>
+								<li>Create the properties based on the listed verbs</li>
+								<li>Attach them to the most general class that a property is suitable for</li>
+								<li>All the subclasses inherit the properties of the superclass</li>
+							</ul>
+						</ul>
+					</section>	
+
+					<section>
+						<h4><b>Steps</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Define the facets of the properties</li>
+							<ul>
+								<li>Cardinality of properties</li>
+								<li>Determine whether they are object or data property</li>
+								<li>The datatype for the value of the data property</li>
+								<li>Domain and range of the property</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Steps</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Create instances of the classes</li>
+							<ul>
+								<li>Decide which class an instance should be associated with</li>
+								<li>Fill in the property values associated with the instance</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Demo</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Build <em style="color:green">Cooking Recipes</em> ontology using <a href="https://protege.stanford.edu/" target="_blank">Prot&#233;g&#233;</a></li>
+						</ul>
+					</section>	
+					
+				</section>	
+
+				<section>
+					<h2>References</h2>
+					<br/>
+					<ol style="font-size:30px">
+						<li><a href="http://www.ksl.stanford.edu/people/dlm/papers/ontology-tutorial-noy-mcguinness.pdf" target="_blank">Ontology Development 101: A Guide to Creating Your First Ontology</a>. Natalya F. Noy, Deborah L. Mcguinness. 2001</li>
+						<li><a href="http://daselab.cs.wright.edu/pub2/mom-recipes-example.pdf" target="_blank">A Tutorial on Modular Ontology Modeling with Ontology Design Patterns: The Cooking Recipes Ontology</a>. Pascal Hitzler et. al. 2018</li>
+					</ol>
+				</section>
+			
+			</div>			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../plugin/markdown/marked.js' },
+					{ src: '../../../plugin/markdown/markdown.js' },
+					{ src: '../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
