@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Course Project</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+			
+				<section>
+					<h2>Course Project</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Logistics</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Group project with team size of 2 or 3</li>
+						<ul>
+							<li>If the team size is 1 then you will straightaway get some extra credit</li>
+						</ul>
+						<li>Each group works on a <em>different</em> dataset and preferably different domain as well</li>
+						<li>There will be intermediate deadlines</li>
+						<li>Expected deliverables</li>
+						<ul>
+							<li>Demo (team)</li>
+							<li>Code, OWL file, query file (team)</li>
+						</ul>
+					</ul>	
+				</section>
+				
+				<section>
+					<h3>Project Tasks</h3>
+					<br/>
+					<ol style="font-size:30px">
+						<li>Find the data that you want to model and query</li>
+						<li>Build an ontology to model the data</li>
+						<li>Convert the data into RDF triples that conform with the ontology you built</li>
+						<li>Store the triples in a triple store</li>
+						<li>Query (templates will be provided) the triples and show the results</li>
+						<li>Add SHACL constraints (if time permits/extra credit)</li>
+						<li>Develop an application on top of this structured data (extra credit)</li>
+					</ol>
+				</section>
+				
+				<section>
+					<h3>Data</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Choose any CSV file(s) that have 15-20 columns and around 10k rows</li>
+						<ul>
+							<li><a href="https://dataverse.harvard.edu/" target="_blank">https://dataverse.harvard.edu/</a></li>
+							<li><a href="http://statweb.stanford.edu/~sabatti/data.html" target="_blank">http://statweb.stanford.edu/~sabatti/data.html</a></li>
+						</ul>
+						<li>Use a CSV reader to read the data</li>
+						<li>Deadline: March 4, 2019. 11:59 pm</li>
+						<li>Submission details</li>
+						<ul>
+							<li>Link to the csv file(s)</li>
+							<li>Top 20 rows of the csv file(s)</li> 
+							<li>Send us the summary: domain, number of columns, number of rows</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Ontology</h3>
+					<ul style="font-size:28px">
+						<li>Minimum requirements</li>
+						<ul>
+							<li>10 classes</li>
+							<li>2 or 3 levels of class hierarchy</li>
+							<li>3-5 object properties</li>
+							<li>3-5 data properties</li>
+							<li>Property hierarchy</li>
+							<ul>
+								<li>1-2 subproperty relations</li>
+								<li>1 property chain (encouraged but optional)</li>
+							</ul>
+							<li>Domain and Range for all the properties</li>
+							<li>3-5 Existential class expressions</li>
+							<li>3 Disjoint classes</li>
+							<li>Use at least 1-2 ontology design patterns</li>
+						</ul>
+						<li>Deadline: March 12, 2019. 11:59 pm</li>
+						<ul>
+							<li>Submit the owl file (can be changed later)</li>
+						</ul>
+					</ul>
+				</section>
+			
+			</div>			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../../../plugin/markdown/marked.js' },
+					{ src: '../../../../../plugin/markdown/markdown.js' },
+					{ src: '../../../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

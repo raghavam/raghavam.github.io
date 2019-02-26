@@ -39,6 +39,8 @@ Knowledge Representation and Reasoning (KRR) is a field of AI that deals with ca
   * <a href="description-logics.html" target="_blank">Description Logics</a> &nbsp;&nbsp;&nbsp; <a href="description-logics.html?print-pdf" target="_blank">pdf</a>     	  
   * <a href="intro-owl.html" target="_blank">Introduction to OWL</a> &nbsp;&nbsp;&nbsp; <a href="intro-owl.html?print-pdf" target="_blank">pdf</a>     	  
   * <a href="design-build-ontology.html" target="_blank">Designing and Building an Ontology</a> &nbsp;&nbsp;&nbsp; <a href="design-build-ontology.html?print-pdf" target="_blank">pdf</a>     	  
+  * <a href="course-project.html" target="_blank">Course Project</a> &nbsp;&nbsp;&nbsp; <a href="course-project?print-pdf" target="_blank">pdf</a>     	  
+  * <a href="odps.html" target="_blank">Ontology Design Patterns</a> &nbsp;&nbsp;&nbsp; <a href="odps.html?print-pdf" target="_blank">pdf</a>     	  
 
 
 ### Files
