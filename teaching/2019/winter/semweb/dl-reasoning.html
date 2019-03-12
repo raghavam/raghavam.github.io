@@ -272,7 +272,15 @@
 						<h4><b>Naive $ALC$ Tableaux Rules</b></h4>
 						<ul style="font-size:30px">
 							<li>$\sqcap$-rule: If C $\sqcap$ D $\in$ L(x) and {C,D} $\not\subseteq$ L(x), then set L(x) $\leftarrow$ {C,D}</li>
-							<li>$\sqcup$-rule: If C $\sqcup$ D $\in$ L(x) and {C,D} $\cap$ L(x) = $\emptyset$</li>
+							<li>$\sqcup$-rule: If C $\sqcup$ D $\in$ L(x) and {C,D} $\cap$ L(x) = $\emptyset$, then set L(x) $\leftarrow$ C or L(x) $\leftarrow$ D</li>
+							<li>$\exists$-rule: If $\exists$R.C $\in$ L(x) and there is no y with R $\in$ L(x,y) and C $\in$ L(y), then</li>
+							<ol>
+								<li>add a new node with label y (where y is a new node label),</li>
+								<li>set L(x,y) = {R}, and</li>
+								<li>set L(y) = {C}</li>
+							</ol>
+							<li>$\forall$-rule: If $\forall$R.C $\in$ L(x) and there is a node y with R $\in$ L(x,y) and C $\not\in$ L(y), then set L(y) $\leftarrow$ C</li>
+							<li>TBox-rule: If C is a TBox statement and C $\not\in$ L(x), then set L(x) $\leftarrow$ C</li>
 						</ul>
 					</section>
 					
@@ -335,6 +343,23 @@
 								<li>or an ancestor of x is blocked</li>
 							</ul>
 					</section>	
+					
+					<section>
+						<h4><b>Naive $ALC$ Tableaux Rules (with blocking)</b></h4>
+						<ul style="font-size:30px">
+							<li>$\sqcap$-rule: If C $\sqcap$ D $\in$ L(x) and {C,D} $\not\subseteq$ L(x), then set L(x) $\leftarrow$ {C,D}</li>
+							<li>$\sqcup$-rule: If C $\sqcup$ D $\in$ L(x) and {C,D} $\cap$ L(x) = $\emptyset$, then set L(x) $\leftarrow$ C or L(x) $\leftarrow$ D</li>
+							<li>$\exists$-rule: If $\exists$R.C $\in$ L(x) and there is no y with R $\in$ L(x,y) and C $\in$ L(y), then</li>
+							<ol>
+								<li>add a new node with label y (where y is a new node label),</li>
+								<li>set L(x,y) = {R}, and</li>
+								<li>set L(y) = {C}</li>
+							</ol>
+							<li>$\forall$-rule: If $\forall$R.C $\in$ L(x) and there is a node y with R $\in$ L(x,y) and C $\not\in$ L(y), then set L(y) $\leftarrow$ C</li>
+							<li>TBox-rule: If C is a TBox statement and C $\not\in$ L(x), then set L(x) $\leftarrow$ C</li>
+							<li><em style="color:blue">Apply these rules only if x is not blocked</em></li>
+						</ul>
+					</section>
 
 					<section>
 						<h4><b>Blocking</b></h4>
@@ -343,6 +368,8 @@
 							<li>K = {Human $\sqsubseteq$ $\exists$hasParent.Human, Bird(tweety)}. Is tweety not Human?</li>
 							<li>K = {hasChild(john,peter), hasChild(john,alex), Male(peter), Male(alex)}. Show that $\forall$hasChild.male(john) is not a logical consequence of K</li>
 							<li>K = {Bird $\sqsubseteq$ Flies, Penguin $\sqsubseteq$ Bird, Penguin $\sqcap$ Bird $\sqsubseteq$ $\bot$, Penguin(tweety)}. Show K is unsatisfiable</li>
+							<br/>
+							<li>Tableau constructed on whiteboard</li>
 						</ul>
 					</section>	
 				</section>
