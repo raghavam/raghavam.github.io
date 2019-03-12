@@ -1,0 +1,389 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Description Logic Reasoning</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+			
+				<section>
+					<h2>Description Logic Reasoning</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Description Logic Reasoning</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Reasoning is the process of deriving facts that are not explicitly expressed in the ontology</li>
+						<li>Reasoning makes implicit facts explicit</li>
+						<li>Logical consequences are drawn from the axioms in the ontology</li>
+					</ul>	
+				</section>
+				
+				<section>
+					<h3>Description Logic Reasoning</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Axioms before reasoning</li>
+						<ul>
+							<li>{john} $\sqsubseteq$ USCitizen</li>
+							<li>USCitizen $\sqsubseteq \exists$hasPassport.USPassport</li>
+							<li>$\exists$hasPassport.USPassport $\sqsubseteq$ EUVisaNotRequired</li>
+						</ul>
+						<li>Logical consequences after reasoning</li>
+						<ul>
+							<li>USCitizen $\sqsubseteq$ EUVisaNotRequired</li>
+							<li>{john} $\sqsubseteq$ EUVisaNotRequired</li>
+						</ul>
+					</ul>	
+				</section>
+				
+				<section>
+					<h3>Purpose of DL Reasoning</h3>
+					<br/>
+					<ol style="font-size:30px">
+						<li>Design and maintain high quality ontologies</li>
+						<ul>
+							<li>Consistency: reasoner helps in determining whether an ontology is consistent or not</li>
+							<li>Minimally redundant: reasoner checks for unintended synonyms</li>
+						</ul>
+						<li>Answer queries over ontology classes and instances</li>
+						<ul>
+							<li>Find more general/specific classes</li>
+							<li>Retrieve individuals of a class</li>
+						</ul>
+					</ol>	
+				</section>
+				
+				<section>
+					<h3>Expressivity and Complexity Trade-off</h3>
+					<section>
+						<h4><b>OWL 2 Profiles</b></h4>
+						<figure>
+							<img src="figures/owl2-profiles-venn-diagram.png" alt="OWL 2 Profiles Venn Diagram"/>
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/HDvOZe" target="_blank">https://goo.gl/HDvOZe</a></figcaption>
+						</figure>	
+					</section>
+					
+					<section>
+						<h4><b>Reasoning Complexity</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>OWL 2 Full: Undecidable</li>
+							<li>OWL 2 DL: N2EXPTIME (2<sup>2<sup>n</sup></sup> in the size of input)</li>
+							<li>OWL 2 EL, OWL 2 RL, OWL 2 QL: Polynomial time</li>
+						</ul>	
+					</section>
+				</section>
+				
+				<section>
+					<h3>Types of Reasoning</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Forward chaining</li>
+						<ul>
+							<li>Start with the axioms and apply inference rules repeatedly until no more new axioms can be derived</li>
+							<li>Saves time during querying but ends up using more space</li>
+						</ul>
+						<li>Backward chaining</li>
+						<ul>
+							<li>Start with a query and apply inference rules that are needed to only answer the query</li>
+							<li>Saves space but increases the querying time</li>
+						</ul>
+					</ul>	
+				</section>
+				
+				<section>
+					<h3>Important Reasoning Tasks</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Consistency of the knowledge base (ontology in our case)</li>
+						<li>Class level consistency (is class C empty, $C \equiv \bot$?)</li>
+						<li>Class inclusion (is C $\sqsubseteq$ D?)</li>
+						<li>Class equivalence (is C $\equiv$ D?)</li>
+						<li>Class disjointness (is C $\sqcap$ D $\equiv \bot$?)</li>
+						<li>Class membership (is C(a)?)</li>
+						<li>Instance retrieval (list all the instances of class C)</li>
+					</ul>	
+				</section>
+				
+				<section>
+					<h3>Reasoning Procedure</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Rule based reasoning</li>
+						<li>Tableaux algorithm</li>
+					</ul>	
+				</section>
+				
+				<section>
+					<h3>Rule based reasoning</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>If $X \sqsubseteq A$ and $A \sqsubseteq B$ then $X \sqsubseteq B$</li>
+						<li>If $X \sqsubseteq A_1$, $X \sqsubseteq A_2$, $\ldots$, $X \sqsubseteq A_n$, and $A_1 \sqcap A_2 \sqcap \ldots \sqcap A_n \sqsubseteq B$ then $X \sqsubseteq B$</li>
+						<li>Examples</li>
+						<ul>
+							<li>Mother $\sqsubseteq$ Female, Mother $\sqsubseteq$ Parent, and Female $\sqcap$ Parent $\sqsubseteq$ Human</li>
+							<li>Is Mother a Human?</li>
+						</ul>
+					</ul>	
+				</section>
+				
+				<section>
+					<h3>Tableaux Algorithm</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>They are used to test satisfiability (consistency)</li>
+							<li>A tree (there can be loops) is built with nodes consisting of class expressions to be evaluated</li>
+							<li>Edges are labelled with the relationships between classes</li>
+							<li>Nodes are expanded by applying the tableaux rules</li>
+							<li>Tree expansion stops when either no more rules can be applied or a clash occurs (for eg: $A \sqcap \neg A$)</li>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Apply Negation Normal Form on the given Knowledge Base K</li>
+							<li>Apply tableaux rules on the axioms</li>
+							<li>Check for termination</li>
+							<li>If there is a contradiction in the tableaux, then it is unsatisfiable</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Negation Normal Form</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>It simplifies the given knowledge base</li>
+							<li>It is a syntactic transformation</li>
+							<li>Initial steps</li>
+							<ul>
+								<li>Replace C $\equiv$ D with C $\sqsubseteq$ D and D $\sqsubseteq$ C</li>
+								<li>Replace C $\sqsubseteq$ D with $\neg$C $\sqcup$ D</li>
+								<li>Apply the NNF rules exhaustively</li> 
+							</ul>
+							<li>In NNF(K), negation occurs only directly in front of atomic classes</li>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:28px">
+							<li>NNF(C) = C, if C is a class name</li>
+							<li>NNF($\neg$C) = $\neg$C, if C is a class name</li>
+							<li>NNF($\neg\neg$C) = NNF(C)</li>
+							<li>NNF(C $\sqcup$ D) = NNF(C) $\sqcup$ NNF(D)</li>
+							<li>NNF(C $\sqcap$ D) = NNF(C) $\sqcap$ NNF(D)</li>
+							<li>NNF($\neg$(C $\sqcup$ D)) = NNF($\neg$C) $\sqcap$ NNF($\neg$D)</li>
+							<li>NNF($\neg$(C $\sqcap$ D)) = NNF($\neg$C) $\sqcup$ NNF($\neg$D)</li>
+							<li>NNF($\forall$R.C) = $\forall$R.NNF(C)</li>
+							<li>NNF($\exists$R.C) = $\exists$R.NNF(C)</li>
+							<li>NNF($\neg\forall$R.C) = $\exists$R.NNF($\neg$C)</li>
+							<li>NNF($\neg\exists$R.C) = $\forall$R.NNF($\neg$C)</li>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Transform the axiom below to NNF</li>	
+							<li>P $\sqsubseteq$ (E $\sqcap$ M) $\sqcup$ $\neg$($\neg$E $\sqcup$ D)</li>
+							<ul>
+								<li>Step-1: $\neg$P $\sqcup$ ((E $\sqcap$ M) $\sqcup$ $\neg$($\neg$E $\sqcup$ D))</li>
+								<li>Step-2: $\neg$P $\sqcup$ ((E $\sqcap$ M) $\sqcup$ (E $\sqcap$ $\neg$D))</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Tableaux Algorithm</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Input: Knowledge Base, K = TBox + ABox, in NNF</li>
+							<li>Output: Whether or not K is satisfiable</li>
+							<br/>
+							<li>A tableau is a directed labelled graph</li>
+							<ul>
+								<li>Nodes are individuals or (new) variable names</li>
+								<li>Nodes x are labelled with sets L(x) of class expressions</li>
+								<li>Edges &lt;x,y&gt; are labelled with sets L(&lt;x,y&gt;) of role names</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Initialization</b></h4>
+						<ul style="font-size:30px">
+							<li>Make a node for every individual in the ABox</li>
+							<li>Every node is labelled with the corresponding class names from the ABox</li>
+							<li>There is an edge, labelled with R, between a and b, if R(a,b) is in the ABox</li>
+							<li>If there is no ABox, the initial tableau consists of a node x with empty label</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Initialization</b></h4>
+						<ul style="font-size:30px">
+							<li>Build an initial tableau for the following knowledge base</li>
+							<li>K = {A(a),($\exists$R.B)(a),R(a,b),R(a,c),S(b,b),(A$\sqcup$B)(c),$\neg$A$\sqcup$($\forall$S.B)}</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Naive $ALC$ Tableaux Rules</b></h4>
+						<ul style="font-size:30px">
+							<li>$\sqcap$-rule: If C $\sqcap$ D $\in$ L(x) and {C,D} $\not\subseteq$ L(x), then set L(x) $\leftarrow$ {C,D}</li>
+							<li>$\sqcup$-rule: If C $\sqcup$ D $\in$ L(x) and {C,D} $\cap$ L(x) = $\emptyset$</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Examples</b></h4>
+						<ul style="font-size:30px">
+							<li>K = {C(a), C $\sqsubseteq$ $\exists$R.D, D $\sqsubseteq$ E}. Is ($\exists$R.E)(a) a logical consequence?</li>
+							<li>K = {Human $\sqsubseteq$ $\exists$hasParent.Human, Bird(tweety)}. Is tweety not Human?</li>
+							<br/>
+							<li>Tableau constructed on whiteboard</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Examples</b></h4>
+						<ul style="font-size:30px">
+							<li>Try the following
+							<ul>
+								<li>Human $\sqsubseteq$ $\exists$hasParent.Human</li>
+								<li>Orphan $\sqsubseteq$ Human $\sqcap$ $\forall$hasParent.$\neg$Alive</li>
+								<li>Orphan(harrypotter)</li>
+								<li>hasParent(harrypotter, jamespotter)</li>
+								<br/>
+								<li>Is $\neg$Alive(jamespotter), a logical consequence?</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Blocking</b></h4>
+						<ul style="font-size:30px">
+							<li>K = {$\exists$R.$\top$, $\top$($a_1$)}. Check the satisfiability of K</li>
+							<li>Does the Tableau for K terminate?</li>
+							<br/>
+							<li>Tableau constructed on whiteboard</li>
+							<br/>
+							<li>Observation: Node x has the same properties of node $a_1$. So "reuse" $a_1$</li>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>Blocking</b></h4>
+						<ul style="font-size:30px">
+							<li>Terms: Consider L(x,y) $\neq$ $\emptyset$. Let's say L(x,y) = {R}</li>
+							<ul>
+								<li>Successor: y is the successor (R-successor) of x</li>
+								<li>Predecessor: x is the predecessor (R-predecessor) of y</li>
+								<li>Ancestor: Every predecessor of y, which is not an individual, is an ancestor of y. Every predecessor of an ancestor of y, which is not an individual, is also an ancestor of y</li>
+							</ul>
+						</ul>
+					</section>	
+					
+					<section>
+						<h4><b>Blocking</b></h4>
+						<ul style="font-size:30px">
+							<li>A node with a label x is blocked by a node with label y if</li>
+							<ul>
+								<li>x is a variable but not an individual</li>
+								<li>y is an ancestor of x, and L(x) $\subseteq$ L(y)</li>
+								<li>or an ancestor of x is blocked</li>
+							</ul>
+					</section>	
+
+					<section>
+						<h4><b>Blocking</b></h4>
+						<ul style="font-size:30px">
+							<li>K = {$\exists$R.$\top$, $\top$($a_1$)}</li>
+							<li>K = {Human $\sqsubseteq$ $\exists$hasParent.Human, Bird(tweety)}. Is tweety not Human?</li>
+							<li>K = {hasChild(john,peter), hasChild(john,alex), Male(peter), Male(alex)}. Show that $\forall$hasChild.male(john) is not a logical consequence of K</li>
+							<li>K = {Bird $\sqsubseteq$ Flies, Penguin $\sqsubseteq$ Bird, Penguin $\sqcap$ Bird $\sqsubseteq$ $\bot$, Penguin(tweety)}. Show K is unsatisfiable</li>
+						</ul>
+					</section>	
+				</section>
+				
+				<section> 
+					<h2>References</h2>
+					<br/>
+					<ol style="font-size:30px">
+						<li><a href="http://www.semantic-web-book.org/" target="_blank">Foundations of Semantic Web Technologies</a>. Pascal Hitzler et. al. CRC Press.</li>
+						<li><a href="https://www.w3.org/TR/owl2-profiles/" target="_blank">OWL 2 Profiles</a>. Boris Motik et. al. 2012</li>
+					</ol>
+				</section>
+			
+			</div>			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../plugin/markdown/marked.js' },
+					{ src: '../../../plugin/markdown/markdown.js' },
+					{ src: '../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
