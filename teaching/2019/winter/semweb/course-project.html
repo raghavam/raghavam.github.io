@@ -125,6 +125,60 @@
 						</ul>
 					</ul>
 				</section>
+				
+				<section>
+					<h3>RDF Graph</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Convert the data in the CSV file(s) to a set of triples</li>
+							<li>This is your instance data</li>
+							<li>Use (import) the ontology and use the classes and properties in the triples</li>
+							<ul>
+								<li><em style="color:green">cr-data:raita rdf:type</em> <em style="color:blue">cr-ont:Dish</em></li>
+								<li><em style="color:green">cr-data:raita</em> <em style="color:blue">cr-ont:hasIngredient</em> <em style="color:green">cr-data:curd</em></li>
+								<li><em style="color:green">cr-data:curd rdf:type</em> <em style="color:blue">cr-ont:Ingredient</em></li>
+							</ul>
+							<li>Ignore empty and NULL values in the CSV</li>
+							<li>Be careful with complex cell values (might have to be broken down into multiple separate triples</li>
+							<li>Make use of a CSV library such as Apache Commons CSV</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Minimum Requirements</b></h4>
+						<ul style="font-size:28px">
+							<li>Mapping file containing the mapping between the column number/name in the CSV and the class/property in the ontology. This can be in any format</li>
+							<li>Number of triples in the RDF Graph should not be less than 500k</li>
+							<li>Make use of at least one existing vocabulary such as Dublin Core, FOAF, schema.org, SKOS, SIOC, CC, etc. Modify your ontology accordingly</li>
+							<li>Choose any triple store (next slide). There should be an even spread of triple stores among the project groups</li>
+							<li>Load the triples into the triple store</li>
+							<li>Deadline: <em style="color:blue">April 10, 2019</em></li>
+							<li>Deliverable: Submit the following screenshots</li>
+							<ul>
+								<li>Mapping file</li>
+								<li>Your code/program that includes the triple store connection string and the result of the SPARQL count query</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Triple Stores</b></h4>
+						<br/>
+						<ol style="font-size:28px">
+							<li><a href="https://jena.apache.org/documentation/tdb/" target="_blank">Jena TDB</a></li>
+							<li><a href="http://vos.openlinksw.com/owiki/wiki/VOS" target="_blank">Virtuoso</a></li>
+							<li><a href="http://graphdb.ontotext.com/" target="_blank">GraphDB</a></li>
+							<li><a href="https://www.blazegraph.com/" target="_blank">Blazegraph</a></li>
+							<li><a href="https://www.stardog.com/" target="_blank">Stardog</a> (trial version available for 60 days)</li>
+							<li><a href="https://www.cs.ox.ac.uk/isg/tools/RDFox/" target="_blank">RDFox</a></li>
+							<li><a href="https://franz.com/agraph/downloads/" target="_blank">AllegroGraph</a></li>
+							<li><a href="http://rdf4j.org/" target="_blank">RDF4J</a></li>
+							<li><a href="https://github.com/4store/4store" target="_blank">4store</a></li>
+							<li><a href="http://www.mulgara.org/" target="_blank">Mulgara</a></li>
+						</ol>
+					</section>
+					
+				</section>
 			
 			</div>			
 		</div>
