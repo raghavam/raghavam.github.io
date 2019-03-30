@@ -1,0 +1,326 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Linked Data</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+			
+				<section>
+					<h2>Linked Data</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Introduction</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Individual data silos</li>
+							<li>Intra and inter connected/linked data</li>
+							<li>Links are typed: relation between two entities can be indicated</li>
+						</ul>	
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Huge amount of data is generated continuously</li>
+							<ul>
+								<li>How can data be reused easily?</li>
+								<li>How can we enable discovery of relevant data?</li>
+								<li>How can we enable applications to integrate data from multiple sources?</li> 
+							</ul>
+							<li>Linked Data helps in discovering, accessing, integrating, and using data</li>
+							<li>WWW helps in connecting and consuming documents. Through Linked Data, it can also help in connecting and consuming data</li>
+						</ul>	
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Rationale for Linked Data</li>
+							<ul>
+								<li>Structured data enables sophisticated processing</li> 
+								<li>Hyperlinks connect distributed data</li>
+								<ul>
+									<li>Makes the data discoverable</li>
+								</ul>
+								<li>From data islands to a global data space</li>
+								<ul>
+									<li>RDF links things, not just documents</li>
+									<li>RDF links are typed</li>
+									<li>Web of Data (analogous to Web of documents)</li>
+								</ul>
+							</ul>
+						</ul>	
+					</section>
+					
+					<section>
+						<h4><b>Linked Open Data Cloud</b></h4>
+						<br/>
+						<a href="https://lod-cloud.net/" target="_blank"><u>https://lod-cloud.net/</u></a>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Principles of Linked Data</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Linked Data refers to a set of best practices/principles for publishing and interlinking structured data on the Web</li>
+							<li>These principles were introduced by Tim Berners-Lee</li>
+							<li>Linked Data principles</li>
+							<ul>
+								<li>Use URIs as names for things</li>
+								<li>Use HTTP URIs, so that people can look up those names (make URIs dereferenceable)</li>
+								<li>When someone looks up a URI, provide useful information, using the standards (RDF, SPARQL)</li>
+								<li>Include links to other URIs, so that they can discover more things</li>
+							</ul>
+						</ul>	
+					</section>
+					
+					<section>
+						<h4><b>Naming Things using URIs</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Resources (real-world entities, abstract concepts) need to be uniquely identified</li>
+							<li>HTTP URIs is a good mechanism to identify resources</li>
+							<ul>
+								<li>They provide a simple mechanism to create globally unique identifiers</li>
+								<li>They provide a means of accessing the identified entity</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Make URIs Defererenceable</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>HTTP clients can look up the URI and retrieve the resource's description</li>
+							<li>Content negotiation</li>
+							<ul>
+								<li>HTTP clients can include in their headers what type of description they are looking for</li>
+								<li>HTML description is for human consumption</li>
+								<li>RDF description is for machine consumption</li>
+								<li>Two strategies can be used make URIs: 303 URIs and Hash URIs</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Make URIs Defererenceable</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>303 URIs</li>
+							<ol>
+								<li>Client performs a HTTP GET on a URI. It indicates either <em style="color:blue">Accept: application/rdf+xml</em> or <em style="color:blue">Accept: text/html</em> in the header</li>
+								<li>Server responds with a HTTP <em style="color:blue">303 See Other</em> response that includes the URI of the resource in requested format</li>
+								<li>Client performs HTTP GET on this URI</li>
+								<li>Server responds with the document and <em style="color:blue">200 OK</em></li>
+							</ol>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Make URIs Defererenceable</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Hash URIs</li>
+							<ol>
+								<li>303 URIs requires two HTTP requests. Hash URIs avoids that.</li>
+								<li>URIs can have a base part and a fragment identifier (after #)</li>
+								<ul>
+									<li>http://biglynx.co.uk/vocab/sme#Team</li>
+								</ul>
+								<li>Client removes the fragment identifier (HTTP protocol requirement) and sends rest of the URI to the server</li>
+								<li>Server returns the details of all the fragment identifiers</li>
+								<li>So client might end up with large number of triples that it is not interested in</li>
+							</ol>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Provide Useful RDF Information</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>When publishing Linked Data on the Web, data is represented in the form of RDF</li>
+							<li>The two most commonly used serialization formats when publishing Linked Data are rdf/xml and RDFa</li>
+							<li>RDF features that should be best avoided when publishing Linked Data</li>
+							<ul>
+								<li>RDF reification: querying becomes cumbersome</li>
+								<li>RDF collections: querying becomes cumbersome</li>
+								<li>Blank nodes: they have local scope</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>Include Links to Other Things</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Include external RDF links to other data sources so that data islands can be transformed into global, interconnected data space</li>
+							<li>There are three important types of RDF links</li>
+							<ol>
+								<li>Relationship Links: they point to related things in other data sources</li>
+								<li>Identity Links: they point to URI aliases</li>
+								<li>Vocabulary Links: they point to the definition of vocabulary terms that are used to represent the data</li>
+							</ol>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Summary</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>A unifying data model: RDF</li>
+							<li>A standardized data access mechanism: HTTP</li>
+							<li>Hyperlink-based data discovery: URIs</li>
+							<li>Self-descriptive data: shared vocabularies and data descriptions</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h4><b>5 Star Rating Scheme</b></h4>
+						<br/>
+						<ol style="font-size:28px">
+							<li>One Star: data is available on the web (whatever format), but with an open license</li>
+							<li>Two Stars: data is available as machine-readable structured data (e.g., Microsoft Excel instead of a scanned image of a table)</li>
+							<li>Three Stars: data is available as (2) but in a non-proprietary format (e.g., CSV instead of Excel)</li>
+							<li>Four Stars: data is available according to all the above, plus the use of open standards from the W3C (RDF and SPARQL) to identify things, so that people can link to it</li>
+							<li>Five Stars: data is available according to all the above, plus outgoing links to other people’s data to provide context</li>
+						</ol>
+					</section>
+				</section>
+				
+				<section>
+					<h3>Publishing Data about Data</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Two common mechanisms to describe data are Semantic Sitemaps and voiD descriptions</li>
+						<ul>
+							<li>Semantic Sitemaps: similar to sitemap (url,loc,lastmod,changefreq), but has more elements such as location of data dumps, SPARQL endpoints</li>
+							<li>voiD: stands for Vocabulary of Interlinked Data. It is similar to Semantic Sitemap, except that it is in RDF. Subsets of a dataset can also be defined and linked to other datasets</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Using Vocabularies to Describe Data</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>There are several popular existing vocabularies that can be reused to describe data, rather than reinventing the terms</li>
+							<li>If existing vocabularies are used then there is a higher chance that your data will be <em>consumed/understood</em> by applications</li>
+							<ul>
+								<li><a href="http://dublincore.org/documents/dcmi-terms/" target="_blank">Dublin Core</a>: defines general metadata attributes such as title, creator, date and subject</li>
+								<li><a href="http://xmlns.com/foaf/spec/" target="_blank">Friend-of-a-Friend (FOAF)</a>: defines terms for describing persons, their activities and their relations to other people and objects</li>
+								<li><a href="https://schema.org/docs/schemas.html" target="_blank">schema.org</a>: created by major search engines to discover data for search</li>
+								<li><a href="https://www.w3.org/TR/skos-reference/" target="_blank">SKOS</a>: bridge between different knowledge organization systems (thesaurus, taxonomy) to Semantic Web standards (RDF, OWL)</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li><a href="http://rdfs.org/sioc/spec/" target="_blank">Semantically-Interlinked Online Communities (SIOC)</a>: designed for describing aspects of online community sites, such as users, posts and forums</li>
+							<li><a href="https://github.com/ewilderj/doap" target="_blank">Description of a Project (DOAP)</a>: defines terms for describing software projects, particularly those that are Open Source</li>
+							<li><a href="http://purl.org/goodrelations/" target="_blank">Good Relations Ontology</a>: defines terms for describing products, services and other aspects relevant to e-commerce applications</li>
+							<li><a href="https://creativecommons.org/ns#" target="_blank">Creative Commons (CC)</a>: defines terms for describing copyright licenses in RDF</li>
+							<li><a href="http://vocab.org/review/#" target="_blank">Review Vocabulary</a>: vocabulary for representing reviews and ratings, as are often applied to products and services</li>
+							<li><a href="https://www.bbc.co.uk/ontologies/po" target="_blank">Programmes Ontology</a>: defines terms for describing programmes such as TV and radio broadcasts</li>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li><a href="https://www.w3.org/2003/01/geo/" target="_blank">Basic Geo (WGS84)</a>: defines terms such as lat and long for describing geographically-located things</li>
+							<li><a href="http://musicontology.com/" target="_blank">Music Ontology</a>: defines terms for describing various aspects related to music, such as artists, albums, tracks, performances and arrangements </li>
+							<li><a href="http://bibliontology.com/" target="_blank">Bibliographic Ontology (BIBO)</a>: provides concepts and properties for describing citations and bibliographic references (i.e., quotes, books, articles, etc.)</li>
+							<br/>
+							<li><a href="https://lov.linkeddata.es/dataset/lov/" target="_blank">Linked Open Vocabularies (LOV)</a>: searchable collection of several vocabularies</li>
+						</ul>
+					</section>
+				</section>	
+				
+				<section>
+					<h3>Linked Data Publishing Patterns</h3>
+					<figure>
+						<img src="figures/publishing-linkeddata.png" alt="Linked Data Publishing Patterns" height="500" width="650">
+						<figcaption style="font-size:13px">Image source: <a href="http://linkeddatabook.com/editions/1.0/" target="_blank">http://linkeddatabook.com/editions/1.0/</a>
+						</figcaption>
+					</figure>
+				</section>
+				
+				<section>
+					<h3>References</h3>
+					<br/>
+					<ol style="font-size:30px">
+						<li><a href="http://linkeddatabook.com/editions/1.0/" target="_blank">Linked Data: Evolving the Web into a Global Data Space</a>. Tom Heath, Christian Bizer. 2011. pp 1-136. Morgan & Claypool.</li>
+					</ol>
+				</section>
+					
+			</div>			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../plugin/markdown/marked.js' },
+					{ src: '../../../plugin/markdown/markdown.js' },
+					{ src: '../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

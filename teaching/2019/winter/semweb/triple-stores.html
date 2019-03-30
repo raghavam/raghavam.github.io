@@ -1,0 +1,172 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Triple Stores</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+			
+				<section>
+					<h2>Brief Overview of Triple Stores</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Introduction</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Triple stores are databases that support</li>
+						<ul>
+							<li>storage of triples</li>
+							<li>querying of triples (SPARQL)</li>
+							<li>reasoning over triples (some triple stores don't support reasoning)</li>
+						</ul>
+					</ul>						
+				</section>
+				
+				<section>
+					<h3>Architecture</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Two possible architectures</li>
+						<ul>
+							<li>Native support: supports triple representation</li>
+							<li>Non-native support: built on top of RDBMS, Graph DB, NoSQL Stores</li>
+						</ul>
+					</ul>						
+				</section>
+				
+				<section>
+					<h3>Triple Stores vs Graph Stores</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Triple Stores</li>
+						<ul>
+							<li>SPARQL support (W3C standard)</li>
+							<li>Reasoning support</li>
+						</ul>
+						<li>Graph Stores</li>
+						<ul>
+							<li>Easy to represent data in the form of (property) graphs</li>
+							<li>Non-standard querying languages: Gremlin, Cypher</li>
+						</ul>
+						<li>Ongoing efforts to convert PG $\Leftrightarrow$ RDF, Gremlin $\Leftrightarrow$ SPARQL</li>
+					</ul>						
+				</section>
+				
+				<section>
+					<h3>Indexing Schemes</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Several combination of indexing schemes</li>
+						<ul>
+							<li>SPO, POS, SOP, PSO, OSP, OPS</li>
+							<li>$\ldots$</li>
+						</ul>
+					</ul>						
+				</section>
+				
+				<section>
+					<h3>Storage Schemes</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Several storage schemes have been explored</li>
+						<ul>
+							<li>Property tables</li>
+							<li>Vertical partitioning</li>
+							<li>$\ldots$</li>
+						</ul>
+					</ul>						
+				</section>
+				
+				<section>
+					<h3>Triple Stores</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Several triple stores are available</li>
+						<ul>
+							<li><a href="https://jena.apache.org/documentation/tdb/" target="_blank">Jena TDB</a></li>
+							<li><a href="http://vos.openlinksw.com/owiki/wiki/VOS" target="_blank">Virtuoso</a></li>
+							<li><a href="https://www.oracle.com/technetwork/database/options/spatialandgraph/overview/rdfsemantic-graph-1902016.html" target="_blank">Oracle Spatial and Graph</a></li>
+							<li><a href="http://graphdb.ontotext.com/" target="_blank">GraphDB</a></li>
+							<li><a href="https://www.blazegraph.com/" target="_blank">Blazegraph</a></li>
+							<li><a href="https://www.stardog.com/" target="_blank">Stardog</li>
+							<li><a href="https://www.cs.ox.ac.uk/isg/tools/RDFox/" target="_blank">RDFox</a></li>
+							<li><a href="https://franz.com/agraph/downloads/" target="_blank">AllegroGraph</a></li>
+							<li><a href="https://www.marklogic.com/" target="_blank">MarkLogic</a></li>
+							<li><a href="http://rdf4j.org/" target="_blank">RDF4J</a></li>
+							<li><a href="https://github.com/4store/4store" target="_blank">4store</a></li>
+							<li><a href="http://www.mulgara.org/" target="_blank">Mulgara</a></li>
+						</ul>
+					</ul>						
+				</section>
+					
+			</div>			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../plugin/markdown/marked.js' },
+					{ src: '../../../plugin/markdown/markdown.js' },
+					{ src: '../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -43,6 +43,8 @@ Knowledge Representation and Reasoning (KRR) is a field of AI that deals with ca
   * <a href="odps.html" target="_blank">Ontology Design Patterns</a> &nbsp;&nbsp;&nbsp; <a href="odps.html?print-pdf" target="_blank">pdf</a>     	  
   * <a href="dl-reasoning.html" target="_blank">Description Logic Reasoning</a> &nbsp;&nbsp;&nbsp; <a href="dl-reasoning.html?print-pdf" target="_blank">pdf</a>     	  
   * <a href="ont-quality.html" target="_blank">Ontology Quality Assessment</a> &nbsp;&nbsp;&nbsp; <a href="ont-quality.html?print-pdf" target="_blank">pdf</a>     	  
+  * <a href="linked-data.html" target="_blank">Linked Data</a> &nbsp;&nbsp;&nbsp; <a href="linked-data.html?print-pdf" target="_blank">pdf</a>     	  
+  * <a href="triple-stores.html" target="_blank">Brief Overview of Triple Stores</a> &nbsp;&nbsp;&nbsp; <a href="triple-stores.html?print-pdf" target="_blank">pdf</a>     	  
 
 
 ### Files
