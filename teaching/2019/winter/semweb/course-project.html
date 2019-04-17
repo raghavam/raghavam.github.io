@@ -177,8 +177,73 @@
 							<li><a href="http://www.mulgara.org/" target="_blank">Mulgara</a></li>
 						</ol>
 					</section>
-					
 				</section>
+				
+				<section>
+					<h3>SPARQL Queries</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Form meaningful SPARQL queries based on your data/triples and the broad templates given in the next two slides</li>
+							<li>Use at least two variables in each query</li>
+							<li>Put each query in a separate text file</li>
+							<li>Write code to read each query from the file</li>
+							<li>Use an API to submit the query to the triple store and collect the results</li>
+							<li>Write the results to a file</li>
+						</ul>
+					</section>
+					
+					<section>
+						<ol style="font-size:28px">
+							<li>At least 3 triple patterns involved in subject-subject joins. This is called a star query. You can use Filter to limit the results (in case of more than 100 triples)</li>
+							<li>At least 3 triple patterns involved in subject-object joins. This is called a chain query. Get only 100 results using limit clause</li>
+							<li>At least 3 triple patterns involved in object-object joins. This is another form of star query. You can use Filter/Limit to restrict the number of results</li>
+							<li>Two star queries with 3 triple patterns each joined on a common object. You can use Filter/Limit to restrict the number of results</li>
+							<li>Two star queries with 3 triple patterns each, connected to each other like a chain, i.e., the subject/object of the first star query is connected to the object/subject of the other star query. You can use Filter/Limit to restrict the number of results</li>
+						</ol>
+					</section>
+					
+					<section>
+						<ol style="font-size:28px" start="6">
+							<li>Query involving reasoning: Assuming that A $\sqsubseteq$ B is in your ontology and a_1, a_2, ..., a_n are instances of A and not B in your RDF graph, write a query to check whether a_1, a_2, ..., a_n are also instances of B</li>
+							<li>Query involving reasoning: Your ontology has <em style="color:blue">p rdfs:domain C</em> for an object property p and <em style="color:blue">s p o</em> in your RDF graph. Write a query to check whether s rdf:type C? If s rdf:type C is already asserted in your graph, delete that triple and then run the query</li>
+							<li>Property path query involving a sequence and at least one triple pattern. Sequence should contain at least two properties in it</li>
+							<li>Property path query involving use of alternative and at least one triple pattern. Alternative should contain at least two properties in it</li>
+							<li>ASK query with a GROUP BY, and HAVING clause and with at least 3 triple patterns in the query such that the output is true</li>
+						</ol>
+					</section>	
+				</section>
+				
+				<section>
+					<h3>SHACL Validation</h3>
+					<section>
+					<ol style="font-size:26px">
+						<li>Construct a shapes graph for the following</li>
+						<ul>
+							<li>Validate the datatype of a string data property (check whether the instances involved with this property are indeed what you asserted in your ontology). Make use of any of the following to validate the instances connected to this data property further: minCount, maxCount, minLength, maxLength</li>
+							<li>Validate the object type to which the object property is connected to and check whether the node is indeed an IRI</li>
+						</ul>
+						<li>Construct a shapes graph for the following</li>
+						<ul>
+							<li>Either a) validate the datatype of a string type data property and using a regular expression check whether instances using this data property are indeed having correct values (eg., phone numbers, zipcode etc) or b) if you have dates or numeric data types, make use of lessThan or lessThanOrEquals (eg., startDate is lessThan endDate) and validate the datatype to be of numeric type</li> 
+							<li>Make use of closed and ignoredProperties</li>
+						</ul>
+					</ol>
+					</section>
+					
+					<section>
+						<h4><b>Libraries</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Any of the following libraries can be used, either in API form or command line, to validate RDF graphs through SHACL</li>
+							<ol>
+								<li><a href="https://github.com/TopQuadrant/shacl" target="_blank">https://github.com/TopQuadrant/shacl</a></li>
+								<li><a href="https://github.com/RDFLib/pySHACL" target="_blank">https://github.com/RDFLib/pySHACL</a></li>
+								<li><a href="https://github.com/labra/shaclex" target="_blank">https://github.com/labra/shaclex</a></li>
+								<li><a href="https://github.com/eclipse/lyo.validation" target="_blank">https://github.com/eclipse/lyo.validation</a></li>
+							</ol>
+						</ul>
+					</section>
+				</section>		
 			
 			</div>			
 		</div>
