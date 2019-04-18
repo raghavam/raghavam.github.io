@@ -1,0 +1,314 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SHACL</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+			
+				<section>
+					<h2>SHACL</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Introduction</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>SHACL stands for Shapes Constraint Language</li>
+							<li>It is used for validating RDF graphs against a set of conditions</li>
+							<li>These conditions/constraints are provided in the form of <em>shapes</em> and are referred to as "shapes graph"</li>
+							<li>RDF graphs that are validated against the shapes graph are called as "data graphs"</li>
+							<li>SHACL follows closed world assumption</li>
+							<li>SHACL namespace is as follows</li>
+							<ul>
+								<li>sh: http://www.w3.org/ns/shacl#</li>
+							</ul>
+						</ul>			
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Focus node: An RDF term that is validated against a "shape" using the triples from the "data graph"</li>
+							<li>Two types of shapes</li>
+							<ul>
+								<li>Node shapes: shapes about the focus node</li>
+								<li>Property shapes: shapes about the values of a property or path for the focus node</li>
+							</ul>
+						</ul>			
+					</section>
+					
+					<section>
+						<p style="text-align:left">Shapes Graph</p>
+						<pre><code>ex:PersonShape
+	a sh:NodeShape ;
+	sh:targetNode ex:Alice .</code></pre>	
+						<p style="text-align:left">Data Graph</p>
+						<pre><code>ex:Alice a ex:Person .
+ex:Bob a ex:Person .</code></pre>
+						<p style="text-align:left;font-size:28px">ex:Alice is the focus node</p>	
+					</section>					
+				</section>
+				
+				<section>
+					<h3>Severity of a Shape</h3>
+					<br/>
+					<table style="font-size:35px">
+						<tr>
+							<th style="text-align:left">Severity</th>
+							<th style="text-align:left">Description</th>
+						</tr>
+						<tr>
+							<td>sh:Info</td>
+							<td>A non-critical constraint violation indicating an informative message</td>
+						</tr>
+						<tr>
+							<td>sh:Warning</td>
+							<td>A non-critical constraint violation indicating a warning</td>
+						</tr>
+						<tr>
+							<td>sh:Violation</td>
+							<td>A constraint violation</td>
+						</tr>
+					</table>
+					<p style="text-align:left;font-size:28px">sh:Violation is the default if sh:severity is unspecified</p>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+						<p style="text-align:left">Shapes Graph</p>
+						<pre><code>ex:MyShape
+a sh:NodeShape ;
+sh:targetNode ex:MyInstance ;
+sh:property [    # _:b1
+	# Violations of sh:minCount and sh:datatype are produced as warnings
+	sh:path ex:myProperty ;
+	sh:minCount 1 ;
+	sh:datatype xsd:string ;
+	sh:severity sh:Warning ;
+] ;
+sh:property [    # _:b2
+	# The default severity here is sh:Violation
+	sh:path ex:myProperty ;
+	sh:maxLength 10 ;
+	sh:message "Too many characters"@en ;
+	sh:message "Zu viele Zeichen"@de ;
+] .					</code></pre>
+					</section>
+					
+					<section>	
+						<p style="text-align:left">Data Graph</p>
+						<pre><code>ex:MyInstance
+	ex:myProperty "http://toomanycharacters"^^xsd:anyURI .</code></pre>
+					</section>
+					
+					<section>
+						<p style="text-align:left">Validation Results</p>
+						<pre><code>[	
+a sh:ValidationReport ;
+sh:conforms false ;
+sh:result
+[	a sh:ValidationResult ;
+	sh:resultSeverity sh:Warning ;
+	sh:focusNode ex:MyInstance ;
+	sh:resultPath ex:myProperty ;
+	sh:value "http://toomanycharacters"^^xsd:anyURI ;
+	sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+	sh:sourceShape _:b1 ;
+] ,
+[	a sh:ValidationResult ;
+	sh:resultSeverity sh:Violation ;
+	sh:focusNode ex:MyInstance ;
+	sh:resultPath ex:myProperty ;
+	sh:value "http://toomanycharacters"^^xsd:anyURI ;
+	sh:resultMessage "Too many characters"@en ;
+	sh:resultMessage "Zu viele Zeichen"@de ;
+	sh:sourceConstraintComponent sh:MaxLengthConstraintComponent ;
+	sh:sourceShape _:b2 ;
+]
+] .</code></pre>
+					</section>
+					
+					<section>
+						<p style="text-align:left">Shapes Graph</p>
+						<pre><code>ex:PersonShape
+	a sh:NodeShape ;
+	sh:targetClass ex:Person ;    # Applies to all persons
+	sh:property [                 # _:b1
+		sh:path ex:ssn ;           # constrains the values of ex:ssn
+		sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:pattern "^\\d{3}-\\d{2}-\\d{4}$" ;
+	] ;
+	sh:property [                 # _:b2
+		sh:path ex:worksFor ;
+		sh:class ex:Company ;
+		sh:nodeKind sh:IRI ;
+	] ;
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) .</code></pre>
+					</section>
+					
+					<section>
+						<p style="text-align:left">Data Graph</p>
+						<pre><code>ex:Alice
+	a ex:Person ;
+	ex:ssn "987-65-432A" .
+  
+ex:Bob
+	a ex:Person ;
+	ex:ssn "123-45-6789" ;
+	ex:ssn "124-35-6789" .
+  
+ex:Calvin
+	a ex:Person ;
+	ex:birthDate "1971-07-07"^^xsd:date ;
+	ex:worksFor ex:UntypedCompany .</code></pre>
+					</section>
+					
+					<section>
+						<p style="text-align:left">Validation Result</p>
+						<pre><code>[	a sh:ValidationReport ;
+	sh:conforms false ;
+	sh:result
+	[	a sh:ValidationResult ;
+		sh:resultSeverity sh:Violation ;
+		sh:focusNode ex:Alice ;
+		sh:resultPath ex:ssn ;
+		sh:value "987-65-432A" ;
+		sh:sourceConstraintComponent sh:RegexConstraintComponent ;
+		sh:sourceShape ... blank node _:b1 on ex:ssn above ... ;
+	] ,
+	[	a sh:ValidationResult ;
+		sh:resultSeverity sh:Violation ;
+		sh:focusNode ex:Bob ;
+		sh:resultPath ex:ssn ;
+		sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+		sh:sourceShape ... blank node _:b1 on ex:ssn above ... ;
+	] ,
+	[	a sh:ValidationResult ;
+		sh:resultSeverity sh:Violation ;
+		sh:focusNode ex:Calvin ;
+		sh:resultPath ex:worksFor ;
+		sh:value ex:UntypedCompany ;
+		sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+		sh:sourceShape ... blank node _:b2 on ex:worksFor above ... ;
+	] ,
+	[	a sh:ValidationResult ;
+		sh:resultSeverity sh:Violation ;
+		sh:focusNode ex:Calvin ;
+		sh:resultPath ex:birthDate ;
+		sh:value "1971-07-07"^^xsd:date ;
+		sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+		sh:sourceShape sh:PersonShape ;
+	] 
+] .</code></pre>
+					</section>
+				</section>
+				
+				<section>
+					<h3>SHACL Property Paths</h3>
+					<br/>
+					<pre><code>SPARQL Property path: ex:parent
+SHACL Property path: ex:parent
+
+SPARQL Property path: ^ex:parent
+SHACL Property path: [ sh:inversePath ex:parent ]
+
+SPARQL Property path: ex:parent/ex:firstName
+SHACL Property path: ( ex:parent ex:firstName )
+
+SPARQL Property path: rdf:type/rdfs:subClassOf*
+SHACL Property path: ( rdf:type [ sh:zeroOrMorePath rdfs:subClassOf ] )
+
+SPARQL Property path: ex:father|ex:mother
+SHACL Property path: [ sh:alternativePath ( ex:father ex:mother  ) ]</code></pre>
+				</section>
+				
+				<section>
+					<h3>Demo</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li><a href="http://shacl.org/playground/" target="_blank">SHACL Playground</a></li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>References</h3>
+					<br/>
+					<ol style="font-size:30px">
+						<li><a href="https://www.w3.org/TR/shacl/" target="_blank">Shapes Constraint Language (SHACL)</a>. Holger Knublauch, Dimitris Kontokostas. W3C Recommendation.</li>
+						<li><a href="https://www.topquadrant.com/technology/shacl/tutorial/" target="_blank">SHACL Tutorial</a></li>
+					</ol>
+				</section>
+					
+			</div>			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../plugin/markdown/marked.js' },
+					{ src: '../../../plugin/markdown/markdown.js' },
+					{ src: '../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

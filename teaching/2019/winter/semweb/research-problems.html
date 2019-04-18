@@ -1,0 +1,204 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Research Problems and Directions in Semantic Web</title>
+		
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		
+			<div class="slides">
+			
+				<section>
+					<h2>Research Problems and Directions in Semantic Web</h2>
+					<br/>
+					Winter 2019
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Ontology Modelling</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Automatically building ontologies with complex relations</li>
+							<ul>
+								<li>Given a dataset (text, tables, excel sheets), competency questions, and list of ODPs, can we (auto/semi-automatically) build ontologies that can answer the competency questions?</li>
+								<li>This is called as <em>Ontology Learning</em></li>
+							</ul>
+						</ul>	
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Automatic refactoring of  ontologies with ODPs</li>
+							<ul>
+								<li>Rebuild large (bulky) ontologies with ODPs</li>
+								<li>Can we make the bulky ontologies more modular by replacing pieces of the ontology with ODPs?</li>
+								<li>The "intent" or the behaviour of the <em>modular</em> ontology should be the same as the original ontology</li>
+								<li>The <em>modular</em> ontology should answer the same competency questions as the original one</li>
+							</ul>
+						</ul>
+					</section>
+					
+					<section>
+						<ul style="font-size:30px">
+							<li>Extracting ODPs from large ontologies</li>
+							<ul>
+								<li>There are several large ontologies that may have similar patterns and can be extracted to form an ODP</li>
+								<li>Ontologies have to be analyzed and common structures have to be identified</li>
+							</ul>
+						</ul>
+					</section>
+				</section>	
+					
+				<section>
+					<h3>Description Logic Reasoning</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Approximate Reasoning</li>
+						<ul>
+							<li>Reasoning over highly expressive and/or very large ontologies is time consuming</li>
+							<li>Approximate Reasoning is about sacrificing either soundness or completeness for better reasoning runtime</li>
+						</ul>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Ontology Alignment</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Given two ontologies, what are the different entities that are similar to each other?</li>
+						<ul>
+							<li>Concepts</li>
+							<li>Properties</li>
+							<li>Instances</li>
+						</ul>
+						<li>Ontology Alignment Evaluation Initiative (<a href="http://oaei.ontologymatching.org/" target="_blank">OAEI</a>) provides benchmarks for alignment</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Knowledge Graph Construction</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Extraction of triples (instance data) from text</li>
+						<li>There are some popular automatically constructed KGs</li>
+						<ul>
+							<li>DBpedia</li>
+							<li>Never Ending Learning (NELL)</li>
+							<li>YAGO</li>
+							<li>Knowledge Graphs from Google, LinkedIn, Amazon, eBay</li>
+						</ul>
+						<li>Open Information Extraction tools such as OpenIE, ClausIE, FRED, Stanford OpenIE etc. can be used for getting triples from text</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Knowledge Graph Embedding</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Entities and relations in a KG are represented as vectors</li>
+						<li>This enables us to perform vector operations on KGs</li>
+						<li>Similar to word embedding</li>
+						<li>KG embedding is useful in a variety of applications</li>
+						<ul>
+							<li>Knowledge Graph Completion</li>
+							<li>Question Answering</li>
+						</ul>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Question Answering using Knowledge Graphs</h3>
+					<br/>
+				</section>
+				
+				<section>
+					<h3>Semantic Web and IoT</h3>
+					<br/>
+				</section>
+				
+				<section>
+					<h3>Making Semantic Technologies user friendly</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li><a href="http://sadl.sourceforge.net/" target="_blank">SADL</a></li>
+						<li><a href="http://semtk.research.ge.com/" target="_blank">SemTk</a></li>
+						<li><a href="http://www.irisa.fr/LIS/ferre/sparklis/" target="_blank">Sparklis</a></li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>References</h3>
+					<br/>
+					<ol style="font-size:30px">
+						<li><a href="https://geog.ucsb.edu/~jano/odpquestions.pdf" target="_blank">Collected Research Questions Concerning Ontology Design Patterns</a>. Karl Hammar et. al. Ontology Engineering with Ontology Design Patterns. 2016</li>
+					</ol>
+				</section>
+					
+			</div>			
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				
+				dependencies: [
+					{ src: '../../../plugin/markdown/marked.js' },
+					{ src: '../../../plugin/markdown/markdown.js' },
+					{ src: '../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
+
+
