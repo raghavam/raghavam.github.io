@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Take Aways</title>
+
+		<meta name="description" content="Slides of Semantic Web course">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../css/reveal.css">
+		<link rel="stylesheet" href="../../../css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../css/print/pdf.css' : '../../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h2>Take Aways</h2>
+					<br/>
+					Instructor: <a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Uses of Ontology/KG</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Formally (machine processable) represent the knowledge of a domain</li>
+							<li>Make the knowledge shareable (by other applications), and reusable</li>
+							<ul>
+								<li>The knowledge that is in your/domain expert's head is given a structure and put out</li>
+								<li>Your intuitions, heuristics could be captured in the form of an ontology</li>
+								<li>If the dictionaries, and vocabularies that you use have hierarchies, relationships, then an it can be represented as an ontology</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul style="font-size:30px">
+							<li>Ontology can give a good description of your data (data documentation)</li>
+							<ul>
+								<li>Makes the data usable</li>
+								<li>Data can be converted to structured data (RDF)</li>
+							</ul>
+							<li>Data integration</li>
+							<ul>
+								<li>IRIs make it easy to integrate the same entities from different data sources</li>
+								<li>Different data formats can be converted to one unified RDF format</li>
+							</ul>
+							<li>Ontology + KG enables automated reasoning</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h3>Uses of Reasoning</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Get complete answers</li>
+						<ul>
+							<li>SubClassOf(Baby Child)</li>
+							<li>SubClassOf(Child Person)</li>
+							<li>ClassAssertion(Baby s)</li>
+						</ul>
+						<li>Consistency of the knowledge base can be checked/maintained</li>
+						<ul>
+							<li>DisjointClasses(Vertebrates Invertebrates)</li>
+							<li>ClassAssertion(Vertebrates xyz)</li>
+							<li>ClassAssertion(Invertebrates xyz)</li>
+						</ul>
+						<li>Get explanation for the decisions/output given by the reasoner</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Ontology/KG construction</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>If KG is for a single/narrow domain, build an ontology first</li>
+						<ul>
+							<li>You would know the concepts and relations that you are interested in</li>
+							<li>Instances (from text) can be mapped to one of the concepts</li>
+							<li>Relations can be mapped to one of the "clean" relations in the ontology</li>
+						</ul>
+					</ul>
+
+			</div>
+
+		</div>
+
+		<script src="../../../lib/js/head.min.js"></script>
+		<script src="../../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: '../../../plugin/markdown/marked.js' },
+					{ src: '../../../plugin/markdown/markdown.js' },
+					{ src: '../../../plugin/notes/notes.js', async: true },
+					{ src: '../../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

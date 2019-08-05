@@ -1,0 +1,1071 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>RDF</title>
+
+		<meta name="description" content="Intro RDF">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../slides/css/reveal.css">
+		<link rel="stylesheet" href="../../../slides/css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../slides/css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../slides/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../slides/css/print/pdf.css' : '../../../slides/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h2>RDF</h2>
+					<br/>
+					<a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					Knowledgeable Computing and Reasoning Lab
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Introduction</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Resource Description Framework (RDF) is a data model that is used to describe resources</li>
+							<ul>
+								<li>Physical things</li>
+								<li>Abstract concepts</li>
+								<li>Numbers and strings</li>
+							</ul>
+							<li>We use the term resource and entity synonymously here</li>
+							<li>It is a universal, machine readable data exchange format</li>
+							<li>Resources are described using triples (subject, predicate, object)</li>
+							<li>A triple captures the relationship (predicate) between a subject and an object</li>
+						</ul>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+							<li>&lt;Delhi&gt; &lt;capitalOf&gt; &lt;India&gt;</li>
+							<li>RDF triple is called a RDF Statement</li>
+							<li>Triple can be represented as a directed labelled graph</li>
+						</ul>
+						<figure>
+							<img src="figures/rdf-graph.svg" alt="RDF Graph" height="200" width="400">
+							<figcaption style="font-size:13px">Image source: <a href="https://www.w3.org/TR/rdf11-concepts/rdf-graph.svg" target="_blank">https://www.w3.org/TR/rdf11-concepts/rdf-graph.svg</a></figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<figure>
+							<img src="figures/rdf-graph-sample.gif" alt="Sample RDF Graph" height="400" width="600">
+							<figcaption style="font-size:13px">Image source: <a href="http://www.obitko.com/tutorials/ontologies-semantic-web/rdf-graph-and-syntax.html" target="_blank">http://www.obitko.com/tutorials/ontologies-semantic-web/rdf-graph-and-syntax.html</a></figcaption>
+						</figure>
+					</section>
+				</section>
+
+				<section>
+					<h3>Identifiers</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>URL (Uniform Resource Locator)</li>
+							<ul>
+								<li>It is a mechanism to specify and locate a web resource on a computer network.</li>
+								<li>Eg: http://, ftp://</li>
+							</ul>
+							<li>URN (Uniform Resource Name)</li>
+							<ul>
+								<li>They are persistent location independent identifiers that use the urn scheme.</li>
+								<li>Eg: ISBN of a book is a URN used to identify a book uniquely</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<ul style="font-size:28px">
+							<li>URI (Uniform Resource Identifier) </li>
+							<ul>
+								<li>It is an identifier that can uniquely and unambiguously identify resources</li>
+								<li>ASCII encoding is used in the identifiers</li>
+								<li>URL and URN are type of URIs. URIs and URNs need not be resolvable to a location, which is the case with URL</li>
+								<li>Eg: http://www.w3.org/2002/07/owl#</li>
+							</ul>
+							<li>IRI (International Resource Identifier) </li>
+							<ul>
+								<li>IRI is similar to URI except that the character set for encoding the identifier is <em>Universal Character Set (UTF-8)</em></li>
+								<li>Eg: &eacute;, &ouml; could be used in IRI</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+							<li>Subject, Predicate, and Object in a triple are identified by IRIs</li>
+							<ul>
+								<li>http://www.example.org/~joe/contact.rdf#joesmith</li>
+								<li>http://xmlns.com/foaf/0.1/homepage</li>
+								<li>http://www.example/org/~joe</li>
+							</ul>
+							<li>Literals and blank nodes do not have IRIs</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h3>Namespace</h3>
+					<br/>
+					<ul style="font-size:28px">
+						<li>It is a logical grouping of unique identifiers</li>
+						<ul>
+							<li>Packages in Java (java.util.concurrent, org.w3c.dom)</li>
+							<li>Namespace in C++ (std)</li>
+							<li>XML namespace: xmlns="http://www.w3.org/1999/xhtml"</li>
+							<li>RDF namespace: rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"</li>
+							<li>RDFS namespace: rdfs="http://www.w3.org/2000/01/rdf-schema#"</li>
+							<li>XSD namespace: xsd="http://www.w3.org/2001/XMLSchema#"</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Literals</h3>
+					<br/>
+					<ul style="font-size:28px">
+						<li>Objects in a triple can be literals</li>
+						<li>Literals are constants. They can be values of strings, numbers, and dates</li>
+						<li>Literal consists of the following parts</li>
+						<ul>
+							<li>a lexical form, which is a unicode string</li>
+							<li>a datatype IRI</li>
+							<li>a language tag (only for string datatype)</li>
+						</ul>
+						<li>"That Seventies Show"^^xsd:string</li>
+						<li>"That Seventies Show"@en</li>
+						<li>"La Joconde"@fr</li>
+						<li>"1"^^xs:integer</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Blank Nodes</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>A blank node does not have a name associated with it</li>
+							<li>It is similar to anonymous classes in Java, C++</li>
+							<li>It indicates the existence of something but we will not be using or saying anything about the name of that thing</li>
+						</ul>
+					</section>
+
+					<section>
+						<figure>
+							<img src="figures/bnode-example.png" alt="RDF Graph with Blank Nodes" height="400" width="600">
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/u7P6wU" target="_blank">https://goo.gl/u7P6wU</a></figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+							<li>It does not have an IRI</li>
+							<ul>
+								<li>Blank node identifiers have only local scope</li>
+								<li>No global identity unlike other nodes with IRIs</li>
+							</ul>
+							<li>It is not a literal</li>
+							<li>It can be used as a subject or object</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h3>Multiple Graphs</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>RDF statements can be grouped into multiple graphs</li>
+							<li>Each graph can have a name associated with it (named graphs), which is an IRI</li>
+							<li>An RDF dataset is a collection of graphs</li>
+							<ul>
+								<li>Exactly one default (unnamed) graph that may be empty</li>
+								<li>Zero or more named graphs</li>
+								<li>Graph names are unique within a RDF dataset</li>
+								<li>Blank nodes can be shared by graphs in a RDF dataset</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<ol style="font-size:30px">
+							<li>Graph name (IRI): http://example.org/bob</li>
+							<ul>
+								<li>&lt;Bob&gt; &lt;is a&gt; &lt;person&gt;. </li>
+								<li>&lt;Bob&gt; &lt;is a friend of&gt; &lt;Alice&gt;.</li>
+								<li>&lt;Bob&gt; &lt;is born on&gt; &lt;the 4th of July 1990&gt;.</li>
+								<li>&lt;Bob&gt; &lt;is interested in&gt; &lt;the Mona Lisa&gt;.</li>
+							</ul>
+							<li>Graph name (IRI): https://www.wikidata.org/wiki/Special:EntityData/Q12418</li>
+							<ul>
+								<li>&lt;Leonardo da Vinci&gt; &lt;is the creator of&gt; &lt;the Mona Lisa&gt;.</li>
+								<li>&lt;The video 'La Joconde à Washington'&gt; &lt;is about&gt; &lt;the Mona Lisa&gt;</li>
+							</ul>
+						</ol>
+					</section>
+				</section>
+
+				<section>
+					<h3>RDF Serialization Formats</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>There are different serialization formats for writing RDF graphs</li>
+							<li>They are all logically equivalent and lead to same triples</li>
+							<ul>
+								<li>Turtle family of RDF serialization formats</li>
+								<ul>
+									<li>N-Triples</li>
+									<li>Turtle</li>
+									<li>TriG</li>
+									<li>N-Quads</li>
+								</ul>
+								<li>JSON-LD</li>
+								<li>RDFa</li>
+								<li>RDF/XML</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<figure>
+							<img src="figures/rdf-serialization-formats.png" alt="RDF Serialization Formats" height="350" width="550">
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/AsV5vR" target="_blank">https://goo.gl/AsV5vR</a></figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h4><b>N-Triples</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>It is a line based, plain text format to encode a RDF graph</li>
+							<li>It is a sequence of subject, predicate, and object separated by whitespace and terminated by dot</li>
+							<li>IRIs are written as absolute IRIs (not shortcuts) and are enclosed in angular brackets</li>
+							<li>Literals are written in double quotes followed by datatype or language tag</li>
+							<li>Datatype IRI is preceded by "^^"</li>
+							<li>Language tag is preceded by "@"</li>
+							<li>Blank nodes are expressed as _: followed by blank node label</li>
+							<ul>
+								<li>_:alice &lt;http://xmlns.com/foaf/0.1/knows&gt; _:bob .</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<figure>
+							<img src="figures/example-graph-iris.jpg" alt="Sample RDF Graph" height="500" width="700">
+							<figcaption style="font-size:13px">Image source: <a href="https://www.w3.org/TR/rdf11-primer/example-graph-iris.jpg" target="_blank">https://www.w3.org/TR/rdf11-primer/example-graph-iris.jpg</a></figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h4><b>N-Triples</b></h4>
+						<ol style="font-size:26px">
+							<li>&lt;http://example.org/bob#me&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://xmlns.com/foaf/0.1/Person&gt; .</li>
+    <li>&lt;http://example.org/bob#me&gt; &lt;http://xmlns.com/foaf/0.1/knows&gt; &lt;http://example.org/alice#me&gt; .</li>
+    <li>&lt;http://example.org/bob#me&gt; &lt;http://schema.org/birthDate&gt; "1990-07-04"^^&lt;http://www.w3.org/2001/XMLSchema#date&gt; .</li>
+    <li>&lt;http://example.org/bob#me&gt; &lt;http://xmlns.com/foaf/0.1/topic_interest&gt; &lt;http://www.wikidata.org/entity/Q12418&gt; .</li>
+    <li>&lt;http://www.wikidata.org/entity/Q12418&gt; &lt;http://purl.org/dc/terms/title&gt; "Mona Lisa" .</li>
+    <li>&lt;http://www.wikidata.org/entity/Q12418&gt; &lt;http://purl.org/dc/terms/creator&gt; &lt;http://dbpedia.org/resource/Leonardo_da_Vinci&gt; .</li>
+    <li>&lt;http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619&gt; &lt;http://purl.org/dc/terms/subject&gt; &lt;http://www.wikidata.org/entity/Q12418&gt; .</li>
+						</ol>
+					</section>
+
+					<section>
+						<h4><b>Turtle</b></h4>
+							<br/>
+							<ul style="font-size:28px">
+								<li>Turtle is the Terse RDF Triple Language</li>
+								<li>It is an extension of N-Triples with syntactic shortcuts</li>
+								<ul>
+									<li>Namespace prefix</li>
+									<li>Predicate lists</li>
+									<li>Object lists</li>
+								</ul>
+							</ul>
+					</section>
+
+					<section>
+						<h4><b>Turtle</b></h4>
+						<br/>
+						<pre><code>BASE   &lt;http://example.org/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+PREFIX schema: &lt;http://schema.org/&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX wd: &lt;http://www.wikidata.org/entity/&gt;
+						</code></pre>
+					</section>
+
+					<section>
+						<h4><b>Turtle</b></h4>
+						<br/>
+						<ul style="font-size:26px">
+							<li><em>Predicate lists</em> are triples with the same subject but different predicates and objects</li>
+							<li>Semi colon is used as a separator</li>
+						</ul>
+						<br/>
+						<pre><code>&lt;bob#me&gt;
+	a foaf:Person ;
+	foaf:knows &lt;alice#me&gt; ;
+	schema:birthDate "1990-07-04"^^xsd:date ;
+	foaf:topic_interest wd:Q12418 .
+						</code></pre>
+					</section>
+
+					<section>
+						<h4><b>Turtle</b></h4>
+						<br/>
+						<ul style="font-size:26px">
+							<li><em>Object lists</em> are triples with the same subject and predicate, but different object</li>
+							<li>Comma is used as a separator</li>
+						</ul>
+						<br/>
+						<pre><code>&lt;ex:spiderman&gt; foaf:name "Spiderman", "Человек-паук"@ru  .
+						</code></pre>
+					</section>
+
+					<section>
+						<h4><b>Turtle</b></h4>
+						<br/>
+						<ul style="font-size:26px">
+							<li>Two types of IRIs - relative and absolute</li>
+							<li>Absolute IRI</li>
+							<ul>
+								<li>&lt;http://one.example/subject1&gt;</li>
+							</ul>
+							<li>Relative IRI</li>
+						</ul>
+						<br/>
+						<pre><code>BASE &lt;http://one.example/&gt;
+&lt;subject1&gt; &lt;predicate1&gt; &lt;object1&gt; .
+						</code></pre>
+
+						<pre><code>PREFIX p: &lt;http://one.example/&gt;
+p:subject1 p:predicate1 p:object1&gt; .
+						</code></pre>
+					</section>
+
+					<section>
+						<h4><b>TriG</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Extension of Turtle that supports multiple graphs</li>
+						</ul>
+						<br/>
+						<pre><code>GRAPH &lt;http://example.org/bob&gt;
+{
+    &lt;bob#me&gt;
+	a foaf:Person ;
+        foaf:knows &lt;alice#me&gt; ;
+        schema:birthDate "1990-07-04"^^xsd:date ;
+        foaf:topic_interest wd:Q12418 .
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h4><b>TriG</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Default graphs</li>
+						</ul>
+						<br/>
+						<pre><code>&lt;http://example.org/bob&gt;
+        dcterms:publisher &lt;http://example.org/crc&gt; ;
+        dcterms:rights &lt;http://creativecommons.org/licenses/by/3.0/&gt; .
+						</code></pre>
+					</section>
+
+					<section>
+						<h4><b>TriG</b></h4>
+						<figure>
+							<img src="figures/example-multiple-graphs-iris.jpg" alt="TriG Named Graphs" height="420" width="500">
+							<figcaption style="font-size:13px">Image source: <a href="https://www.w3.org/TR/rdf11-primer/example-multiple-graphs-iris.jpg" target="_blank">https://www.w3.org/TR/rdf11-primer/example-multiple-graphs-iris.jpg</a></figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h4><b>N-Quads</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Extends N-Triples with a fourth element to the line which is the graph IRI of the triple</li>
+						</ul>
+						<br/>
+						<pre><code>&lt;http://example.org/bob#me&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://xmlns.com/foaf/0.1/Person&gt; &lt;http://example.org/bob&gt; .
+&lt;http://example.org/bob#me&gt; &lt;http://xmlns.com/foaf/0.1/knows&gt; &lt;http://example.org/alice#me&gt; &lt;http://example.org/bob&gt; .
+						</code></pre>
+						<pre><code>&lt;http://example.org/bob&gt; &lt;http://purl.org/dc/terms/publisher&gt; &lt;http://example.org&gt; .
+&lt;http://example.org/bob&gt; &lt;http://purl.org/dc/terms/rights&gt; &lt;http://creativecommons.org/licenses/by/3.0/&gt; .
+						</code></pre>
+					</section>
+
+					<section>
+						<h4><b>JSON-LD</b></h4>
+						<br/>
+						<ul style="font-size:28px">
+							<li>Provides JSON sytanx for RDF graphs</li>
+							<li>JSON-LD can be used to transform JSON to RDF</li>
+							<li>JSON objects are given universal identifiers in JSON-LD</li>
+							<ul>
+								<li>This helps in referring to objects in other JSON documents anywhere on the Web</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>JSON-LD</b></h4>
+						<br/>
+						<pre><code>{
+"@context": "example-context.json",
+"@id": "http://example.org/bob#me",
+"@type": "Person",
+"birthdate": "1990-07-04",
+"knows": "http://example.org/alice#me",
+"interest": {
+	"@id": "http://www.wikidata.org/entity/Q12418",
+	"title": "Mona Lisa",
+	"subject_of": "http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619",
+	"creator": "http://dbpedia.org/resource/Leonardo_da_Vinci"
+    }
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h4><b>RDFa</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>It is used to embed RDF within HTML and XML documents</li>
+							<li>Search engines can make use of the structured data (schema.org, Rich Snippets) to enrich search results</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>RDFa</b></h4>
+						<pre><code>&lt;body prefix="foaf: http://xmlns.com/foaf/0.1/
+	schema: http://schema.org/
+	dcterms: http://purl.org/dc/terms/"&gt;
+&lt;div resource="http://example.org/bob#me" typeof="foaf:Person"&gt;
+	&lt;p&gt;
+		Bob knows &lt;a property="foaf:knows" href="http://example.org/alice#me">Alice&lt;/a&gt;
+        and was born on the &lt;time property="schema:birthDate" datatype="xsd:date">1990-07-04&lt;/time&gt;.
+    &lt;/p&gt;
+	&lt;p&gt;
+		Bob is interested in &lt;span property="foaf:topic_interest"
+        resource="http://www.wikidata.org/entity/Q12418"&gt;the Mona Lisa&lt;/span&gt;.
+      &lt;/p&gt;
+  <&lt;/div&gt;
+&lt;/body&gt;
+						</code></pre>
+					</section>
+
+					<section>
+						<h4><b>RDF/XML</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Provides XML syntax for RDF graphs</li>
+							<li>There is good tool support for XML</li>
+							<li>This used to be the only syntax that was available to serialize RDF</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>RDF/XML</b></h4>
+						<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;rdf:RDF
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"&gt;
+	&lt;rdf:Description rdf:about="http://example.org/bob#me"&gt;
+		&lt;rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/&gt;
+		&lt;schema:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1990-07-04&lt;/schema:birthDate&gt;
+		&lt;foaf:knows rdf:resource="http://example.org/alice#me"/&gt;
+		&lt;foaf:topic_interest rdf:resource="http://www.wikidata.org/entity/Q12418"/&gt;
+	&lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+						</code></pre>
+					</section>
+
+				</section>
+
+				<section>
+					<h3>RDFS</h3>
+					<section>
+						<ul style="font-size:28px">
+							<li>RDFS is a semantic extension of RDF</li>
+							<li>It provides the vocabulary for the RDF data</li>
+							<li>It provides a mechanism to describe groups of related resources (classes) and the relationships between these resources (properties)</li>
+							<li>Classes</li>
+							<ul>
+								<li>Related resources can be categorized as a <em>class</em></li>
+								<li>A class is defined using <em>rdfs:Class</em></li>
+								<li>Members of the class are known as instances</li>
+								<li>Classes can be subclass of another class. This is defined using <em>rdfs:subClassOf</em></li>
+							</ul>
+							<li>A <em>Resource</em> is the class of everything, i.e., class of all classes</li>
+						</ul>
+					</section>
+
+					<section>
+						<ul style="font-size:28px">
+							<li>Properties</li>
+							<ul>
+								<li>It is a relation between subject resources and object resources</li>
+								<li>A property/predicate is defined using <em>rdf:Property</em></li>
+								<li>Subproperties can be stated using <em>rdfs:subPropertyOf</em></li>
+								<ul>
+									<li>hasSon rdfs:subPropertyOf hasChild</li>
+								</ul>
+								<li>A property can have domain and range, which can be defined using <em>rdfs:domain</em> and <em>rdfs:range</em> respectively<li>
+								<ul>
+									<li>If multiple domains/ranges are defined then the domain/range of the property is the intersection of all the defined domains/ranges</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+							<li>Other frequently used RDFS schema elements</li>
+							<ul>
+								<li>rdf:type</li>
+								<li>rdfs:Literal</li>
+								<li>rdfs:label</li>
+								<li>rdfs:comment</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Examples</b></h4>
+						<br/>
+						<ol style="font-size:30px">
+							<li>Person <em style="color:blue">rdf:type</em> <em style="color:green">rdfs:Class</em> .</li>
+							<li>Father <em style="color:blue">rdfs:subClassOf</em> Person .</li>
+							<li>hasAge <em style="color:blue">rdf:type</em> <em style="color:green">rdf:Property</em> .</li>
+							<li>hasSon <em style="color:blue">rdfs:subPropertyOf</em> hasChild .</li>
+							<li>hasAge <em style="color:blue">rdfs:domain</em> Person</li>
+							<li>hasAge <em style="color:blue">rdfs:range</em> <em style="color:green">rdfs:Literal</em> .</li>
+							<li>wd:Q12418 <em style="color:blue">rdfs:Label</em> "Mona Lisa" .</li>
+							<li>wd:Q12418 <em style="color:blue">rdfs:comment</em> "Wikidata ID for Mona Lisa" .</li>
+						</ol>
+					</section>
+				</section>
+
+				<section>
+					<h3>Reification</h3>
+					<br/>
+						<ul style="font-size:28px">
+							<li>Used to capture provenance information</li>
+							<li>Describe other RDF statements using statements</li>
+						</ul>
+						<br/>
+						<pre><code>exproducts:triple12345   rdf:type        rdf:Statement .
+exproducts:triple12345   rdf:subject     exproducts:item10245 .
+exproducts:triple12345   rdf:predicate   exterms:weight .
+exproducts:triple12345   rdf:object      "2.4"^^xsd:decimal .
+exproducts:triple12345   dc:creator      exstaff:85740 .
+						</code></pre>
+				</section>
+
+				<section>
+					<h3>Entailment Rules</h3>
+					<section>
+						<h4><b>Conventions</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>We use the following conventions in the entailment rules</li>
+							<ul>
+								<li><b>S</b> represents an RDF graph</li>
+								<li>aaa, bbb represents predicate of a triple</li>
+								<li>xxx, yyy, zzz represents either the subject or object of a triple</li>
+								<li>sss represents a literal</li>
+								<li>ddd represents a datatype</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>RDF Entailment Patterns</b></h4>
+						<br/>
+							<table style="font-size:35px">
+								<tr>
+									<th></th>
+									<th>If S contains</th>
+									<th>then S RDF entails</th>
+								</tr>
+								<tr>
+									<td>rdf1</td>
+									<td>xxx aaa "sss"^^ddd .</td>
+									<td>
+										xxx aaa _:nnn .<br/>
+										_:nnn  rdf:type ddd .
+									</td>
+								</tr>
+							</table>
+							<br/>
+							<ul style="font-size:30px">
+								<li>If <em style="color:blue">ex:a &nbsp;&nbsp; ex:p &nbsp;&nbsp; "123"^^xsd:integer .</em> &nbsp; then</li>
+								<ul>
+									<li><em style="color:green">ex:a &nbsp;&nbsp; ex:p &nbsp;&nbsp; _:x .</em> &nbsp; and</li>
+									<li><em style="color:green">_:x &nbsp;&nbsp; rdf:type &nbsp;&nbsp; xsd:integer .</em></li>
+								</ul>
+							</ul>
+					</section>
+
+					<section>
+						<h4><b>RDF Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDF entails</th>
+							</tr>
+							<tr>
+								<td>rdf2</td>
+								<td>xxx aaa yyy .</td>
+								<td>aaa rdf:type rdf:Property .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:a &nbsp;&nbsp; ex:p &nbsp;&nbsp; "123"^^xsd:integer .</em> &nbsp; then</li>
+							<ul>
+								<li><em style="color:green">ex:p &nbsp;&nbsp; rdf:type &nbsp;&nbsp; rdf:Property .</em></li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs1</td>
+								<td>xxx aaa "sss"^^ddd .</td>
+								<td>ddd rdf:type rdfs:Datatype .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:a &nbsp;&nbsp; ex:p &nbsp;&nbsp; "123"^^xsd:integer .</em> &nbsp; then</li>
+							<ul>
+								<li><em style="color:green">xsd:integer &nbsp;&nbsp; rdf:type &nbsp;&nbsp; rdfs:Datatype .</em></li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs2</td>
+								<td>
+									aaa rdfs:domain xxx . <br/>
+									yyy aaa zzz .
+								</td>
+								<td>yyy rdf:type xxx .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:worksAt &nbsp;&nbsp; rdfs:domain &nbsp;&nbsp; ex:Employee .</em> &nbsp; and <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; ex:john &nbsp;&nbsp; ex:worksAt &nbsp;&nbsp; ex:ibm .</em> &nbsp; then </li>
+							<ul>
+								<li><em style="color:green">ex:john &nbsp;&nbsp; rdf:type &nbsp;&nbsp; ex:Employee .</em></li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs3</td>
+								<td>
+									aaa rdfs:range xxx . <br/>
+									yyy aaa zzz .
+								</td>
+								<td>zzz rdf:type xxx .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:worksAt &nbsp;&nbsp; rdfs:range &nbsp;&nbsp; ex:Organization .</em> &nbsp; and <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; ex:john &nbsp;&nbsp; ex:worksAt &nbsp;&nbsp; ex:ibm .</em> &nbsp; then </li>
+							<ul>
+								<li><em style="color:green">ex:ibm &nbsp;&nbsp; rdf:type &nbsp;&nbsp; ex:Organization .</em></li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs4a</td>
+								<td>xxx aaa yyy .</td>
+								<td>xxx rdf:type rdfs:Resource .</td>
+							</tr>
+							<tr>
+								<td>rdfs4b</td>
+								<td>xxx aaa yyy .</td>
+								<td>yyy rdf:type rdfs:Resource .</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:32px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs5</td>
+								<td>
+									xxx rdfs:subPropertyOf yyy . <br/>
+									yyy rdfs:subPropertyOf zzz .
+								</td>
+								<td>xxx rdfs:subPropertyOf zzz .</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:33px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs6</td>
+								<td>xxx rdf:type rdf:Property .</td>
+								<td>xxx rdfs:subPropertyOf xxx .</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs7</td>
+								<td>
+									aaa rdfs:subPropertyOf bbb . <br/>
+									xxx aaa yyy .
+								</td>
+								<td>xxx bbb yyy .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:hasSon &nbsp;&nbsp; rdfs:subPropertyOf &nbsp;&nbsp; ex:hasChild .</em> &nbsp; and <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; ex:john &nbsp;&nbsp; ex:hasSon &nbsp;&nbsp; ex:mike .</em> &nbsp; then </li>
+							<ul>
+								<li><em style="color:green">ex:john &nbsp;&nbsp; ex:hasChild &nbsp;&nbsp; ex:mike .</em></li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:31px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs8</td>
+								<td>xxx rdf:type rdfs:Class .</td>
+								<td>xxx rdfs:subClassOf rdfs:Resource .</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs9</td>
+								<td>
+									xxx rdfs:subClassOf yyy . <br/>
+									zzz rdf:type xxx .
+								</td>
+								<td>zzz rdf:type yyy .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:Employee &nbsp;&nbsp; rdfs:subClassOf &nbsp;&nbsp; ex:Person .</em> &nbsp; and <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; ex:john &nbsp;&nbsp; rdf:type &nbsp;&nbsp; ex:Employee .</em> &nbsp; then </li>
+							<ul>
+								<li><em style="color:green">ex:john &nbsp;&nbsp; rdf:type &nbsp;&nbsp; ex:Person .</em></li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:31px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs10</td>
+								<td>xxx rdf:type rdfs:Class .</td>
+								<td>xxx rdfs:subClassOf xxx .</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:32px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs11</td>
+								<td>
+									xxx rdfs:subClassOf yyy . <br/>
+									yyy rdfs:subClassOf zzz .
+								</td>
+								<td>xxx rdfs:subClassOf zzz .</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:29px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs12</td>
+								<td>xxx rdf:type rdfs:ContainerMembershipProperty .</td>
+								<td>xxx rdfs:subPropertyOf rdfs:member .</td>
+							</tr>
+						</table>
+						<br/>
+						<ul style="font-size:30px">
+							<li>If <em style="color:blue">ex:CarBrandsBag &nbsp;&nbsp; rdf:_1 &nbsp;&nbsp; ex:honda .</em> &nbsp; and <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; ex:CarBrandsBag &nbsp;&nbsp; rdf:_2 &nbsp;&nbsp; ex:toyota .</em> &nbsp; <br/>
+							<em style="color:blue">&nbsp;&nbsp;&nbsp; rdf:_1 &nbsp;&nbsp; rdf:type &nbsp;&nbsp; rdfs:ContainerMembershipProperty .</em> &nbsp; then</li>
+							<ul>
+								<li><em style="color:green">rdf:_1 &nbsp;&nbsp; rdfs:subPropertyOf &nbsp;&nbsp; rdfs:member .</em></li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>RDFS Entailment Patterns</b></h4>
+						<br/>
+						<table style="font-size:30px">
+							<tr>
+								<th></th>
+								<th>If S contains</th>
+								<th>then S RDFS entails</th>
+							</tr>
+							<tr>
+								<td>rdfs13</td>
+								<td>xxx rdf:type rdfs:Datatype .</td>
+								<td>xxx rdfs:subClassOf rdfs:Literal .</td>
+							</tr>
+						</table>
+					</section>
+
+				</section>
+
+				<section>
+					<h3>Representing Knowledge using RDF</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Online RDF Editor: <a href="http://linkeddata.uriburner.com/rdf-editor/" target="_blank">http://linkeddata.uriburner.com/rdf-editor/</a></li>
+							<li>Online RDF Visualization: <a href="http://visgraph3.org/" target="_blank">http://visgraph3.org/</a></li>
+							<li>Domain: Delhi Public Transportation</li>
+							<ul>
+								<li>Road Transport (Bus, AutoRickshaw, Taxi, CycleRickshaw)</li>
+								<li>Rail Transport (Metro)</li>
+								<li>Air Transport</li>
+								<li>Properties: hasCapacity, hasLocation, hasSource, hasDestination</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+							<li>Pick a domain of your choice and build an RDF graph</li>
+						</ul>
+					</section>
+
+					<section>
+						<br/>
+						<h4><b>RDF Editors</b></h4>
+						<br/>
+						<ol style="font-size:30px">
+							<li><a href="http://linkeddata.uriburner.com/rdf-editor/" target="_blank">http://linkeddata.uriburner.com/rdf-editor/</a></li>
+							<li><a href="https://bitbucket.org/dotnetrdf/dotnetrdf/wiki/UserGuide/Tools/rdfEditor" target="_blank">https://bitbucket.org/dotnetrdf/dotnetrdf/wiki/UserGuide/Tools/rdfEditor</a></li>
+                            <li><a href="http://www.linkeddatatools.com/rdf-studio" target="_blank">http://www.linkeddatatools.com/rdf-studio</a></li>
+							<li><a href="https://marketplace.eclipse.org/content/komma-rdf-eclipse" target="_blank">https://marketplace.eclipse.org/content/komma-rdf-eclipse</a></li>
+							<li><a href="https://github.com/AKSW/Xturtle" target="_blank">https://github.com/AKSW/Xturtle</a></li>
+							<li><a href="https://atom.io/packages/language-rdf" target="_blank">https://atom.io/packages/language-rdf</a></li>
+							<li><a href="https://github.com/e-e-e/sublime-turtle-syntax" target="_blank">https://github.com/e-e-e/sublime-turtle-syntax</a>, <a href="https://github.com/abcoates/sublime-text-turtle-sparql"  target="_blank">https://github.com/abcoates/sublime-text-turtle-sparql</a></li>
+							<li><a href="https://sourceforge.net/projects/veudas/" target="_blank">https://sourceforge.net/projects/veudas/</a></li>
+						</ol>
+					</section>
+
+					<section>
+						<br/>
+						<h4><b>RDF Visualization Tools</b></h4>
+						<br/>
+						<ol style="font-size:30px">
+							<li><a href="http://www.easyrdf.org/converter" target="_blank">http://www.easyrdf.org/converter</a></li>
+							<li><a href="http://rhizomik.net/html/redefer/rdf2svg-form/" target="_blank">http://rhizomik.net/html/redefer/rdf2svg-form/</a></li>
+							<li><a href="https://github.com/usc-isi-i2/ontology-visualization" target="_blank">https://github.com/usc-isi-i2/ontology-visualization</a></li>
+							<li><a href="https://franz.com/agraph/gruff/" target="_blank">https://franz.com/agraph/gruff/</a></li>
+							<li><a href="https://github.com/idafensp/ar2dtool" target="_blank">https://github.com/idafensp/ar2dtool</a></li>
+							<li><a href="https://github.com/dyreriket/rdfvizler" target="_blank">https://github.com/dyreriket/rdfvizler</a></li>
+							<li><a href="http://activearchives.org/wiki/Visualizing_RDF" target="_blank">http://activearchives.org/wiki/Visualizing_RDF</a></li>
+							<li><a href="http://visgraph3.org/" target="_blank">http://visgraph3.org/</a></li>
+						</ol>
+					</section>
+
+					<section>
+						<br/>
+						<h4><b>RDF Validators</b></h4>
+						<br/>
+						<ol style="font-size:30px">
+							<li><a href="https://www.w3.org/RDF/Validator/" target="_blank">https://www.w3.org/RDF/Validator/</a></li>
+							<li><a href="http://rdfvalidator.mybluemix.net/" target="_blank">http://rdfvalidator.mybluemix.net/</a></li>
+							<li><a href="http://ttl.summerofcode.be/" target="_blank">http://ttl.summerofcode.be/</a></li>
+						</ol>
+					</section>
+				</section>
+
+				<section>
+					<h2>References</h2>
+					<br/>
+					<ul style="font-size:30px">
+						<li><a href="http://www.semantic-web-book.org/" target="_blank">Foundations of Semantic Web Technologies</a>. Pascal Hitzler et. al. CRC Press.</li>
+						<li><a href="https://www.w3.org/TR/rdf11-primer/" target="_blank">RDF 1.1 Primer</a></li>
+						<li><a href="https://www.w3.org/TR/rdf-schema/" target="_blank">RDF 1.1 Schema</a></li>
+						<li><a href="https://www.w3.org/TR/turtle/" target="_blank">RDF 1.1 Turtle</a></li>
+						<li><a href="https://www.w3.org/TR/rdf11-mt/" target="_blank">RDF 1.1 Semantics</a></li>
+					</ul>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../../../slides/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: '../../../slides/plugin/markdown/marked.js' },
+					{ src: '../../../slides/plugin/markdown/markdown.js' },
+					{ src: '../../../slides/plugin/notes/notes.js', async: true },
+					{ src: '../../../slides/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../slides/plugin/math/math.js', async: true },
+					{ src: '../../../slides/plugin/search/search.js', async: true },
+					{ src: '../../../slides/plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+PREFIX : <http://www.iiitd.ac.in/university#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:raghava a :AssistantProfessor ;
+        :hasFirstName  "Raghava"@en ;
+        :hasLastName   "Mutharaju"@en ;
+        :startDate     "10-09-2018"^^xsd:date .
+
+
+:vikram  a :AssociateProfessor ;
+        :teaches :DBMS ;
+        :teaches :BigData ;
+        :affiliatedTo  :CSE .
+
+:DBMS    a     :Course .
+:BigData a     :Course .
+:CSE     a     :Department .
+
+:Course a rdfs:Class .
+:AssistantProfessor rdfs:subClassOf :Faculty .

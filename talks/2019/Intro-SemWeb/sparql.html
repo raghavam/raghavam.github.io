@@ -1,0 +1,1077 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SPARQL</title>
+
+		<meta name="description" content="Intro SPARQL">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../slides/css/reveal.css">
+		<link rel="stylesheet" href="../../../slides/css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../slides/css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../slides/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../slides/css/print/pdf.css' : '../../../slides/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h2>SPARQL</h2>
+					<br/>
+					<a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					Knowledgeable Computing and Reasoning Lab
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+				<section>
+					<h3>Introduction</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>SPARQL 1.1 is a set of languages and protocols to query and manipulate RDF graphs</li>
+							<ul>
+								<li><a href="https://www.w3.org/TR/sparql11-query/" target="_blank">SPARQL 1.1 Query Language:</a> query language for RDF</li>
+								<li>SPARQL 1.1 Query Results Format (<a href="https://www.w3.org/TR/rdf-sparql-XMLres/" target="_blank">XML</a>, <a href="http://www.w3.org/TR/sparql11-results-json/" target="_blank">JSON</a>, <a href="http://www.w3.org/TR/sparql11-results-csv-tsv/" target="_blank">CSV, TSV</a>): description of four different formats to represent SPARQL query results</li>
+								<li><a href="http://www.w3.org/TR/sparql11-federated-query/" target="_blank">SPARQL 1.1 Federated Query:</a> specification for executing queries distributed over different SPARQL endpoints</li>
+								<li><a href="http://www.w3.org/TR/sparql11-entailment/" target="_blank">SPARQL 1.1 Entailment Regimes:</a> defines the semantics of queries under different entailment regimes such as RDFS, OWL, RIF</li>
+								<li><a href="http://www.w3.org/TR/sparql11-update/" target="_blank">SPARQL 1.1 Update Language:</a> specification for updating, creating, and removing RDF graphs</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+							<li><a href="http://www.w3.org/TR/sparql11-protocol/" target="_blank">SPARQL 1.1 Protocol:</a> a protocol for conveying arbitrary SPARQL queries and updates to a SPARQL service</li>
+							<li><a href="http://www.w3.org/TR/sparql11-service-description/" target="_blank">SPARQL 1.1 Service Description:</a> a specification for describing and discovering SPARQL services</li>
+							<li><a href="http://www.w3.org/TR/sparql11-http-rdf-update/" target="_blank">SPARQL 1.1 Graph Store HTTP Protocol:</a> specification that defines minimal means of managing RDF graph content directly using HTTP operations</li>
+							<li><a href="http://www.w3.org/2009/sparql/docs/tests/" target="_blank">SPARQL 1.1 Test Cases:</a> test cases for identifying corner cases in the specification and assessing whether a system conforms to SPARQL 1.1</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h3>SPARQL 1.1 Query Language</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>RDF is a directed, labelled graph</li>
+						<li>SPARQL is a graph pattern language</li>
+						<li>It supports aggregation, subqueries, negation, filters etc.</li>
+						<li>It is similar to SQL in terms of syntax</li>
+						<li>Result of a SPARQL query can be a RDF graph or a result set</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Basic Graph Patterns</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>A basic graph pattern (BGP) is a triple pattern</li>
+						<li>A triple pattern is nothing but a triple except that each of the subject, predicate, and object can be a variable</li>
+						<li>A BGP matches a subgraph of a RDF graph when the RDF terms (IRIs, literals, blank nodes) from that subgraph can be substituted for the variables in the BGP</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>SELECT clause</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>It is a projection</li>
+						<li>It returns variables and their bindings</li>
+						<li>New variable bindings can be introduced in the query</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+					<p style="text-align:left">Data</p>
+						<pre><code>
+&lt;http://example.org/book/book1&gt; &lt;http://purl.org/dc/elements/1.1/title&gt; "SPARQL Tutorial" . </code></pre>
+						<br/>
+						<p style="text-align:left">Query</p>
+						<pre><code>SELECT ?title
+WHERE
+{
+  &lt;http://example.org/book/book1&gt; &lt;http://purl.org/dc/elements/1.1/title&gt; ?title .
+}</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">title</th>
+							</tr>
+							<tr>
+								<td>SPARQL Tutorial</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>
+@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+_:a  foaf:name   "Johnny Lee Outlaw" .
+_:a  foaf:mbox   &lt;mailto:jlow@example.com&gt; .
+_:b  foaf:name   "Peter Goodguy" .
+_:b  foaf:mbox   &lt;mailto:peter@example.org&gt; .
+_:c  foaf:mbox   &lt;mailto:carol@example.org&gt; .</code></pre>
+
+						<br/>
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX foaf:   &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name ?mbox
+WHERE
+  { ?x foaf:name ?name .
+    ?x foaf:mbox ?mbox }</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">name</th>
+								<th style="text-align:center">mbox</th>
+							</tr>
+							<tr>
+								<td>"Johnny Lee Outlaw"</td>
+								<td>&lt;mailto:jlow@example.com&gt;</td>
+							</tr>
+							<tr>
+								<td>"Peter Goodguy"</td>
+								<td>&lt;mailto:peter@example.org&gt;</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix dc:   &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix :     &lt;http://example.org/book/&gt; .
+@prefix ns:   &lt;http://example.org/ns#&gt; .
+
+:book1  dc:title  "SPARQL Tutorial" .
+:book1  ns:price  42 .
+:book1  ns:discount 0.2 .
+
+:book2  dc:title  "The Semantic Web" .
+:book2  ns:price  23 .
+:book2  ns:discount 0.25 .</code></pre>
+
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX  dc:  &lt;http://purl.org/dc/elements/1.1/&gt;
+PREFIX  ns:  &lt;http://example.org/ns#&gt;
+SELECT  ?title (?p*(1-?discount) AS ?price)
+{ ?x ns:price ?p .
+  ?x dc:title ?title .
+  ?x ns:discount ?discount
+}</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">title</th>
+								<th style="text-align:center">price</th>
+							</tr>
+							<tr>
+								<td>"The Semantic Web"</td>
+								<td>17.25</td>
+							</tr>
+							<tr>
+								<td>"SPARQL Tutorial"</td>
+								<td>33.6</td>
+							</tr>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<h3>CONSTRUCT</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>This query form returns a RDF graph that matches a graph template</li>
+						<li>This is different from SELECT query form that returns variable bindings</li>
+						<li>If the graph template contains no variables (ground or explicit triples) then the CONSTRUCT query includes them in the result</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix org:    &lt;http://example.com/ns#&gt; .
+
+_:a  org:employeeName   "Alice" .
+_:a  org:employeeId     12345 .
+
+_:b  org:employeeName   "Bob" .
+_:b  org:employeeId     67890 .</code></pre>
+
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX foaf:   &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX org:    &lt;http://example.com/ns#&gt;
+
+CONSTRUCT { ?x foaf:name ?name }
+WHERE  { ?x org:employeeName ?name }</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Result</p>
+						<pre><code>@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+_:x foaf:name "Alice" .
+_:y foaf:name "Bob" .</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix  foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+_:a    foaf:name   "Alice" .
+_:a    foaf:mbox   &lt;mailto:alice@example.org&gt; .</code></pre>
+
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX foaf:    &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX vcard:   &lt;http://www.w3.org/2001/vcard-rdf/3.0#&gt;
+CONSTRUCT   { &lt;http://example.org/person#Alice&gt; vcard:FN ?name }
+WHERE       { ?x foaf:name ?name }</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Result</p>
+						<pre><code>@prefix vcard: &lt;http://www.w3.org/2001/vcard-rdf/3.0#&gt; .
+
+&lt;http://example.org/person#Alice&gt; vcard:FN "Alice" .</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h3>FILTER</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>FILTER is used to constrain the RDF terms</li>
+						<li>A FILTER expression can result in either true, false, or error</li>
+						<li>Solutions that result in false or error are eliminated from the result</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix dc:   &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix :     &lt;http://example.org/book/&gt; .
+@prefix ns:   &lt;http://example.org/ns#&gt; .
+
+:book1  dc:title  "SPARQL Tutorial" .
+:book1  ns:price  42 .
+:book2  dc:title  "The Semantic Web" .
+:book2  ns:price  23 .</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX  dc:  &lt;http://purl.org/dc/elements/1.1/&gt;
+SELECT  ?title
+WHERE   { ?x dc:title ?title
+          FILTER regex(?title, "^SPARQL")
+        }</code></pre>
+
+						<p style="text-align:left">Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">title</th>
+							</tr>
+							<tr>
+								<td>"SPARQL Tutorial"</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX  dc:  &lt;http://purl.org/dc/elements/1.1/&gt;
+SELECT  ?title
+WHERE   { ?x dc:title ?title
+          FILTER regex(?title, "web", "i" )
+        }</code></pre>
+
+						<p style="text-align:left">Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">title</th>
+							</tr>
+							<tr>
+								<td>"The Semantic Web"</td>
+							</tr>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<h3>OPTIONAL</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Generally, all the basic graph patterns in the query should match a subgraph in order to get a solution</li>
+						<li>But sometimes, it is useful to get a solution even though some part of the query pattern does not match</li>
+						<li>OPTIONAL feature provides this functionality</li>
+						<li>If the optional part does not match, it creates no bindings but does not eliminate the solution</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+
+_:a  rdf:type        foaf:Person .
+_:a  foaf:name       "Alice" .
+_:a  foaf:mbox       &lt;mailto:alice@example.com&gt; .
+_:a  foaf:mbox       &lt;mailto:alice@work.example&gt; .
+
+_:b  rdf:type        foaf:Person .
+_:b  foaf:name       "Bob" .</code></pre>
+
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name ?mbox
+WHERE  { ?x foaf:name  ?name .
+         OPTIONAL { ?x  foaf:mbox  ?mbox }
+       }</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">name</th>
+								<th style="text-align:center">mbox</th>
+							</tr>
+							<tr>
+								<td>"Alice"</td>
+								<td>&lt;mailto:alice@example.com&gt;</td>
+							</tr>
+							<tr>
+								<td>"Alice"</td>
+								<td>&lt;mailto:alice@work.example&gt;</td>
+							</tr>
+							<tr>
+								<td>"Bob"</td>
+								<td></td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix dc:   &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix :     &lt;http://example.org/book/&gt; .
+@prefix ns:   &lt;http://example.org/ns#&gt; .
+
+:book1  dc:title  "SPARQL Tutorial" .
+:book1  ns:price  42 .
+:book2  dc:title  "The Semantic Web" .
+:book2  ns:price  23 .</code></pre>
+
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX  dc:  &lt;http://purl.org/dc/elements/1.1/&gt;
+PREFIX  ns:  &lt;http://example.org/ns#&gt;
+SELECT  ?title ?price
+WHERE   { ?x dc:title ?title .
+          OPTIONAL { ?x ns:price ?price . FILTER (?price < 30) }
+        }</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">title</th>
+								<th style="text-align:center">price</th>
+							</tr>
+							<tr>
+								<td>"SPARQL Tutorial"</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>"The Semantic Web"</td>
+								<td>23</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix foaf:       &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+_:a  foaf:name       "Alice" .
+_:a  foaf:homepage   &lt;http://work.example.org/alice/&gt; .
+
+_:b  foaf:name       "Bob" .
+_:b  foaf:mbox       &lt;mailto:bob@work.example&gt; .</code></pre>
+
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name ?mbox ?hpage
+WHERE  { ?x foaf:name  ?name .
+         OPTIONAL { ?x foaf:mbox ?mbox } .
+         OPTIONAL { ?x foaf:homepage ?hpage }
+       }</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Result</p>
+						<br/>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">name</th>
+								<th style="text-align:center">mbox</th>
+								<th style="text-align:center">hpage</th>
+							</tr>
+							<tr>
+								<td>"Alice"</td>
+								<td></td>
+								<td>&lt;http://work.example.org/alice/&gt;</td>
+							</tr>
+							<tr>
+								<td>"Bob"</td>
+								<td>&lt;mailto:bob@work.example&gt;</td>
+								<td></td>
+							</tr>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<h3>Aggregates</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Aggregates apply expressions over groups of solutions</li>
+						<li>GROUP BY is used for grouping</li>
+						<li>SPARQL 1.1 supports COUNT, SUM, MIN, MAX, AVG, GROUP_CONCAT, and SAMPLE aggregates</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix : &lt;http://books.example/&gt; .
+
+:org1 :affiliates :auth1, :auth2 .
+:auth1 :writesBook :book1, :book2 .
+:book1 :price 9 .
+:book2 :price 5 .
+:auth2 :writesBook :book3 .
+:book3 :price 7 .
+:org2 :affiliates :auth3 .
+:auth3 :writesBook :book4 .
+:book4 :price 7 .</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX : &lt;http://books.example/&gt;
+SELECT ?org (SUM(?lprice) AS ?totalPrice)
+WHERE {
+  ?org :affiliates ?auth .
+  ?auth :writesBook ?book .
+  ?book :price ?lprice .
+}
+GROUP BY ?org
+HAVING (SUM(?lprice) > 10)</code></pre>
+
+						<p style="text-align:left">Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">org</th>
+								<th style="text-align:center">totalPrice</th>
+							</tr>
+							<tr>
+								<td>org1</td>
+								<td>21</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix : &lt;http://org.example/&gt; .
+
+:org1 :affiliates :p1, :p2, :p6 .
+:org2 :affiliates :p3, :p4 .
+
+:p1 :name "John" .
+:p2 :name "Paul" .
+:p6 :name "John" .
+:p3 :name "Ringo" .
+:p4 :name "George" .</code></pre>
+
+					<p style="text-align:left">Query</p>
+						<pre><code>PREFIX : &lt;http://books.example/&gt;
+SELECT ?org (GROUP_CONCAT(DISTINCT ?name;separator=', ') as ?names)
+WHERE {?org :affiliates ?p. ?p :name ?name }
+GROUP BY ?org</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">org</th>
+								<th style="text-align:center">names</th>
+							</tr>
+							<tr>
+								<td>org1</td>
+								<td>"John, Paul"</td>
+							</tr>
+							<tr>
+								<td>org2</td>
+								<td>"Ringo, George"</td>
+							</tr>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<h3>Property Paths</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>A property path is a possible route through a graph between two graph nodes</li>
+						<li>A basic graph pattern has a property path length of 1</li>
+						<li>The ends of the path can be RDF terms or variables</li>
+						<li>Paths (properties) cannot be variables. Only the path ends can be variables</li>
+						<li>Property paths allow connectivity match of two resources of arbitrary path length</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+						<ul style="font-size:30px">
+						<li>Alternatives: Match one or both possibilities</li>
+						</ul>
+						<pre><code>{ :book1 dc:title|rdfs:label ?displayString }</code></pre>
+						<br/>
+						<ul style="font-size:30px">
+						<li>Sequence: Find the name of any people that Alice knows</li>
+						</ul>
+						<pre><code>{
+    ?x foaf:mbox &lt;mailto:alice@example&gt; .
+    ?x foaf:knows/foaf:name ?name .
+}</code></pre>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+						<li>Sequence: Find the names of people two "foaf:knows" links away</li>
+						</ul>
+						<pre><code>{
+    ?x foaf:mbox &lt;mailto:alice@example&gt; .
+    ?x foaf:knows/foaf:knows/foaf:name ?name .
+}</code></pre>
+						<p style="font-size:30px">This is the same as the SPARQL query:</p>
+						<pre><code>SELECT ?x ?name
+{
+    ?x  foaf:mbox &lt;mailto:alice@example&gt; .
+    ?x  foaf:knows ?a1 .
+    ?a1 foaf:knows ?a2 .
+    ?a2 foaf:name ?name .
+}</code></pre>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+						<li>Filtering duplicates: someone Alice knows may well know Alice</li>
+						</ul>
+						<pre><code>{ ?x foaf:mbox &lt;mailto:alice@example&gt; .
+    ?x foaf:knows/foaf:knows ?y .
+    FILTER ( ?x != ?y )
+    ?y foaf:name ?name
+}</code></pre>
+						<ul style="font-size:30px">
+						<li>Inverse Property Paths: following two queries are the same. </li>
+						<li>Second query is just reversing the property direction which swaps the roles of subject and object</li>
+						</ul>
+						<pre><code>{ ?x foaf:mbox &lt;mailto:alice@example&gt; }</code></pre>
+						<pre><code>{ &lt;mailto:alice@example&gt; ^foaf:mbox ?x }</code></pre>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+						<li>Inverse Path Sequence: Find all the people who know someone ?x knows</li>
+						</ul>
+						<pre><code>{
+    ?x foaf:knows/^foaf:knows ?y .
+    FILTER(?x != ?y)
+}</code></pre>
+						<p style="font-size:30px">This is the same as the SPARQL query:</p>
+						<pre><code>{
+    ?x foaf:knows ?a .
+    ?y foaf:knows ?a .
+    FILTER(?x != ?y)
+}</code></pre>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+						<li>Arbitrary length match: Find the names of all the people that can be reached from Alice by foaf:knows</li>
+						</ul>
+						<pre><code>{
+    ?x foaf:mbox &lt;mailto:alice@example&gt; .
+    ?x foaf:knows+/foaf:name ?name .
+}</code></pre>
+						<ul style="font-size:30px">
+						<li>Alternatives in an arbitrary length path</li>
+						</ul>
+						<pre><code>{ ?ancestor (ex:motherOf|ex:fatherOf)+ &lt;#me&gt; }</code></pre>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+						<li>Inference: some form of limited inference is possible using property paths</li>
+						<li>All resources and all their inferred types</li>
+						</ul>
+						<pre><code>{ ?x rdf:type/rdfs:subClassOf* ?type }</code></pre>
+						<ul style="font-size:30px">
+						<li>Subproperty inference</li>
+						</ul>
+						<pre><code>{ ?x ?p ?v . ?p rdfs:subPropertyOf* :property }</code></pre>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+						<li>Negated Property Paths: Find nodes connected but not by rdf:type (either way round)</li>
+						</ul>
+						<pre><code>{ ?x !(rdf:type|^rdf:type) ?y }</code></pre>
+						<ul style="font-size:30px">
+						<li>Find all the elements in an RDF collection</li>
+						</ul>
+						<pre><code>{ :list rdf:rest*/rdf:first ?element }</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h3>SPARQL Query Forms</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>There are four different SPARQL query forms</li>
+						<ul>
+							<li>SELECT</li>
+							<li>CONSTRUCT</li>
+							<li>ASK</li>
+							<li>DESCRIBE</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>ASK</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>ASK queries are used to test whether a query pattern has a solution or not</li>
+						<li>A solution to the query pattern is not returned. The only information that is returned is whether a solution exists or not</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+	_:a  foaf:name       "Alice" .
+	_:a  foaf:homepage   &lt;http://work.example.org/alice/&gt; .
+
+	_:b  foaf:name       "Bob" .
+	_:b  foaf:mbox       &lt;mailto:bob@work.example&gt; .</code></pre>
+
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+	ASK  { ?x foaf:name  "Alice" }</code></pre>
+
+						<p style="text-align:left">Result</p>
+						<pre><code>true</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+ASK  { ?x foaf:name  "Alice" ;
+          foaf:mbox  &lt;mailto:alice@work.example&gt; }</code></pre>
+
+						<p style="text-align:left">Result</p>
+						<pre><code>false</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h3>DESCRIBE</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>This query form is used to get information/description about RDF resources</li>
+						<li>This is generally used to know the structure of the RDF graph that we are interested in querying</li>
+						<li>The description is determined by the query service. Information can come from the target RDF graph</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+						<pre><code>DESCRIBE &lt;http://example.org/&gt;</code></pre>
+						<br/>
+						<pre><code>PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+	DESCRIBE ?x
+	WHERE    { ?x foaf:name "Alice" }</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX ent:  &lt;http://org.example.com/employees#&gt;
+DESCRIBE ?x WHERE { ?x ent:employeeId "1234" }</code></pre>
+						<p style="text-align:left">Result</p>
+						<pre><code>@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix vcard:  &lt;http://www.w3.org/2001/vcard-rdf/3.0&gt; .
+@prefix exOrg:  &lt;http://org.example.com/employees#&gt; .
+@prefix rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix owl:  &lt;http://www.w3.org/2002/07/owl#&gt;
+
+_:a     exOrg:employeeId    "1234" ;
+
+        foaf:mbox_sha1sum   "bee135d3af1e418104bc42904596fe148e90f033" ;
+        vcard:N
+         [ vcard:Family       "Smith" ;
+           vcard:Given        "John"  ] .
+
+foaf:mbox_sha1sum  rdf:type  owl:InverseFunctionalProperty .</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h3>EXISTS</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>It is a filter expression that can be used to test whether a pattern is found in the data</li>
+						<li>It returns true/false and does not generate any additional bindings</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix  :  &lt;http://example/&gt; .
+@prefix  rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix  foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:alice  rdf:type   foaf:Person .
+:alice  foaf:name  "Alice" .
+:bob    rdf:type   foaf:Person .</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX  rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX  foaf:  &lt;http://xmlns.com/foaf/0.1/&gt;
+
+SELECT ?person
+WHERE
+{
+    ?person rdf:type  foaf:Person .
+    FILTER EXISTS { ?person foaf:name ?name }
+}</code></pre>
+
+						<p style="text-align:left">Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">person</th>
+							</tr>
+							<tr>
+								<td>&lt;http://example/alice&gt;</td>
+							</tr>
+						</table>
+					</section>
+
+				</section>
+
+				<section>
+					<h3>Negation</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>There are two ways of using negation in SPARQL</li>
+							<ol>
+								<li>NOT EXISTS: tests for the absense of a pattern</li>
+								<li>MINUS: removes triples based on a pattern</li>
+							</ol>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>NOT EXISTS</b></h4>
+						<ul style="font-size:30px">
+							<li>Tests whether a graph pattern does not match the dataset</li>
+							<li>Returns true/false and does not generate any additional bindings</li>
+						</ul>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix  :  &lt;http://example/&gt; .
+@prefix  rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix  foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:alice  rdf:type   foaf:Person .
+:alice  foaf:name  "Alice" .
+:bob    rdf:type   foaf:Person .</code></pre>
+					</section>
+
+					<section>
+						<h4><b>NOT EXISTS</b></h4>
+						<p style="text-align:left;font-size:30px">Query</p>
+						<pre><code>PREFIX  rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX  foaf:  &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?person
+WHERE
+{
+    ?person rdf:type  foaf:Person .
+    FILTER NOT EXISTS { ?person foaf:name ?name }
+}</code></pre>
+
+						<p style="text-align:left;font-size:30px">Result</p>
+						<table style="font-size:30px">
+							<tr>
+								<th style="text-align:center">person</th>
+							</tr>
+							<tr>
+								<td>&lt;http://example/bob&gt;</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h4><b>MINUS</b></h4>
+						<ul style="font-size:26px">
+							<li>Assuming the patterns that precede MINUS are left-hand side patterns and the one following MINUS are right-hand side patterns</li>
+							<ul>
+								<li>solutions in the LHS that are not compatible with solutions on the RHS are evaluated</li>
+							</ul>
+						</ul>
+						<p style="text-align:left;font-size:26px">Data</p>
+						<pre><code>@prefix  :  &lt;http://example/&gt; .
+@prefix  foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+:alice  foaf:givenName "Alice" ;
+        foaf:familyName "Smith" .
+:bob    foaf:givenName "Bob" ;
+        foaf:familyName "Jones" .
+:carol  foaf:givenName "Carol" ;
+        foaf:familyName "Smith" .</code></pre>
+					</section>
+
+					<section>
+						<h4><b>MINUS</b></h4>
+						<p style="text-align:left;font-size:24px">Query</p>
+						<pre><code>PREFIX :  &lt;http://example/&gt;
+PREFIX  foaf:  &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT DISTINCT ?s
+WHERE {
+   ?s ?p ?o .
+   MINUS {
+      ?s foaf:givenName "Bob" .
+   }
+}</code></pre>
+
+						<p style="text-align:left;font-size:24px">Result</p>
+						<table style="font-size:24px">
+							<tr>
+								<th style="text-align:center">s</th>
+							</tr>
+							<tr>
+								<td>&lt;http://example/carol&gt;</td>
+							</tr>
+							<tr>
+								<td>&lt;http://example/alice&gt;</td>
+							</tr>
+						</table>
+					</section>
+
+				</section>
+
+				<section>
+					<h3>Subqueries</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>SPARQL queries can be embedded within another SPARQL query</li>
+						<li>Subqueries are evaluated first and the results are propagated to the outer query</li>
+						<li>Only the variables that are projected out of the subquery will be visible to the outer query</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<section>
+						<p style="text-align:left">Data</p>
+						<pre><code>@prefix : &lt;http://people.example/&gt; .
+
+:alice :name "Alice", "Alice Foo", "A. Foo" .
+:alice :knows :bob, :carol .
+:bob :name "Bob", "Bob Bar", "B. Bar" .
+:carol :name "Carol", "Carol Baz", "C. Baz" .</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left">Query</p>
+						<pre><code>PREFIX : &lt;http://people.example/&gt;
+PREFIX : &lt;http://people.example/&gt;
+SELECT ?y ?minName
+WHERE {
+  :alice :knows ?y .
+  {
+    SELECT ?y (MIN(?name) AS ?minName)
+    WHERE {
+      ?y :name ?name .
+    } GROUP BY ?y
+  }
+}</code></pre>
+					</section>
+
+					<section>
+						<p style="text-align:left;font-size:30px">Results of inner query</p>
+						<table style="font-size:30px">
+							<tr>
+								<th style="text-align:center">y</th>
+								<th style="text-align:center">minName</th>
+							</tr>
+							<tr>
+								<td>:alice</td>
+								<td>"A. Foo"</td>
+							</tr>
+							<tr>
+								<td>:bob</td>
+								<td>"B. Bar"</td>
+							</tr>
+							<tr>
+								<td>:carol</td>
+								<td>"C. Baz"</td>
+							</tr>
+						</table>
+						<p style="text-align:left;font-size:30px">These are joined with the results of the outer query</p>
+						<table style="font-size:30px">
+							<tr>
+								<th style="text-align:center">y</th>
+							</tr>
+							<tr>
+								<td>:bob</td>
+							</tr>
+							<tr>
+								<td>:carol</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<p style="text-align:left">Final Result</p>
+						<table style="font-size:35px">
+							<tr>
+								<th style="text-align:center">y</th>
+								<th style="text-align:center">minName</th>
+							</tr>
+							<tr>
+								<td>:bob</td>
+								<td>"B. Bar"</td>
+							</tr>
+							<tr>
+								<td>:carol</td>
+								<td>"C. Baz"</td>
+							</tr>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<h3>Demo</h3>
+					<br/>
+					<ul style="font-size:30px">
+						<li>SPARQL Endpoints</li>
+						<ul>
+							<li><a href="http://dbpedia.org/snorql/" target="_blank">http://dbpedia.org/snorql/</a></li>
+							<li><a href="https://dbpedia.org/sparql" target="_blank">https://dbpedia.org/sparql</a></li>
+							<li><a href="https://www.w3.org/wiki/SparqlEndpoints" target="_blank">https://www.w3.org/wiki/SparqlEndpoints</a></li>
+						</ul>
+						<br/>
+						<li>Examples</li>
+						<ul>
+							<li><a href="http://tiny.cc/4r9qaz" target="_blank">http://tiny.cc/4r9qaz</a></li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>References</h3>
+					<br/>
+					<ol style="font-size:30px">
+						<li><a href="https://www.w3.org/TR/sparql11-overview/" target="_blank">SPARQL 1.1 Overview</a>. W3C Recommendation.</li>
+						<li><a href="https://www.w3.org/TR/sparql11-query/" target="_blank">SPARQL 1.1 Query Language</a>. Steve Harris, and Andy Seaborne. W3C Recommendation.</li>
+					</ol>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../../../slides/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: '../../../slides/plugin/markdown/marked.js' },
+					{ src: '../../../slides/plugin/markdown/markdown.js' },
+					{ src: '../../../slides/plugin/notes/notes.js', async: true },
+					{ src: '../../../slides/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../slides/plugin/math/math.js', async: true },
+					{ src: '../../../slides/plugin/search/search.js', async: true },
+					{ src: '../../../slides/plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
