@@ -1,0 +1,401 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Semantic Web: Mining Knowledge from the Web</title>
+
+		<meta name="description" content="Intro-SemWeb">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../slides/css/reveal.css">
+		<link rel="stylesheet" href="../../../slides/css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../slides/css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../slides/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../slides/css/print/pdf.css' : '../../../slides/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h2>Semantic Web: Mining Knowledge from the Web</h2>
+					<br/>
+					<a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					Knowledgeable Computing and Reasoning Lab
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+			<section>
+					<h3>About Myself</h3>
+					<section>
+						<h4><b>Work Experience and Education</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Assistant Professor (CSE), IIIT-D</li>
+							<li>Research Scientist, GE Research Center, New York</li>
+							<li>Internships at IBM Research, Bell Labs, Xerox Research, Stardog</li>
+							<li>Software Engineer, CA Technologies, Hyderabad</li>
+							<br/>
+							<li>PhD from Wright State University</li>
+							<li>M.Tech from MNNIT, Allahabad</li>
+							<li>B.Tech from JNTU, Hyderabad</li>
+						</ul>
+				 </section>
+
+				 <section>
+					<h4><b>Research Interests</b></h4>
+					<br/>
+					<ul style="font-size:30px">
+						<li>Semantic Web</li>
+						<ul>
+							<li>Ontology Modelling</li>
+							<li>Ontology Reasoning</li>
+							<li>Knowledge Graphs</li>
+							<li>SPARQL Query Processing</li>
+						</ul>
+						<li>Big Data</li>
+						<li>IoT</li>
+					</ul>
+				 </section>
+			</section>
+
+				<section>
+					<h3>Introduction</h3>
+					<section>
+						<figure>
+							<img src="figures/AbdulKalamWiki.png" alt="Abdul Kalam Wiki" height="550" width="1000">
+							<figcaption style="font-size:13px">Image source: <a href="https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam" target="_blank">https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam</a></figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<ol style="font-size:30px">
+							<li>Who was the president of India who was also a scientist?</li>
+							<li>Who was the scientist who worked at DRDO and was a Bharat Ratna?</li>
+							<li>Who was the president of India with an aerospace engineering background?</li>
+							<li>Name the person that worked at DRDO and ISRO and was called the “People’s President”? </li>
+							<li>Who was the Bharat Ratna holder from rameswaram?</li>
+						</ol>
+					</section>
+
+					<section>
+						<p style="text-align:left">Humans</p>
+						<ul style="font-size:30px">
+							<li>can read the text</li>
+							<li>can understand the text</li>
+							<li>can make inferences based on the text</li>
+							<li>can answer the questions</li>
+						</ul>
+					</section>
+
+					<section>
+						<p style="text-align:left">Machines</p>
+						<ul style="font-size:30px">
+							<li>can read the text</li>
+							<li>cannot understand the text</li>
+							<li>cannot make any inferences</li>
+							<li>may answer some of the questions </li>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Knowledge Graph</b></h4>
+						<figure>
+							<img src="figures/AbdulKalam-KG.jpeg" alt="Abdul Kalam KG" height="310" width="600">
+							<figcaption style="font-size:13px">Knowledge Graph involving Abdul Kalam</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h4><b>Knowledge Graph</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Capture the knowledge in a structured form</li>
+							<li>Machine processable</li>
+							<li>Inferences can be drawn</li>
+							<li>KG can be linked to other related KGs</li>
+							<ul>
+								<li>Presidents of India</li>
+								<li>Books written by presidents</li>
+								<li>Details of DRDO and ISRO</li>
+							</ul>
+							<li>Machines have better chance to answer questions using KGs</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Knowledge Graph</b></h4>
+						<figure>
+							<img src="figures/AbdulKalam-KG.jpeg" alt="Abdul Kalam KG" height="200" width="450">
+							<figcaption style="font-size:13px">Knowledge Graph involving Abdul Kalam</figcaption>
+						</figure>
+						<p style="font-size:25px">Domain(born in, Person) &nbsp;&nbsp;&nbsp; Range(born in, Place) &nbsp;&nbsp;&nbsp; Range(worked at, Organization)</p>
+					</section>
+
+					<section>
+						<h4><b>Knowledge Graph</b></h4>
+						<figure>
+							<img src="figures/AbdulKalam-KG-Ext.jpeg" alt="Abdul Kalam KG" height="350" width="600">
+							<figcaption style="font-size:13px">Expanded Knowledge Graph involving Abdul Kalam</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<figure>
+							<img src="figures/AbdulKalam-Google-KG.png" alt="Google Abdul Kalam KG" height="550" width="1000">
+							<figcaption style="font-size:13px">Google's knowledge card for Abdul Kalam</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h4><b>Knowledge Graph</b></h4>
+						<figure>
+							<img src="figures/knowledge-graph.jpg" alt="Knowledge Graph" height="350" width="680">
+							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/S2F3mH" target="_blank">https://goo.gl/S2F3mH</a></figcaption>
+						</figure>
+					</section>
+				</section>
+
+				<section>
+					<h3>Semantic Web</h3>
+					<section>
+						<ul style="font-size:30px">
+							<li>Purpose is to provide structure to the Web and to the data in general</li>
+							<li>Move from web of documents to web of data</li>
+							<li>Proposed by Tim-Berners Lee in 1999</li>
+							<li>Semantic Web technologies and W3C standards</li>
+							<ul>
+								<li><em style="color:maroon">RDF (Resource Description Framework)</em></li>
+								<li>OWL (Web Ontology Language)</li>
+								<li>SPARQL (query language)</li>
+								<li>SHACL (Shapes Constraint Language)</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<figure>
+							<img src="figures/lod-cloud-sm.jpg" alt="LOD" height="530" width="1000">
+							<figcaption style="font-size:13px">Image source: <a href="https://lod-cloud.net/" target="_blank">https://lod-cloud.net/</a></figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h4><b>RDF</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Resource Description Framework (RDF) is a data model that is used to describe resources</li>
+							<ul>
+								<li>Physical things</li>
+								<li>Abstract concepts</li>
+								<li>Numbers and strings</li>
+							</ul>
+							<li>We use the term resource and entity synonymously here</li>
+							<li>It is a universal, machine readable data exchange format</li>
+							<li>Resources are described using triples (subject, predicate, object)</li>
+							<li>A triple captures the relationship (predicate) between a subject and an object</li>
+						</ul>
+					</section>
+
+					<section>
+						<ul style="font-size:30px">
+							<li>&lt;Delhi&gt; &lt;capitalOf&gt; &lt;India&gt;</li>
+							<li>RDF triple is called a RDF Statement</li>
+							<li>Triple can be represented as a directed labelled graph</li>
+						</ul>
+						<figure>
+							<img src="figures/rdf-graph.svg" alt="RDF Graph" height="200" width="400">
+							<figcaption style="font-size:13px">Image source: <a href="https://www.w3.org/TR/rdf11-concepts/rdf-graph.svg" target="_blank">https://www.w3.org/TR/rdf11-concepts/rdf-graph.svg</a></figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<figure>
+							<img src="figures/rdf-graph-sample.gif" alt="Sample RDF Graph" height="400" width="600">
+							<figcaption style="font-size:13px">Image source: <a href="http://www.obitko.com/tutorials/ontologies-semantic-web/rdf-graph-and-syntax.html" target="_blank">http://www.obitko.com/tutorials/ontologies-semantic-web/rdf-graph-and-syntax.html</a></figcaption>
+						</figure>
+					</section>
+				</section>
+
+				<section>
+					<h3>Mining Knowledge</h3>
+					<section>
+						<figure>
+							<img src="figures/AbdulKalamWiki.png" alt="Abdul Kalam Wiki" height="500" width="1000">
+							<figcaption style="font-size:13px">Image source: <a href="https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam" target="_blank">https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam</a></figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h4><b>Knowledge Graph Construction</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Manual</li>
+							<ul>
+								<li>Good quality KG (entities and relations)</li>
+								<li>Not scalable</li>
+							</ul>
+							<li>Automatic</li>
+							<ul>
+								<li>Quality unpredictable, but generally not good</li>
+								<li>Scalable: large amount of text, any domain</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Automatic Knowledge Graph Construction</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Steps</li>
+							<ul>
+								<li>Parts of speech tagging</li>
+								<ul>
+									<li>Identify nouns, verbs, adjectives, etc.</li>
+								</ul>
+								<li>Dependency parsing</li>
+								<ul>
+									<li>Recognize the syntactic structure of the sentence along with the dependencies among the words</li>
+								</ul>
+								<li>Named Entity Recognition</li>
+								<ul>
+									<li>Identify person, location, organization, etc.</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Automatic Knowledge Graph Construction</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Steps</li>
+							<ul>
+								<li>Coreference resolution</li>
+								<ul>
+									<li>All words that refer to the same entity (I, we, he, she, it)</li>
+								</ul>
+								<li>Entity resolution and linking</li>
+								<ul>
+									<li>Uniquely identify entities that refer to the same entity</li>
+									<li>Obama, Barack Obama, President, Paris, Amazon</li>
+								</ul>
+								<li>Information extraction</li>
+								<ul>
+									<li>Define the domain (high level concepts and relations)</li>
+									<li>Learn extractors/templates</li>
+									<li>Rank/score the candidate facts</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h3>Automatic Knowledge Graph Construction</h3>
+					<section>
+						<h4><b>Existing OpenIE Systems</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>OpenIE 5.0</li>
+							<li>FRED</li>
+							<li>ClausIE</li>
+							<li>MinIE</li>
+							<br/>
+							<li>Demo</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>List of papers/code/data</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li><a href="https://github.com/gkiril/oie-resources" target="_blank">https://github.com/gkiril/oie-resources</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h4><b>Challenges</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Large scale benchmark for all the OpenIE systems. Results should be reproducible.</li>
+							<li>OpenIE systems for non-English languages</li>
+							<li>Handle all types of sentences from different domains</li>
+							<ul>
+								<li>Long/short sentences, with clauses, numerical values, etc.</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h3>Semantic Web: Mining Knowledge from the Web</h3>
+					<section>
+						<h4><b>Conclusion</b></h4>
+						<ul style="font-size:28px">
+							<li>In order for the machines to understand and make sense of the data, it has to be in a structured form</li>
+							<li>Knowledge can be captured and (machine) processed if it is in the form of Knowledge Graphs</li>
+							<li>Automatically building Knowledge Graphs is hard</li>
+							<ul>
+								<li>Quality of the triples is not good</li>
+								<li>Some of the open challenges were discussed</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../../../slides/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: '../../../slides/plugin/markdown/marked.js' },
+					{ src: '../../../slides/plugin/markdown/markdown.js' },
+					{ src: '../../../slides/plugin/notes/notes.js', async: true },
+					{ src: '../../../slides/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../slides/plugin/math/math.js', async: true },
+					{ src: '../../../slides/plugin/search/search.js', async: true },
+					{ src: '../../../slides/plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

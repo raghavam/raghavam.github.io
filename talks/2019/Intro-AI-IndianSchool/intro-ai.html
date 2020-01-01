@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introduction to AI</title>
+
+		<meta name="description" content="Intro-AI">
+		<meta name="author" content="Raghava Mutharaju">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../../../slides/css/reveal.css">
+		<link rel="stylesheet" href="../../../slides/css/theme/black.css">
+
+		<link rel="stylesheet" href="../../../slides/css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../slides/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../slides/css/print/pdf.css' : '../../../slides/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h2>Introduction to Artificial Intelligence</h2>
+					<br/>
+					<a href="http://www.iiitd.ac.in/raghavam" target="_blank">Raghava Mutharaju</a>
+					<br/>
+					Knowledgeable Computing and Reasoning Lab
+					<br/>
+					<a href="http://www.iiitd.ac.in/" target="_blank">IIIT-Delhi</a>
+					<br/>
+					<img src="figures/IIITD-Email-Footer.png" alt="IIIT Delhi" width="410" height="70"/>
+				</section>
+
+			<section>
+					<h3>About Myself</h3>
+					<section>
+						<h4><b>Work Experience and Education</b></h4>
+						<br/>
+						<ul style="font-size:30px">
+							<li>Assistant Professor (CSE), IIIT-D</li>
+							<li>Research Scientist, GE Research Center, New York</li>
+							<li>Internships at IBM Research, Bell Labs, Xerox Research, Stardog</li>
+							<li>Software Engineer, CA Technologies, Hyderabad</li>
+							<br/>
+							<li>Ph.D from Wright State University, Dayton, OH, USA</li>
+							<li>M.Tech from MNNIT, Allahabad</li>
+							<li>B.Tech from JNTU, Hyderabad</li>
+						</ul>
+				 </section>
+			 </section>
+
+			 <section>
+				 <h3>Applications</h3>
+
+				 <ul style="font-size:27px">
+					 <li>Google search</li>
+					 <ul>
+						 <li>Knowledge card on the right side</li>
+					 </ul>
+					 <li>Facebook</li>
+					 <ul>
+						 <li>Personalized advertisements</li>
+					 </ul>
+					 <li>Games</li>
+					 <ul>
+						 <li>Navigation of characters from one location to the other (avoiding obstacles, other characters)</li>
+						 <li>Adapting the behaviour of certain characters with the way user is playing the game</li>
+						 <li>Computer/Machine playing games such as Chess, Go, Poker, Jeopardy etc.</li>
+					 </ul>
+					 <li>Intelligent Virtual Assistants</li>
+					 <ul>
+						 <li>Google Assistant, Amazon Alexa, Siri, Cortana etc.</li>
+					 </ul>
+					 <li>Healthcare</li>
+					 <ul>
+						 <li>Analyzing medical images (radiology), wearable device data etc.</li>
+					 </ul>
+				 </ul>
+			 </section>
+
+			 <section>
+				 <h3>Natural Intelligence</h3>
+				 <br/>
+				 <ul style="font-size:30px">
+					 <li>What is natural intelligence?</li>
+					 <ul>
+						 <li>We receive inputs through the sensory organs</li>
+						 <li>We take <em style="color:purple">decisions</em> based on these inputs</li>
+					 </ul>
+					 <li>How are we able to take decisions?</li>
+					 <ul>
+						 <li>our knowledge (reading books)</li>
+						 <li>learning from others (living/non-living things around us)</li>
+						 <ul>
+							 <li>Kids learn from parents, friends, teachers etc.</li>
+						 </ul>
+						 <li>analogy</li>
+						 <ul>
+							 <li>Birds fly. Ostrich is a bird.</li>
+						 </ul>
+						 <li><em>gut</em> feeling</li>
+					 </ul>
+				 </ul>
+			 </section>
+
+			 <section>
+				 <h3>Artificial Intelligence (AI)</h3>
+				 <section>
+					 <ul style="font-size:28px">
+						 <li>It is the study of the general principles of building intelligent agents.</li>
+						 <li>An agent is any device that can perceive its environment through sensors and react to it by taking action to achieve a stated goal.</li>
+						 <li>Mimicking human senses, i.e., sight, sound, touch, smell, taste, is a form of perception.</li>
+						 <li>Intelligent agents should be able to interpret and process other forms of input such as text, semi-structured, and structured data.</li>
+						 <li>Output of an intelligent agent could be in multiple forms such as movement (reaching a destination), decision taken, sound etc.</li>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>How do we reach The Indian School from IIIT-D?</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Multiple paths</li>
+						 <li>Which path is the best?</li>
+						 <ul>
+							 <li>Depends on multiple factors</li>
+							 <li>Distance, time, road conditions, time of the day</li>
+						 </ul>
+						 <li>Given an initial path and a final path, <em>search</em> algorithms find the best possible route</li>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>How can a machine engage with the world?</b></h4>
+					 <br/>
+					 <ul style="font-size:29px">
+						 <li>Perception: Gather information about the environment and react to it</li>
+						 <li>Information is gathered with the help of sensors</li>
+						 <ul>
+							 <li>Temperature, pressure, movement, air quality, images etc.</li>
+						 </ul>
+						 <li>Machines analyze the sensor data and take actions (sometimes using actuators)</li>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>Perception</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Detecting the movement of a person using images from multiple different cameras (with different angles)</li>
+						 <li>Counting the number of tigers in India</li>
+						 <li>Lip reading: Transcribe the text for a video</li>
+						 <ul>
+						 	<li>Automatic Speech Recognition</li>
+						</ul>
+						<li>Generating captions for images</li>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>How can a machine observe the world and improve?</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Learning: Machines can observe the world including its own experiences and improve its performance over time</li>
+						 <li>Types of learning based on the feedback</li>
+						 <ul>
+							 <li>Supervised learning</li>
+							 <li>Unsupervised learning</li>
+							 <li>Semi-supervised learning</li>
+							 <li>Reinforcement learning</li>
+						 </ul>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>Supervised Learning</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Agents learn from examples (labelled data)</li>
+						 <ul>
+							 <li>This is a cat</li>
+							 <li>This is a tiger</li>
+							 <li>Person holding an umbrella</li>
+							 <li>Dog is a mammal</li>
+						 </ul>
+						 <li>Is this a cat?</li>
+						 <ul>
+							 <li>I am 90% sure that this is a lion</li>
+						 </ul>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>Unsupervised Learning</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Learn patterns without any explicit feedback</li>
+						 <li>Clustering</li>
+						 <li>Taxi driver can learn traffic time and non-traffic time, without explicit feedback</li>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>Semi-supervised Learning</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Limited amount of labelled examples are given</li>
+						 <li>Labels might not be accurate</li>
+						 <li>Need to find patterns from unlabelled data</li>
+						 <li>Guess a person's age from their picture</li>
+						 <ul>
+							 <li>We can collect some limited labelled data</li>
+							 <li>People might lie about their age</li>
+						 </ul>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>Reinforcement Learning</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Agent learns from a series of reinforements - reward or punishment</li>
+						 <li>Eg: Tip to a barber</li>
+						 <li>A reward function exists. An action is taken if it leads to a reward</li>
+						 <li>Exploration vs Exploitation trade-off</li>
+						 <ul>
+							 <li>Picking the best possible ripe mango in 15 mins from a tall tree with many branches</li>
+						 </ul>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>Natural Language Processing</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Extracting knowledge expressed in the natural language (books, blogs, articles, tweets)</li>
+						 <li>Communicate with humans using natural language</li>
+						 <li>Agents should be able to parse sentences and make sense out of it</li>
+						 <li>Applications: Speech recognition (speech to text), machine translation (text to speech), information retrieval</li>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>Knowledge Representation and Reasoning (KRR)</b></h4>
+					 <br/>
+					 <ul style="font-size:26px">
+						 <li>Techniques to capture knowledge about the world in a form that machines can understand</li>
+						 <ul style="font-size:24px">
+							 <li>A Car is a type of Vehicle</li>
+							 <li>Car has exactly four wheels</li>
+							 <li>Car has at least two doors and at most four doors</li>
+						 </ul>
+						 <li>Reasoning is the process of deriving new facts (knowledge) based on existing facts</li>
+						 <ul style="font-size:24px">
+							 <li>All birds fly</li>
+							 <li>Pigeon is a bird</li>
+							 <li>Can Pigeon fly?</li>
+						 </ul>
+						 <li>KRR is the field of AI that helps an agent to use what it knows (background knowledge) to decide what to do</li>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>Applications of KRR</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Unstructured data to structured data</li>
+						 <ul>
+							 <li>Search Engine Optimization: Schema.org</li>
+							 <li>Adding semantics to the data</li>
+						 </ul>
+						 <li>Data Integration</li>
+						 <li>Recommendations</li>
+						 <ul>
+							 <li>Drug recommendation based on symptoms</li>
+						 </ul>
+						 <li>Question Answering</li>
+						 <ul>
+							 <li>Who is the president of India who was also a scientist?</li>
+						 </ul>
+					 </ul>
+				 </section>
+
+				 <section>
+	 				<h4><b>Structured Data</b></h4>
+	 						<ul style="font-size:30px">
+	 							<li>&lt;Delhi&gt; &lt;capitalOf&gt; &lt;India&gt;</li>
+	 							<li>RDF triple is called a RDF Statement</li>
+	 							<li>Triple can be represented as a directed labelled graph</li>
+	 						</ul>
+	 						<figure>
+	 							<img src="figures/rdf-graph.svg" alt="RDF Graph" height="200" width="400">
+	 							<figcaption style="font-size:13px">Image source: <a href="https://www.w3.org/TR/rdf11-concepts/rdf-graph.svg" target="_blank">https://www.w3.org/TR/rdf11-concepts/rdf-graph.svg</a></figcaption>
+	 						</figure>
+	 			</section>
+
+	 			<section>
+	 						<h4><b>Knowledge Graph</b></h4>
+	 						<figure>
+	 							<img src="figures/knowledge-graph.jpg" alt="Knowledge Graph" height="350" width="700">
+	 							<figcaption style="font-size:13px">Image source: <a href="https://goo.gl/S2F3mH" target="_blank">https://goo.gl/S2F3mH</a></figcaption>
+	 						</figure>
+	 			</section>
+
+				 <section>
+					 <h4><b>Robotics</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Robots are physical agents that perform tasks in the physical world</li>
+						 <li>Robots are generally equipped with sensors, arms, wheels/legs, joints</li>
+						 <li>Social robots</li>
+						 <ul>
+							 <li>Robots interact with kids with autism spectrum disorder (ASD)</li>
+						 </ul>
+						 <li>Robots in industrial settings (assembly, welding, packaging and labelling)</li>
+					 </ul>
+				 </section>
+
+				 <section>
+					 <h4><b>Philosophical and Ethical Issues</b></h4>
+					 <br/>
+					 <ul style="font-size:30px">
+						 <li>Autonomous vehicles</li>
+						 <li>Will we lose jobs?</li>
+						 <li>Will robots take over the world?</li>
+					 </ul>
+				 </section>
+
+			 </section>
+
+			</div>
+
+		</div>
+
+		<script src="../../../slides/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				hideAddressBar: true,
+				slideNumber: 'c/t',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: '../../../slides/plugin/markdown/marked.js' },
+					{ src: '../../../slides/plugin/markdown/markdown.js' },
+					{ src: '../../../slides/plugin/notes/notes.js', async: true },
+					{ src: '../../../slides/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../slides/plugin/math/math.js', async: true },
+					{ src: '../../../slides/plugin/search/search.js', async: true },
+					{ src: '../../../slides/plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
